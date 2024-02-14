@@ -15,6 +15,7 @@ import foto3 from "@/assets/heroCarousel/foto3.png";
 import foto4 from "@/assets/heroCarousel/foto4.png";
 import foto5 from "@/assets/heroCarousel/foto5.png";
 import foto6 from "@/assets/heroCarousel/foto6.png";
+import { cn } from "@/lib/utils";
 
 export function HeroCarousel() {
   const [api, setApi] = React.useState<CarouselApi>();
@@ -48,6 +49,15 @@ export function HeroCarousel() {
         </CarouselContent>
         <CarouselPrevious />
         <CarouselNext />
+        {/* {HeroImage.map((_, index) => (
+          <div
+            className={cn(
+              "rounded-full w-3 h-3",
+              index === count ? "bg-white" : "bg-[#f4f4f4]"
+            )}
+            key=""
+          />
+        ))} */}
       </Carousel>
     </div>
   );
