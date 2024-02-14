@@ -4,23 +4,21 @@ import React from "react";
 interface MetricsItemProps {
   image?: any;
   tprimary?: string;
-  tsecondary?: string;
+  children?: React.ReactNode;
 }
 
 const MetricsItem: React.FC<MetricsItemProps> = ({
   image,
   tprimary,
-  tsecondary,
+  children,
 }) => {
   return (
-    <div className='text-center'>
-      <div className='mx-auto flex items-center  gap-2 mt-2 max-w-12'>
-        {image && <Image src={image} alt='' />}
-        <h3 className='text-xl font-bold'>{tprimary}</h3>
+    <div className="flex flex-col items-center justify-start">
+      <div className="flex items-center gap-2 mb-3">
+        {image && <Image src={image} alt="" className="w-7 h-7" />}
+        <h3 className="text-xl font-medium">{tprimary}</h3>
       </div>
-      <div>
-        <h3 className='pl-12 text-sm text-gray-600'>{tsecondary}</h3>
-      </div>
+      <h3 className="text-sm text-gray-600 text-left">{children}</h3>
     </div>
   );
 };
