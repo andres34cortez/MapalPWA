@@ -5,13 +5,11 @@ import Image from "next/image";
 import {
   Carousel,
   CarouselContent,
-  CarouselItem,
   CarouselNext,
   CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
 
-import Triangulos from "@/assets/triangulos.png";
 import ResponsabilidadImg from "@/assets/responsabilidad.png";
 import Link from "next/link";
 
@@ -19,6 +17,7 @@ export function Content() {
   return (
     <div className="flex flex-col max-w-[1400px] w-full">
       <div className="pt-[90px] pb-[140px] border-r-2 border-[#FAB918] pr-[80px] mt-8 mb-12">
+        <div className="contentTexture w-[1264px] h-[1640px] absolute left-0 -mt-[85px]" />
         <div className="flex flex-col">
           <Empresa />
           <News />
@@ -157,8 +156,8 @@ const News = () => {
             </NewsCard>
           </div>
         </CarouselContent>
-        <CarouselPrevious className="absolute left-[-40px] z-10 cursor-pointer" />
-        <CarouselNext className="absolute right-[-40px] z-10 cursor-pointer" />
+        <CarouselPrevious className="absolute left-[-40px] z-10 cursor-pointer bg-gray-400 bg-opacity-50" />
+        <CarouselNext className="absolute right-[-40px] z-10 cursor-pointer bg-gray-400 bg-opacity-50" />
       </Carousel>
     </div>
   );
@@ -170,7 +169,7 @@ const NewsCard = (props: {
   children: React.ReactNode;
 }) => {
   return (
-    <div className="rounded-[8px] flex flex-col py-3 px-5 w-full max-h-[300px] border shadow-[0px_0px_20px_-10px_rgba(0,0,0,0.4)]">
+    <div className="rounded-[8px] flex flex-col py-3 px-5 w-full max-h-[300px] border shadow-[0px_0px_20px_-10px_rgba(0,0,0,0.4)] bg-white">
       <Image src={props.img} alt="" className="w-full h-[165px]" />
       <div className="my-3">{props.children}</div>
       <Link href={props.link} className="text-[#158CF9] font-medium text-xs">

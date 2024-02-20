@@ -4,7 +4,8 @@ import Image from "next/image";
 
 export default function HistoryBaner() {
   return (
-    <div className=" w-full bg-cover bg-center bg-black flex flex-row items-center justify-center gap-12 pt-4">
+    <div className=" w-full bg-black flex flex-row items-center justify-center gap-12 pt-4">
+      <div className="bg-historyTexture w-screen h-[372px] -mt-4 absolute" />
       <div className="border border-[#FDBA13] rounded-sm">
         <Image
           src={iconHistory}
@@ -29,7 +30,7 @@ export default function HistoryBaner() {
           de San Juan y en distintas provincias de nuestro País, posicionándola
           como una de las principales compañías de zona cuyo en el rubro.
         </h3>
-        <h3 className="text-[#bababa] text-sm italic pt-8 pb-8 ">
+        <h3 className="text-[#bababa] text-sm italic pt-8 pb-8">
           “Desde su comienzo en el año 1967 bajo el nombre de CONSTRUCCIONES{" "}
           <br />
           JULIO CESAR PALLUCCHINI y posteriormente a partir del año 1980,

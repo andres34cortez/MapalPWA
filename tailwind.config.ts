@@ -18,12 +18,15 @@ const config = {
       },
     },
     extend: {
+      backgroundImage: {
+        triangulos: "url('/src/assets/triangulos.png')",
+        historyTexture: "url('/src/assets/FondoHistory.png')",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
-        backgroundImage: { triangulos: "url(/assets/triangulos.png)" },
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
