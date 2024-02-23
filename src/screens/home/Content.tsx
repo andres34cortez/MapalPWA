@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Image from "next/image";
+import { client } from "../../../sanity/lib/client";
 import {
   Carousel,
   CarouselContent,
@@ -12,13 +13,22 @@ import {
 
 import ResponsabilidadImg from "@/assets/responsabilidad.png";
 import Link from "next/link";
+import image from "../../assets/logoMapal.svg";
+
+export const dynamic = "force-dynamic";
+export async function getCards() {
+  const cards = await client.fetch(
+    `*[_type == "card"]{title, description,link, "image":image.asset->url}`
+  );
+  return cards;
+}
 
 export function Content() {
   return (
     <div className="flex flex-col max-w-[1400px] w-full">
       <div className="pt-[90px] pb-[140px] border-r-2 border-[#FAB918] pr-[80px] mt-8 mb-12">
-        <div className="contentTexture w-[1264px] h-[1640px] absolute left-0 -mt-[85px]" />
-        <div className="flex flex-col">
+        <div className="contentTexture w-[1264px] h-[1640px] absolute left-0 -mt-[85px] " />
+        <div className="flex flex-col z-10 bg-transparent">
           <Empresa />
           <News />
         </div>
@@ -92,88 +102,45 @@ const Empresa = () => {
   );
 };
 
-const News = () => {
-  const [api, setApi] = React.useState<CarouselApi>();
-  const [current, setCurrent] = React.useState(0);
-  const [count, setCount] = React.useState(0);
-  const HeroImage = [""];
-
-  React.useEffect(() => {
-    if (!api) {
-      return;
-    }
-
-    setCount(api.scrollSnapList().length);
-    setCurrent(api.selectedScrollSnap() + 1);
-
-    api.on("select", () => {
-      console.log("current");
-      setCurrent(api.selectedScrollSnap() + 1);
-    });
-  }, [api]);
+async function News() {
+  const cards = await getCards();
 
   return (
-    <div className="flex flex-col mt-[100px]">
+    <div className="flex flex-col mt-[100px] z-10">
       <h2 className="font-bold mb-2">NOTICIAS / PRENSA</h2>
-      <Carousel setApi={setApi} className="items-center justify-center">
-        <CarouselContent className="py-8">
-          <div className="grid grid-cols-3 gap-3 justify-center w-full">
-            <NewsCard img="" link="">
-              <div>
-                <div>Titulo</div>
-                <div>descripcion</div>
-              </div>
-            </NewsCard>
-            <NewsCard img="" link="">
-              <div>
-                <div>Titulo</div>
-                <div>descripcion</div>
-              </div>
-            </NewsCard>
-            <NewsCard img="" link="">
-              <div>
-                <div>Titulo</div>
-                <div>descripcion</div>
-              </div>
-            </NewsCard>
-            <NewsCard img="" link="">
-              <div>
-                <div>Titulo</div>
-                <div>descripcion</div>
-              </div>
-            </NewsCard>
-            <NewsCard img="" link="">
-              <div>
-                <div>Titulo</div>
-                <div>descripcion</div>
-              </div>
-            </NewsCard>
-            <NewsCard img="" link="">
-              <div>
-                <div>Titulo</div>
-                <div>descripcion</div>
-              </div>
-            </NewsCard>
-          </div>
-        </CarouselContent>
-        <CarouselPrevious className="absolute left-[-40px] z-10 cursor-pointer bg-gray-400 bg-opacity-50" />
-        <CarouselNext className="absolute right-[-40px] z-10 cursor-pointer bg-gray-400 bg-opacity-50" />
-      </Carousel>
+      <div className="grid grid-cols-3 gap-2">
+        {/* @ts-ignore */}
+        {cards.map((card, index) => (
+          <NewsCard card={card} key={index} />
+        ))}
+      </div>
     </div>
   );
+}
+
+type Card = {
+  image: string;
+  title: string;
+  description: string;
+  link: string;
 };
 
-const NewsCard = (props: {
-  img: string;
-  link: string;
-  children: React.ReactNode;
-}) => {
+const NewsCard = (props: { card: Card }) => {
+  console.log("aca", props.card);
   return (
     <div className="rounded-[8px] flex flex-col py-3 px-5 w-full max-h-[300px] border shadow-[0px_0px_20px_-10px_rgba(0,0,0,0.4)] bg-white">
-      <Image src={props.img} alt="" className="w-full h-[165px]" />
-      <div className="my-3">{props.children}</div>
-      <Link href={props.link} className="text-[#158CF9] font-medium text-xs">
-        ver mas...
+      <div className="relative w-full h-[200px]">
+        <Image
+          src={props.card.image}
+          alt="image"
+          fill
+          className="object-cover"
+        />
+      </div>
+      <h1>{props.card.title}</h1>
+      <p>{props.card.description}</p>
+      <Link href={props.card.link} className="pointer" target="_blank">
+        ver mas
       </Link>
     </div>
   );
