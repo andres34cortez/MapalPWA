@@ -1,11 +1,13 @@
 import React from "react";
 import iconHistory from "@/assets/IconHisrory.png";
+import fondoHistory from "@/assets/FondoHistory.png";
 import Image from "next/image";
 
 export default function HistoryBaner() {
   return (
-    <div className=" w-full bg-black flex flex-row items-center justify-center gap-12 pt-4">
+    <div className=" w-full bg-black flex flex-row items-center justify-center gap-12">
       <div className="bg-historyTexture w-screen h-[372px] -mt-4 absolute" />
+      <Image src={fondoHistory} alt="" className="absolute w-fullh-[372px]" />
       <div className="border border-[#FDBA13] rounded-sm">
         <Image
           src={iconHistory}
