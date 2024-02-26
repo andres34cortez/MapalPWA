@@ -3,17 +3,8 @@
 import * as React from "react";
 import Image from "next/image";
 import { client } from "../../../sanity/lib/client";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselNext,
-  CarouselPrevious,
-  type CarouselApi,
-} from "@/components/ui/carousel";
-
 import ResponsabilidadImg from "@/assets/responsabilidad.png";
 import Link from "next/link";
-import image from "../../assets/logoMapal.svg";
 
 export const dynamic = "force-dynamic";
 export async function getCards() {
