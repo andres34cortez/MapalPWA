@@ -43,7 +43,7 @@ const Navbar: React.FC = () => {
             PROYECTOS
           </a>
           <a
-            href="#"
+            href="/mineria"
             className="text-white font-medium text-xs hover:text-gray-300"
           >
             MINERIA
@@ -90,7 +90,7 @@ const Navbar: React.FC = () => {
                 PROYECTOS
               </a>
               <a
-                href="#"
+                href="mineria"
                 className="text-white text-xs hover:text-gray-300 block py-2"
               >
                 MINERIA
