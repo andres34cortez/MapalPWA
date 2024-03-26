@@ -25,44 +25,44 @@ const Navbar: React.FC = () => {
 
         <div className={" hidden  md:block md:space-x-6 ml-auto"}>
           <a
-            href="#"
+            href="/"
             className="text-white font-medium text-xs hover:text-gray-300"
           >
             LA EMPRESA
           </a>
           <a
             href="#"
-            className="text-white font-medium text-xs hover:text-gray-300"
+            className="text-white disabled font-medium text-xs hover:text-gray-300"
           >
             PRENSA
           </a>
           <a
             href="#"
-            className="text-white font-medium text-xs hover:text-gray-300"
+            className="text-white disabled font-medium text-xs hover:text-gray-300"
           >
             PROYECTOS
           </a>
           <a
             href="/mineria"
-            className="text-white font-medium text-xs hover:text-gray-300"
+            className="text-white disabled font-medium text-xs hover:text-gray-300"
           >
             MINERIA
           </a>
           <a
             href="#"
-            className="text-white font-medium text-xs hover:text-gray-300"
+            className="text-white disabled font-medium text-xs hover:text-gray-300"
           >
             EQUIPAMIENTO
           </a>
           <a
             href="#"
-            className="text-white font-medium text-xs hover:text-gray-300"
+            className="text-white disabled font-medium text-xs hover:text-gray-300"
           >
             CONTACTO
           </a>
           <a
             href="#"
-            className="text-white font-medium text-xs hover:text-gray-300"
+            className="text-white disabled font-medium text-xs hover:text-gray-300"
           >
             ING/ESP
           </a>
@@ -72,44 +72,44 @@ const Navbar: React.FC = () => {
           {menuOpen && (
             <div className="absolute right-0 top-16 w-full bg-gray-800">
               <a
-                href="#"
-                className="text-white text-xs hover:text-gray-300 block py-2"
+                href="/"
+                className="text-white  text-xs hover:text-gray-300 block py-2"
               >
                 LA EMPRESA
               </a>
               <a
                 href="#"
-                className="text-white text-xs hover:text-gray-300 block py-2"
+                className="text-white disabled text-xs hover:text-gray-300 block py-2"
               >
                 PRENSA
               </a>
               <a
                 href="#"
-                className="text-white text-xs hover:text-gray-300 block py-2"
+                className="text-white disabled text-xs hover:text-gray-300 block py-2"
               >
                 PROYECTOS
               </a>
               <a
                 href="mineria"
-                className="text-white text-xs hover:text-gray-300 block py-2"
+                className="text-white  text-xs hover:text-gray-300 block py-2"
               >
                 MINERIA
               </a>
               <a
                 href="#"
-                className="text-white text-xs hover:text-gray-300 block py-2"
+                className="text-white disabled text-xs hover:text-gray-300 block py-2"
               >
                 EQUIPAMIENTO
               </a>
               <a
                 href="#"
-                className="text-white text-xs hover:text-gray-300 block py-2"
+                className="text-white disabled text-xs hover:text-gray-300 block py-2"
               >
                 CONTACTO
               </a>
               <a
                 href="#"
-                className="text-white text-xs hover:text-gray-300 block py-2"
+                className="text-white disabled text-xs hover:text-gray-300 block py-2"
               >
                 ING/ESP
               </a>
