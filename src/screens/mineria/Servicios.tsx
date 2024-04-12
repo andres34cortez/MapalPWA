@@ -51,7 +51,7 @@ export default function Servicios() {
           Servicios de infraestructura para la industria minera
         </h3>
       </div>
-      <div className="grid grid-cols-5">
+      <div className="grid grid-cols-5 ">
         {items.map((item, index) => {
           return (
             <ServiciosCard
@@ -77,7 +77,7 @@ type CardProps = {
 
 export function ServiciosCard({ name, icon, background, text }: CardProps) {
   return (
-    <div className="w-full h-[650px] relative flex justify-center">
+    <div className="w-full min-h-[650px] relative flex justify-center ">
       <Image src={background} alt="fondo" fill className="object-cover" />
       <div className="flex flex-col justify-center px-[40px] py-[55px] gap-[10px] absolute items-center ">
         <Image src={icon} alt="icon" width={85} />

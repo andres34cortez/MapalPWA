@@ -38,12 +38,15 @@ export function HeroCarousel() {
   }, [api]);
 
   return (
-    <div>
-      <Carousel setApi={setApi} className="w-full items-center justify-center">
+    <div className="w-screen overflow-hidden">
+      <Carousel
+        setApi={setApi}
+        className="w-full items-center justify-center border"
+      >
         <CarouselContent>
           {HeroImage.map((foto, index) => (
             <CarouselItem key={index}>
-              <Image src={foto} alt="" />
+              <Image src={foto} alt="" className="w-full object-cover" />
             </CarouselItem>
           ))}
         </CarouselContent>

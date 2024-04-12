@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
             PRENSA
           </a>
           <a
-            href="#"
+            href="/proyectos"
             className="text-white disabled font-medium text-xs hover:text-gray-300"
           >
             PROYECTOS

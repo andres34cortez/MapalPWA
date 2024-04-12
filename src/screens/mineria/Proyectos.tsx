@@ -7,71 +7,48 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import foto01 from "../../assets/mineriaPage/proyectosCarousel/proyecto01-foto1.png";
-import foto02 from "../../assets/mineriaPage/proyectosCarousel/proyecto01-foto2.png";
-import foto03 from "../../assets/mineriaPage/proyectosCarousel/proyecto01-foto3.png";
-import foto04 from "../../assets/mineriaPage/proyectosCarousel/proyecto02-foto1.png";
-import foto05 from "../../assets/mineriaPage/proyectosCarousel/proyecto02-foto2.png";
-import foto06 from "../../assets/mineriaPage/proyectosCarousel/proyecto02-foto3.png";
-import foto07 from "../../assets/mineriaPage/proyectosCarousel/proyecto03-foto1.png";
-import foto08 from "../../assets/mineriaPage/proyectosCarousel/proyecto02-foto2.png";
 
-const proyectos = [
-  {
-    nombre: "Los Azules",
-    fecha: "Diciembre",
-    anio: "2015",
-    text: "11.400 m2 Cubiertos, Edificio Principal con 14 Consultorios Externos, Internación, Especialidades: Laboratorio, Diálisis, Radiografía, etc., Zona de Servicios, Estacionamiento, Casa de Médicos, Calles Internas, Instalaciones de Gas, Agua; Electricidad, Gases Medicinales, Voz y Datos. Estructura de Hormigón Armado y Mampostería, con Pisos Cerámicos y Graníticos.",
-    localidad: "Pocito, San Juan",
-    superficie: "27.935,32 m2",
-    comitente: "Dirección Provincial de Arquitectura",
-    images: [foto01, foto02, foto03],
-  },
-  {
-    nombre: "Veladero",
-    fecha: "Diciembre",
-    anio: "2015",
-    text: "11.400 m2 Cubiertos, Edificio Principal con 14 Consultorios Externos, Internación, Especialidades: Laboratorio, Diálisis, Radiografía, etc., Zona de Servicios, Estacionamiento, Casa de Médicos, Calles Internas, Instalaciones de Gas, Agua; Electricidad, Gases Medicinales, Voz y Datos. Estructura de Hormigón Armado y Mampostería, con Pisos Cerámicos y Graníticos.",
-    localidad: "Pocito, San Juan",
-    superficie: "27.935,32 m2",
-    comitente: "Dirección Provincial de Arquitectura",
-    images: [foto04, foto05, foto06],
-  },
-  {
-    nombre: "Veladero",
-    fecha: "Diciembre",
-    anio: "2015",
-    text: "11.400 m2 Cubiertos, Edificio Principal con 14 Consultorios Externos, Internación, Especialidades: Laboratorio, Diálisis, Radiografía, etc., Zona de Servicios, Estacionamiento, Casa de Médicos, Calles Internas, Instalaciones de Gas, Agua; Electricidad, Gases Medicinales, Voz y Datos. Estructura de Hormigón Armado y Mampostería, con Pisos Cerámicos y Graníticos.",
-    localidad: "Pocito, San Juan",
-    superficie: "27.935,32 m2",
-    comitente: "Dirección Provincial de Arquitectura",
-    images: [foto07, foto08],
-  },
-];
+import { client } from "../../../sanity/lib/client";
 
-export default function Proyectos() {
+export const dynamic = "force-dynamic";
+export async function getProyects() {
+  const projects = await client.fetch(
+    `*[_type == "miningProjects"]{name, date, year, text, localidad, superficie, comitente, "images":image.asset->url}`
+  );
+  return projects;
+}
+
+export default async function Proyectos() {
+  const projects = await getProyects();
+  console.log(projects);
+
   return (
     <div className="py-[40px] flex flex-col gap-[60px]">
       <h3 className="uppercase font-bold text-[15px]">
         Proyectos en desarrollo
       </h3>
-      <div className="flex flex-col gap-[34px]">
-        {proyectos.map((proyecto, index) => {
-          return (
-            <ProyectoCard
-              nombre={proyecto.nombre}
-              fecha={proyecto.fecha}
-              anio={proyecto.anio}
-              text={proyecto.text}
-              localidad={proyecto.localidad}
-              superficie={proyecto.superficie}
-              comitente={proyecto.comitente}
-              images={proyecto.images}
-              key={index}
-            />
-          );
-        })}
-      </div>
+      {projects.length > 0 ? (
+        <div className="flex flex-col gap-[34px]">
+          {/* @ts-ignore */}
+          {projects.map((proyecto, index) => {
+            return (
+              <ProyectoCard
+                nombre={proyecto.name}
+                fecha={proyecto.date}
+                anio={proyecto.year}
+                text={proyecto.text}
+                localidad={proyecto.localidad}
+                superficie={proyecto.superficie}
+                comitente={proyecto.comitente}
+                images={proyecto.images}
+                key={index}
+              />
+            );
+          })}
+        </div>
+      ) : (
+        <p>Todavia no hay proyectos</p>
+      )}
     </div>
   );
 }
@@ -84,7 +61,7 @@ type ProyectoCardType = {
   localidad: string;
   superficie: string;
   comitente: string;
-  images: StaticImageData[];
+  images: string[];
 };
 
 export function ProyectoCard({
@@ -97,6 +74,7 @@ export function ProyectoCard({
   comitente,
   images,
 }: ProyectoCardType) {
+  console.log(images);
   return (
     <div className="border border-[#FDBA13] rounded-[4px] flex py-[20px] px-[25px] gap-[20px]">
       <div className="flex flex-col justify-between self-stretch flex-1">
@@ -115,7 +93,7 @@ export function ProyectoCard({
         </div>
       </div>
 
-      <div className="flex-1">
+      {/* <div className="flex-1">
         <Carousel opts={{ loop: true }}>
           <CarouselContent>
             {images.map((item, index) => {
@@ -136,7 +114,7 @@ export function ProyectoCard({
           <CarouselPrevious />
           <CarouselNext />
         </Carousel>
-      </div>
+      </div> */}
     </div>
   );
 }

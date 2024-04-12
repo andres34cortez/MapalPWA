@@ -5,6 +5,7 @@ import Consorcio from "@/screens/mineria/Consorcio";
 import Servicios from "@/screens/mineria/Servicios";
 import Desarrollo from "@/screens/mineria/Desarrollo";
 import Proyectos from "@/screens/mineria/Proyectos";
+import ConsorcioGallery from "@/screens/mineria/ConsorcioGallery";
 
 export default function Mineria() {
   return (
@@ -23,6 +24,7 @@ export default function Mineria() {
         <Consorcio />
         <div className="flex-1"></div>
       </div>
+      <ConsorcioGallery />
       <Servicios />
       <div className="border-r border-r-[#FDBA13] container mx-auto">
         <Desarrollo />

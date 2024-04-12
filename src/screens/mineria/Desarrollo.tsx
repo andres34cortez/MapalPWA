@@ -11,7 +11,7 @@ export default function Desarrollo() {
         Desarrollo, proveedores y comunidades
       </h3>
       <div className="grid grid-cols-3 grid-rows-2">
-        <div className="border-r-2 border-r-[#C8C8C8]">
+        <div className="border-r-2 border-r-[#C8C8C8] pr-4">
           <p className="font-light text-[15px] max-w-[400px]">
             Desde MAPAL SIGMA promovemos la integración con las comunidades, con
             dedicación y espíritu de servicio, actuando con compromiso y
@@ -54,7 +54,7 @@ export default function Desarrollo() {
             />
           </div>
         </div>
-        <div className="border-r-2 border-r-[#C8C8C8] flex flex-col gap-[25px] pb-[25px]">
+        <div className="border-r-2 pr-4 border-r-[#C8C8C8] flex flex-col gap-[25px] pb-[25px]">
           <div className="flex flex-col gap-[20px]">
             <h4 className="uppercase font-bold text-[#FDBA13] text-[15px]">
               Regionalidad

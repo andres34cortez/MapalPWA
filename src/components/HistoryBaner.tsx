@@ -5,8 +5,8 @@ import Image from "next/image";
 
 export default function HistoryBaner() {
   return (
-    <div className=" w-full bg-black flex flex-row items-center justify-center gap-12">
-      <div className="bg-historyTexture w-screen h-[372px] -mt-4 absolute" />
+    <div className="w-[100%] bg-black flex flex-row items-center justify-center gap-12 overflow-hidden">
+      <div className="bg-historyTexture w-[100%] h-[372px] -mt-4 absolute" />
       <Image src={fondoHistory} alt="" className="absolute w-fullh-[372px]" />
       <div className="border border-[#FDBA13] rounded-sm">
         <Image
