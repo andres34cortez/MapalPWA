@@ -23,6 +23,8 @@ export default function ProyectosPage() {
 
       <Data />
       <Banner />
+
+      <Proyectos />
     </div>
   );
 }

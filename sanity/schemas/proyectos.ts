@@ -1,6 +1,6 @@
-const MineriaProyectos = {
-  name: "miningProjects",
-  title: "Proyectos Mineria",
+const Proyectos = {
+  name: "projects",
+  title: "Proyectos",
   type: "document",
 
   fields: [
@@ -8,6 +8,21 @@ const MineriaProyectos = {
       name: "name",
       title: "Nombre",
       type: "string",
+    },
+    {
+      name: "type",
+      title: "Tipo de Proyecto",
+      type: "string",
+      options: {
+        list: [
+          { title: "Viales", value: "viales" },
+          { title: "Arquitectura", value: "arquitectura" },
+          { title: "Hidraulicas", value: "hidraulicas" },
+          { title: "Infraestructura", value: "infraestructura" },
+          { title: "Mineria", value: "mineria" },
+          { title: "Inmobiliaria", value: "inmobiliaria" },
+        ],
+      },
     },
     {
       name: "date",
@@ -43,8 +58,8 @@ const MineriaProyectos = {
       name: "images",
       title: "Imagenes",
       type: "array",
-      of: [{ type: "image", name: "picture" }],
+      of: [{ type: "image" }],
     },
   ],
 };
-export default MineriaProyectos;
+export default Proyectos;

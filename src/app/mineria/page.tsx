@@ -25,7 +25,9 @@ export default function Mineria() {
         <div className="flex-1"></div>
       </div>
       <ConsorcioGallery />
+
       <Servicios />
+
       <div className="border-r border-r-[#FDBA13] container mx-auto">
         <Desarrollo />
         <Proyectos />
