@@ -25,8 +25,8 @@ const Proyectos = {
       },
     },
     {
-      name: "date",
-      title: "Fecha",
+      name: "month",
+      title: "Mes",
       type: "string",
     },
     {
@@ -38,6 +38,11 @@ const Proyectos = {
       name: "text",
       title: "Descripción",
       type: "text",
+    },
+    {
+      name: "state",
+      title: "Estado",
+      type: "string",
     },
     {
       name: "localidad",

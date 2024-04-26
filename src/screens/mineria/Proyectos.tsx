@@ -4,7 +4,7 @@ import { ProjectCard } from "@/components/ProjectCard";
 export const dynamic = "force-dynamic";
 export async function getProyects() {
   const projects = await client.fetch(
-    `*[_type == "projects" && type == "mineria"]{name, type, date, year, text, localidad, superficie, comitente, "images": images[] {'url': asset->url}}`
+    `*[_type == "projects" && type == "mineria"]{name, type, month, year, state, text, localidad, superficie, comitente, "images": images[] {'url': asset->url}}`
   );
   return projects;
 }
@@ -24,14 +24,15 @@ export default async function Proyectos() {
             return (
               <ProjectCard
                 nombre={proyecto.name}
-                fecha={proyecto.date}
-                anio={proyecto.year}
+                month={proyecto.month}
+                year={proyecto.year}
                 text={proyecto.text}
                 localidad={proyecto.localidad}
                 superficie={proyecto.superficie}
                 comitente={proyecto.comitente}
                 images={proyecto.images}
                 key={index}
+                state={proyecto.state}
               />
             );
           })}
