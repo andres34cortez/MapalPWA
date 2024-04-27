@@ -2,12 +2,28 @@ import { client } from "../../../sanity/lib/client";
 import { ProjectCard } from "@/components/ProjectCard";
 
 export const dynamic = "force-dynamic";
-export async function getProyects() {
+export async function getProyects(): Promise<ProjectCardType[]> {
   const projects = await client.fetch(
     `*[_type == "projects"]{name, type, month, year, state, text, localidad, superficie, comitente, "images": images[] {'url': asset->url}}`
   );
   return projects;
 }
+
+export type ProjectCardType = {
+  name: string;
+  month: string;
+  year: string;
+  text: string;
+  localidad: string;
+  superficie: string;
+  comitente: string;
+  images: Image[];
+  state: string;
+};
+
+type Image = {
+  url: string;
+};
 
 export default async function Proyectos() {
   const projects = await getProyects();
@@ -25,7 +41,6 @@ export default async function Proyectos() {
         </div>
 
         <div className="flex flex-col space-y-5 mt-[50px]">
-          {/* @ts-ignore */}
           {projects.map((proyecto, index) => {
             return (
               <ProjectCard
