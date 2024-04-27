@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { client } from "../../../sanity/lib/client";
 import { ProjectCard } from "@/components/ProjectCard";
 
@@ -19,29 +20,64 @@ export type ProjectCardType = {
   comitente: string;
   images: Image[];
   state: string;
+  type: string;
 };
 
 type Image = {
   url: string;
 };
 
-export default async function Proyectos() {
+type Props = {
+  tipo: string;
+};
+
+export default async function Proyectos({ tipo }: Props) {
   const projects = await getProyects();
-  console.log(projects);
+  const filteredProjects = projects.filter((project) => project.type === tipo);
   return (
     <>
       <div className="container mx-auto py-[40px]">
         <div className="flex gap-[20px]">
-          <p className="uppercase font-bold text-[15px]">Viales</p>
-          <p className="uppercase font-bold text-[15px]">Arquitectura</p>
-          <p className="uppercase font-bold text-[15px]">Hidraulicas</p>
-          <p className="uppercase font-bold text-[15px]">Infraestructura</p>
-          <p className="uppercase font-bold text-[15px]">Mineria</p>
-          <p className="uppercase font-bold text-[15px]">Inmobiliaria</p>
+          <Link
+            href="/proyectos?tipo=viales"
+            className="uppercase font-bold text-[15px]"
+          >
+            Viales
+          </Link>
+          <Link
+            href="/proyectos?tipo=arquitectura"
+            className="uppercase font-bold text-[15px]"
+          >
+            Arquitectura
+          </Link>
+          <Link
+            href="/proyectos?tipo=hidrualicas"
+            className="uppercase font-bold text-[15px]"
+          >
+            Hidraulicas
+          </Link>
+          <Link
+            href="/proyectos?tipo=infraestructura"
+            className="uppercase font-bold text-[15px]"
+          >
+            Infraestructura
+          </Link>
+          <Link
+            href="/proyectos?tipo=mineria"
+            className="uppercase font-bold text-[15px]"
+          >
+            Mineria
+          </Link>
+          <Link
+            href="/proyectos?tipo=inmobiliaria"
+            className="uppercase font-bold text-[15px]"
+          >
+            Inmobiliaria
+          </Link>
         </div>
 
         <div className="flex flex-col space-y-5 mt-[50px]">
-          {projects.map((proyecto, index) => {
+          {filteredProjects.map((proyecto, index) => {
             return (
               <ProjectCard
                 name={proyecto.name}
@@ -54,6 +90,7 @@ export default async function Proyectos() {
                 images={proyecto.images}
                 key={index}
                 state={proyecto.state}
+                type={proyecto.type}
               />
             );
           })}

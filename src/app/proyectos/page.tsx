@@ -4,7 +4,12 @@ import Fondo from "../../assets/proyectosPage/ProyectosBanner.png";
 import Banner from "@/screens/proyectos/Banner";
 import Proyectos from "@/screens/proyectos/Proyectos";
 
-export default function ProyectosPage() {
+export default function ProyectosPage({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | string[] | undefined };
+}) {
+  const { tipo } = searchParams;
   return (
     <div className="min-h-screen">
       <div className="h-[600px] w-[100%] relative flex justify-center">
@@ -23,8 +28,7 @@ export default function ProyectosPage() {
 
       <Data />
       <Banner />
-
-      <Proyectos />
+      <Proyectos tipo={(tipo || "viales") as string} />
     </div>
   );
 }
