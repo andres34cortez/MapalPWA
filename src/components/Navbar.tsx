@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="bg-gradient-to-b from-black/60 to-transparent pt-4 pb-12 px-6 md:px-16 lg:px-32 xl:px-48 fixed w-full top-0 z-50  ">
+    <nav className="bg-gradient-to-b from-black/60 to-transparent pt-4 pb-12 px-6 md:px-16 lg:px-32 xl:px-48 fixed w-full top-0 z-50 ">
       <div className="flex items-center justify-between">
         <div className="flex-shrink-0">
           <Image src={logoNavbar} alt="Logo" width={120} height={40} />

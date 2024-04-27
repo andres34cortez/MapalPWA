@@ -115,7 +115,6 @@ type Card = {
 };
 
 const NewsCard = (props: { card: Card }) => {
-  console.log("aca", props.card);
   return (
     <div className='rounded-[8px] flex flex-col py-3 px-5 w-full max-h-[300px] border shadow-[0px_0px_20px_-10px_rgba(0,0,0,0.4)] bg-white'>
       <div className='relative w-full h-[200px]'>
