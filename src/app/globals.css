@@ -76,7 +76,6 @@
 }
 
 .contentTexture {
-  background-image: url("../assets/triangulos.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position-x: left;
