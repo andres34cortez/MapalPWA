@@ -11,7 +11,7 @@ import { type CarouselApi } from "@/components/ui/carousel";
 import { useEffect, useState } from "react";
 
 type ProjectCardType = {
-  nombre: string;
+  name: string;
   month: string;
   year: string;
   text: string;
@@ -27,7 +27,7 @@ type Image = {
 };
 
 export function ProjectCard({
-  nombre,
+  name,
   month,
   year,
   text,
@@ -65,7 +65,7 @@ export function ProjectCard({
       <div className="flex flex-col justify-between self-stretch flex-1 gap-[25px]">
         <div>
           <div className="text-[#FDBA13] text-[15px] mb-[10px]">
-            <p className="font-bold">{nombre}</p>
+            <p className="font-bold">{name}</p>
             <p>
               Fecha: {month} {year}
             </p>
@@ -81,11 +81,11 @@ export function ProjectCard({
       </div>
 
       <div className="flex-1">
-        <Carousel opts={{ loop: true }} setApi={setApi}>
+        <Carousel opts={{ loop: true }} setApi={setApi} className="h-[300px] lg:h-[500pxs] relative">
           <CarouselContent>
             {images.map((item, index) => {
               return (
-                <CarouselItem key={index} className="h-[500px]">
+                <CarouselItem key={index} className="h-[300px] lg:h-[500px]">
                   <div className="h-full w-full relative">
                     <Image
                       src={item.url}
@@ -100,8 +100,23 @@ export function ProjectCard({
           </CarouselContent>
           <CarouselPrevious />
           <CarouselNext />
+          <div className="flex lg:hidden py-3 w-full justify-center items-center gap-[8px] absolute bottom-0">
+          {images.map((items, index) => {
+            return (
+              <div
+                key={index}
+                className={`w-3 h-3 rounded-2xl ${
+                  index === current - 1
+                    ? "bg-white  border border-[#fab918]"
+                    : "bg-[#fab918] border border-[#fab918]"
+                }`}
+                onClick={() => handleCircleClick(index)}
+              ></div>
+            );
+          })}
+        </div>
         </Carousel>
-        <div className="pt-3 flex w-full justify-center items-center gap-[8px]">
+        <div className="hidden lg:flex py-3 w-full justify-center items-center gap-[8px]">
           {images.map((items, index) => {
             return (
               <div

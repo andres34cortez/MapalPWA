@@ -29,7 +29,7 @@ export default async function Proyectos() {
           {projects.map((proyecto, index) => {
             return (
               <ProjectCard
-                nombre={proyecto.nombre}
+                name={proyecto.name}
                 month={proyecto.month}
                 year={proyecto.year}
                 text={proyecto.text}
