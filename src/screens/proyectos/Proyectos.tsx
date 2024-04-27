@@ -36,8 +36,10 @@ export default async function Proyectos({ tipo }: Props) {
   const filteredProjects = projects.filter((project) => project.type === tipo);
   return (
     <>
-      <div className="container mx-auto py-[40px]">
-        <div className="flex gap-[20px]">
+      <div className="container mx-auto py-[40px] relative">
+        <p className="uppercase font-bold text-[18px]">Proyectos</p>
+
+        <div className="flex gap-[20px] flex-wrap mt-[25px]">
           <Link
             href="/proyectos?tipo=viales"
             className="uppercase font-bold text-[15px]"

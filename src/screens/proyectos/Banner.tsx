@@ -2,11 +2,49 @@ import Image from "next/image";
 import FondoBanner from "../../assets/proyectosPage/fondo.png";
 import Argentina from "../../assets/proyectosPage/argentina.svg";
 import SanJuan from "../../assets/proyectosPage/sanJuan.svg";
+import ArgentinaCompleto from "../../assets/proyectosPage/ArgentinaCompleto.png";
+import SanJuanCompleto from "../../assets/proyectosPage/SanJuanCompleto.png";
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+
+const images = [ArgentinaCompleto, SanJuanCompleto];
 
 export default function Banner() {
   return (
     <div className="bg-black w-full h-[350px] relative flex justify-center">
-      <div className="container w-full h-full grid grid-cols-2 gap-[100px] absolute">
+      <div className="w-full lg:hidden flex items-center">
+        <Carousel
+          opts={{ loop: true }}
+          className="h-[300px] lg:h-[500px] relative w-screen"
+        >
+          <CarouselContent>
+            {images.map((item, index) => {
+              return (
+                <CarouselItem key={index} className="h-[300px]">
+                  <div className="h-full w-full relative">
+                    <Image
+                      src={item}
+                      alt="imagen"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                </CarouselItem>
+              );
+            })}
+          </CarouselContent>
+
+          <CarouselPrevious className="bg-trasnparent text-white " />
+          <CarouselNext className="bg-trasnparent text-white " />
+        </Carousel>
+      </div>
+      <div className="hidden lg:grid container w-full h-full grid-cols-2 gap-[100px] absolute">
         <div className="w-full h-full relative grid grid-cols-2 justify-center items-center">
           <div className="flex-1 relative w-full h-full">
             <Image
