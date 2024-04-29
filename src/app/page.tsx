@@ -8,12 +8,11 @@ import Footer from "../components/Footer";
 
 export default function Home() {
   return (
-    <div className="flex flex-col w-full items-center overflow-x-hidden">
+    <div className='flex flex-col w-full items-center overflow-x-hidden'>
       <HeroCarousel />
       <Metricas />
       <HistoryBaner />
       <Content />
-      <Footer />
     </div>
   );
 }

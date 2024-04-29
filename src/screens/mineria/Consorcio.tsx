@@ -7,7 +7,7 @@ import arrows from "../../assets/mineriaPage/arrows.png";
 
 export default function Consorcio() {
   return (
-    <div className='bg-white py-8 md:py-12 lg:py-16'>
+    <div className='bg-white py-8 md:py-12 lg:py-16'id="Equipamiento">
       <div className='container mx-auto'>
         <div className='flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8'>
           <div className='w-full md:w-1/2 lg:w-2/5 flex flex-col gap-4 md:gap-6'>

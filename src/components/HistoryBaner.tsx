@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function HistoryBaner() {
   return (
-    <div className='bg-black w-full'>
+    <div className='bg-black w-full' id="Historia">
       <div className='hidden md:flex w-full items-center justify-center gap-12 overflow-hidden '>
         <div className='bg-historyTexture w-full h-[372px] -mt-4 absolute' />
         <Image

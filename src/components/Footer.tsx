@@ -9,7 +9,7 @@ import linkdin from "@/assets/linkdin.png";
 
 export default function Footer() {
   return (
-    <div className='w-full bg-black pt-10 sm:pt-24'>
+    <div className='w-full bg-black pt-10 sm:pt-24' id='Contacto'>
       <div className='flex flex-col sm:flex-row gap-4 sm:gap-24 text-white items-center justify-center px-4 sm:px-0'>
         <div>
           <Image src={LogoFooter} alt='Logo' />

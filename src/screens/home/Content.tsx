@@ -28,7 +28,7 @@ export function Content() {
 }
 const Empresa = () => {
   return (
-    <div className='flex flex-col sm:pl-6'>
+    <div className='flex flex-col sm:pl-6' id="Empresa">
       <h2 className='font-bold mb-2'>LA EMPRESA</h2>
       <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
         <div className='border-[#C8C8C8] border-r-0 sm:border-r-2 py-6'>
