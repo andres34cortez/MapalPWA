@@ -45,13 +45,13 @@ const items = [
 
 export default function Servicios() {
   return (
-    <div className="bg-white py-[40px] mt-[34px]">
-      <div className="container mx-auto mb-[34px]">
-        <h3 className="uppercase font-bold text-[15px]">
+    <div className='bg-white py-10 md:py-20 mt-10 md:mt-20'>
+      <div className='container mx-auto mb-10 md:mb-20'>
+        <h3 className='uppercase font-bold text-xs md:text-lg'>
           Servicios de infraestructura para la industria minera
         </h3>
       </div>
-      <div className="flex items-stretch justify-stretch self-stretch border border-green-400 h-auto">
+      <div className='flex flex-wrap justify-center'>
         {items.map((item, index) => {
           return (
             <ServiciosCard
@@ -77,14 +77,22 @@ type CardProps = {
 
 export function ServiciosCard({ name, icon, background, text }: CardProps) {
   return (
-    <div className="relative flex justify-center flex-1 min-h-[650px] self-stretch">
-      <Image src={background} alt="fondo" fill className="object-cover" />
-      <div className="flex flex-col justify-center px-[40px] py-[55px] gap-[10px] absolute items-center border border-red-500 ">
-        <Image src={icon} alt="icon" width={85} />
-        <h4 className="text-white font-bold text-[15px] text-center uppercase">
+    <div className='relative flex justify-center flex-1 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2 md:p-4'>
+      <Image
+        src={background}
+        alt='fondo'
+        layout='fill'
+        objectFit='cover'
+        className='absolute inset-0'
+      />
+      <div className='flex flex-col justify-center items-center p-4 bg-black bg-opacity-50 w-full h-full z-10'>
+        <Image src={icon} alt='icon' width={85} height={85} />
+        <h4 className='text-white font-bold text-sm md:text-lg text-center uppercase mt-2'>
           {name}
         </h4>
-        <p className="text-white font-normal text-[15px] text-center">{text}</p>
+        <p className='text-white font-normal text-sm md:text-lg text-center mt-2'>
+          {text}
+        </p>
       </div>
     </div>
   );

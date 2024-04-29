@@ -49,7 +49,13 @@ export default function HistoryBaner() {
 
       <div className='md:hidden text-center'>
         <h1 className='text-[#FAB918] text-3xl mt-8'>NUESTRA HISTORIA</h1>
-        <Image src={iconHistory} alt='' className='w-[200px] mx-auto mt-4' />
+        <div className='border border-[#FDBA13] w-auto rounded-sm overflow-hidden flex items-center'>
+          <Image
+            src={iconHistory}
+            alt=''
+            className='-mt- -ml-2 pb-2 pr-2 min-w-[200px]'
+          />
+        </div>
         <div className='text-[#FFFFFF] text-sm font-medium pt-4 px-4'>
           <p>
             MAPAL S.A. es una empresa Sanjuanina de alcance nacional con más de

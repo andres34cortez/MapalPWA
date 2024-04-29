@@ -14,29 +14,27 @@ export default async function Proyectos() {
   const projects = await getProyects();
 
   return (
-    <div className="py-[40px] flex flex-col gap-[60px]">
-      <h3 className="uppercase font-bold text-[15px]">
+    <div className='py-8 md:py-12 lg:py-16 flex flex-col gap-8 md:gap-12 lg:gap-16'>
+      <h3 className='uppercase font-bold text-sm md:text-lg'>
         Proyectos en desarrollo
       </h3>
 
-      <div className="flex flex-col gap-[34px]">
-        {projects.map((proyecto, index) => {
-          return (
-            <ProjectCard
-              name={proyecto.name}
-              month={proyecto.month}
-              year={proyecto.year}
-              text={proyecto.text}
-              localidad={proyecto.localidad}
-              superficie={proyecto.superficie}
-              comitente={proyecto.comitente}
-              images={proyecto.images}
-              key={index}
-              state={proyecto.state}
-              type={proyecto.type}
-            />
-          );
-        })}
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10'>
+        {projects.map((proyecto, index) => (
+          <ProjectCard
+            name={proyecto.name}
+            month={proyecto.month}
+            year={proyecto.year}
+            text={proyecto.text}
+            localidad={proyecto.localidad}
+            superficie={proyecto.superficie}
+            comitente={proyecto.comitente}
+            images={proyecto.images}
+            key={index}
+            state={proyecto.state}
+            type={proyecto.type}
+          />
+        ))}
       </div>
     </div>
   );
