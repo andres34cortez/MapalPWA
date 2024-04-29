@@ -42,36 +42,42 @@ export default async function Proyectos({ tipo }: Props) {
         <div className="flex gap-[20px] flex-wrap mt-[25px]">
           <Link
             href="/proyectos?tipo=viales"
+            scroll={false}
             className="uppercase font-bold text-[15px]"
           >
             Viales
           </Link>
           <Link
             href="/proyectos?tipo=arquitectura"
+            scroll={false}
             className="uppercase font-bold text-[15px]"
           >
             Arquitectura
           </Link>
           <Link
             href="/proyectos?tipo=hidrualicas"
+            scroll={false}
             className="uppercase font-bold text-[15px]"
           >
             Hidraulicas
           </Link>
           <Link
             href="/proyectos?tipo=infraestructura"
+            scroll={false}
             className="uppercase font-bold text-[15px]"
           >
             Infraestructura
           </Link>
           <Link
             href="/proyectos?tipo=mineria"
+            scroll={false}
             className="uppercase font-bold text-[15px]"
           >
             Mineria
           </Link>
           <Link
             href="/proyectos?tipo=inmobiliaria"
+            scroll={false}
             className="uppercase font-bold text-[15px]"
           >
             Inmobiliaria
