@@ -2,9 +2,11 @@ import Link from "next/link";
 import { client } from "../../../sanity/lib/client";
 import { ProjectCard } from "@/components/ProjectCard";
 import { GetServerSideProps } from "next";
+import { unstable_noStore as noStore } from "next/cache";
 
 export const dynamic = "force-dynamic";
 export async function getProyects(): Promise<ProjectCardType[]> {
+  noStore();
   const projects = await client.fetch(
     `*[_type == "projects"]{name, type, month, year, state, text, localidad, superficie, comitente, "images": images[] {'url': asset->url}}`
   );
