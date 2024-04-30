@@ -38,18 +38,19 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     props: { tipo },
   };
 };
+//coomentario para ver si se sana
 
 export default async function Proyectos({ tipo }: Props) {
   const projects = await getProyects();
   const filteredProjects = projects.filter((project) => project.type === tipo);
   return (
     <>
-      <div className="container mx-auto py-[40px] relative">
-        <p className="uppercase font-bold text-[18px]">Proyectos</p>
+      <div className='container mx-auto py-[40px] relative'>
+        <p className='uppercase font-bold text-[18px]'>Proyectos</p>
 
-        <div className="flex gap-[20px] flex-wrap mt-[25px]">
+        <div className='flex gap-[20px] flex-wrap mt-[25px]'>
           <Link
-            href="/proyectos?tipo=viales"
+            href='/proyectos?tipo=viales'
             scroll={false}
             className={`uppercase font-bold text-[15px] py-2 px-3 ${
               tipo === "viales"
@@ -60,7 +61,7 @@ export default async function Proyectos({ tipo }: Props) {
             Viales
           </Link>
           <Link
-            href="/proyectos?tipo=arquitectura"
+            href='/proyectos?tipo=arquitectura'
             scroll={false}
             className={`uppercase font-bold text-[15px] py-2 px-3 ${
               tipo === "arquitectura"
@@ -71,7 +72,7 @@ export default async function Proyectos({ tipo }: Props) {
             Arquitectura
           </Link>
           <Link
-            href="/proyectos?tipo=hidraulicas"
+            href='/proyectos?tipo=hidraulicas'
             scroll={false}
             className={`uppercase font-bold text-[15px] py-2 px-3 ${
               tipo === "hidraulicas"
@@ -82,7 +83,7 @@ export default async function Proyectos({ tipo }: Props) {
             Hidraulicas
           </Link>
           <Link
-            href="/proyectos?tipo=infraestructura"
+            href='/proyectos?tipo=infraestructura'
             scroll={false}
             className={`uppercase font-bold text-[15px] py-2 px-3 ${
               tipo === "infraestructura"
@@ -93,7 +94,7 @@ export default async function Proyectos({ tipo }: Props) {
             Infraestructura
           </Link>
           <Link
-            href="/proyectos?tipo=inmobiliaria"
+            href='/proyectos?tipo=inmobiliaria'
             scroll={false}
             className={`uppercase font-bold text-[15px] py-2 px-3 ${
               tipo === "inmobiliaria"
@@ -105,7 +106,7 @@ export default async function Proyectos({ tipo }: Props) {
           </Link>
         </div>
 
-        <div className="flex flex-col space-y-5 mt-[50px]">
+        <div className='flex flex-col space-y-5 mt-[50px]'>
           {filteredProjects.map((proyecto, index) => {
             return (
               <ProjectCard
