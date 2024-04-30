@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { client } from "../../../sanity/lib/client";
 import { ProjectCard } from "@/components/ProjectCard";
+import { GetServerSideProps } from "next";
 
 export const dynamic = "force-dynamic";
 export async function getProyects(): Promise<ProjectCardType[]> {
@@ -31,6 +32,13 @@ type Props = {
   tipo: string;
 };
 
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const tipo = context.query.tipo;
+  return {
+    props: { tipo },
+  };
+};
+
 export default async function Proyectos({ tipo }: Props) {
   const projects = await getProyects();
   const filteredProjects = projects.filter((project) => project.type === tipo);
@@ -43,42 +51,55 @@ export default async function Proyectos({ tipo }: Props) {
           <Link
             href="/proyectos?tipo=viales"
             scroll={false}
-            className="uppercase font-bold text-[15px]"
+            className={`uppercase font-bold text-[15px] py-2 px-3 ${
+              tipo === "viales"
+                ? "border-b-2 border-[#fdba13] text-[#fdba13]"
+                : "border-b-2 border-[#b2b2b2]"
+            }`}
           >
             Viales
           </Link>
           <Link
             href="/proyectos?tipo=arquitectura"
             scroll={false}
-            className="uppercase font-bold text-[15px]"
+            className={`uppercase font-bold text-[15px] py-2 px-3 ${
+              tipo === "arquitectura"
+                ? "border-b-2 border-[#fdba13] text-[#fdba13]"
+                : "border-b-2 border-[#b2b2b2]"
+            }`}
           >
             Arquitectura
           </Link>
           <Link
-            href="/proyectos?tipo=hidrualicas"
+            href="/proyectos?tipo=hidraulicas"
             scroll={false}
-            className="uppercase font-bold text-[15px]"
+            className={`uppercase font-bold text-[15px] py-2 px-3 ${
+              tipo === "hidraulicas"
+                ? "border-b-2 border-[#fdba13] text-[#fdba13]"
+                : "border-b-2 border-[#b2b2b2]"
+            }`}
           >
             Hidraulicas
           </Link>
           <Link
             href="/proyectos?tipo=infraestructura"
             scroll={false}
-            className="uppercase font-bold text-[15px]"
+            className={`uppercase font-bold text-[15px] py-2 px-3 ${
+              tipo === "infraestructura"
+                ? "border-b-2 border-[#fdba13] text-[#fdba13]"
+                : "border-b-2 border-[#b2b2b2]"
+            }`}
           >
             Infraestructura
           </Link>
           <Link
-            href="/proyectos?tipo=mineria"
-            scroll={false}
-            className="uppercase font-bold text-[15px]"
-          >
-            Mineria
-          </Link>
-          <Link
             href="/proyectos?tipo=inmobiliaria"
             scroll={false}
-            className="uppercase font-bold text-[15px]"
+            className={`uppercase font-bold text-[15px] py-2 px-3 ${
+              tipo === "inmobiliaria"
+                ? "border-b-2 border-[#fdba13] text-[#fdba13]"
+                : "border-b-2 border-[#b2b2b2]"
+            }`}
           >
             Inmobiliaria
           </Link>
