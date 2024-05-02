@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import LogoFooter from "@/assets/LogoFooter1.svg";
 import Image from "next/image";

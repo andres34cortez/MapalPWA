@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import iconHistory from "@/assets/IconHisrory.png";
 import fondoHistory from "@/assets/FondoHistory.png";
@@ -5,7 +6,7 @@ import Image from "next/image";
 
 export default function HistoryBaner() {
   return (
-    <div className='bg-black w-full' id="Historia">
+    <div className='bg-black w-full' id='Historia'>
       <div className='hidden md:flex w-full items-center justify-center gap-12 overflow-hidden '>
         <div className='bg-historyTexture w-full h-[372px] -mt-4 absolute' />
         <Image
@@ -49,12 +50,14 @@ export default function HistoryBaner() {
 
       <div className='md:hidden text-center'>
         <h1 className='text-[#FAB918] text-3xl mt-8'>NUESTRA HISTORIA</h1>
-        <div className='border border-[#FDBA13] w-auto rounded-sm overflow-hidden flex items-center'>
-          <Image
-            src={iconHistory}
-            alt=''
-            className='-mt- -ml-2 pb-2 pr-2 min-w-[200px]'
-          />
+        <div className=' w-auto rounded-sm overflow-hidden flex justify-center'>
+          <div className='border border-[#FDBA13] rounded-sm'>
+            <Image
+              src={iconHistory}
+              alt=''
+              className='-mt-2 -ml-2 pb-2 pr-2 min-w-[200px]'
+            />
+          </div>
         </div>
         <div className='text-[#FFFFFF] text-sm font-medium pt-4 px-4'>
           <p>

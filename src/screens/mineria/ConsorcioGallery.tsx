@@ -32,6 +32,7 @@ import foto20 from "../../assets/mineriaPage/mineriaCarousel/foto20.png";
 import foto21 from "../../assets/mineriaPage/mineriaCarousel/foto21.png";
 import foto22 from "../../assets/mineriaPage/mineriaCarousel/foto22.png";
 import Image from "next/image";
+import useMediaQuery from "@/components/useMediaQuery";
 
 export default function ConsorcioGallery() {
   const [api, setApi] = useState<CarouselApi>();
@@ -75,24 +76,30 @@ export default function ConsorcioGallery() {
     });
   }, [api]);
 
+  const mobile = useMediaQuery("screen and (max-width:768px)");
+
   return (
     <Carousel
       setApi={setApi}
-      className="w-[100%] items-center justify-center mt-[50px]"
+      className='w-[100%] items-center justify-center md:mt-[50px]'
       opts={{ slidesToScroll: 1, loop: true }}
     >
-      <CarouselContent className="w-[100%]">
+      <CarouselContent className='w-[100%]'>
         {mineriaImage.map((foto, index) => {
           if (index % 5 === 0) {
             const group = mineriaImage.slice(index, index + 5);
             return group.map((img, i) => (
-              <Image src={img} key={i} alt="imagen" className="w-[20%]" />
+              <Image src={img} key={i} alt='imagen' className='md:w-[20%]' />
             ));
           }
         })}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      {!mobile && (
+        <>
+          <CarouselPrevious />
+          <CarouselNext />
+        </>
+      )}
     </Carousel>
   );
 }

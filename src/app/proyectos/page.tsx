@@ -1,3 +1,4 @@
+'use client'
 import Data from "@/screens/proyectos/Data";
 import Image, { StaticImageData } from "next/image";
 import Fondo from "../../assets/proyectosPage/ProyectosBanner.png";

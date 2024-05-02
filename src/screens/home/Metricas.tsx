@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import star from "@/assets/starMetrics.png";
 import house from "@/assets/houseMetrics.png";

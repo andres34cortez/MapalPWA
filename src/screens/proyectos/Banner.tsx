@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image";
 import FondoBanner from "../../assets/proyectosPage/fondo.png";
 import Argentina from "../../assets/proyectosPage/argentina.svg";

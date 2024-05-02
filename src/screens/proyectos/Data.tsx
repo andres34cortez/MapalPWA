@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image";
 import Viviendas from "@/assets/houseMetrics.png";
 import Naves from "@/assets/naves.png";

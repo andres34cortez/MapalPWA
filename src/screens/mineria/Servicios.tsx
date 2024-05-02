@@ -1,3 +1,4 @@
+'use client'
 import construccionPuente from "../../assets/mineriaPage/construccionDePuentesIcon.png";
 import movimientoSuelos from "../../assets/mineriaPage/movimientoDeSuelosIcon.png";
 import obrasViales from "../../assets/mineriaPage/obrasVialesMineriaIcon.png";
@@ -9,6 +10,8 @@ import bgObras from "../../assets/mineriaPage/bg-obras.png";
 import bgNaves from "../../assets/mineriaPage/bg-naves.png";
 import bgProvision from "../../assets/mineriaPage/bg-provision.png";
 import Image, { StaticImageData } from "next/image";
+import useMediaQuery from "@/components/useMediaQuery";
+import { cn } from "@/lib/utils";
 
 const items = [
   {
@@ -44,6 +47,7 @@ const items = [
 ];
 
 export default function Servicios() {
+  const mobile = useMediaQuery("screen and (max-width:768px)");
   return (
     <div className='bg-white py-10 md:py-20 mt-10 md:mt-20'>
       <div className='container mx-auto mb-10 md:mb-20'>
@@ -51,7 +55,7 @@ export default function Servicios() {
           Servicios de infraestructura para la industria minera
         </h3>
       </div>
-      <div className='flex flex-wrap justify-center'>
+      <div className={cn('flex flex-wrap justify-center', mobile && 'flex-col')}>
         {items.map((item, index) => {
           return (
             <ServiciosCard
@@ -77,7 +81,7 @@ type CardProps = {
 
 export function ServiciosCard({ name, icon, background, text }: CardProps) {
   return (
-    <div className='relative flex justify-center flex-1 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2 md:p-4'>
+    <div className='relative flex justify-center flex-1 w-full sm:w-1/2 md:w-1/3 lg:w-1/4'>
       <Image
         src={background}
         alt='fondo'
@@ -85,7 +89,7 @@ export function ServiciosCard({ name, icon, background, text }: CardProps) {
         objectFit='cover'
         className='absolute inset-0'
       />
-      <div className='flex flex-col justify-center items-center p-4 bg-black bg-opacity-50 w-full h-full z-10'>
+      <div className='flex flex-col justify-center items-center p-4 bg-black/10 w-full h-full z-10'>
         <Image src={icon} alt='icon' width={85} height={85} />
         <h4 className='text-white font-bold text-sm md:text-lg text-center uppercase mt-2'>
           {name}

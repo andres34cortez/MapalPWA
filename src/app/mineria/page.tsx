@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image";
 import bg from "../../assets/mineriaPage/bg.png";
 import logoMS from "../../assets/mineriaPage/logo.png";

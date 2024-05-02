@@ -10,6 +10,7 @@ import {
 import { type CarouselApi } from "@/components/ui/carousel";
 import { useEffect, useState } from "react";
 import { ProjectCardType } from "@/screens/proyectos/Proyectos";
+import useMediaQuery from "./useMediaQuery";
 
 export function ProjectCard({
   name,
@@ -45,6 +46,7 @@ export function ProjectCard({
     }
   };
 
+  const mobile = useMediaQuery("screen and (max-width:768px)");
   return (
     <div className="border border-[#FDBA13] rounded-[4px] flex flex-col-reverse lg:flex-row py-[20px] px-[25px] gap-[30px] lg:gap-[20px]">
       <div className="flex flex-col justify-between self-stretch flex-1 gap-[25px]">
@@ -89,9 +91,10 @@ export function ProjectCard({
                 </CarouselItem>
               );
             })}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+        </CarouselContent>
+        {!mobile && <><CarouselPrevious />
+          <CarouselNext /></>}
+        
           <div className="flex lg:hidden py-3 w-full justify-center items-center gap-[8px] absolute bottom-0">
             {images.map((items, index) => {
               return (

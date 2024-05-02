@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image";
 import group01 from "../../assets/mineriaPage/group01.png";
 import group02 from "../../assets/mineriaPage/group02.png";
