@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React from "react";
 import LogoFooter from "@/assets/LogoFooter1.svg";
 import Image from "next/image";
@@ -8,6 +8,7 @@ import x from "@/assets/x.png";
 import youtube from "@/assets/youtube.png";
 import linkdin from "@/assets/linkdin.png";
 import Link from "next/link";
+import { Twitter, XIcon } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -15,11 +16,10 @@ export default function Footer() {
       className="w-full bg-black pt-10 px-[15px] overflow-x-hidden "
       id="Contacto"
     >
-      <div className="flex justify-between gap-2 max-w-[1920px] mx-auto">
+      <div className="flex justify-between gap-2 max-w-[1240px] mx-auto">
         <div className="basis-2/6 flex justify-center lg:basis-auto">
           <Image src={LogoFooter} alt="Logo Mapal" />
         </div>
-
         <div className="hidden md:flex flex-col lg:basis-auto">
           <Link
             href="#"
@@ -64,7 +64,6 @@ export default function Footer() {
             ING/ESP
           </Link>
         </div>
-
         <div className="basis-3/6 flex flex-col gap-3 pl-2 lg:basis-auto">
           <div>
             <p className="uppercase text-white text-[14px] font-medium">
@@ -74,7 +73,6 @@ export default function Footer() {
               Tucumán 523 NORTE, CP 5413 Chimbas, San Juan.
             </p>
           </div>
-
           <div>
             <p className="uppercase text-white text-[14px] font-medium">
               Contáctenos
@@ -90,11 +88,10 @@ export default function Footer() {
             </p>
           </div>
         </div>
-
+        <p className="text-white hidden lg:flex lg:place-self-center">
+          Descargas
+        </p>
         <div className="basis-1/6 flex flex-col justify-center md:flex-row lg:gap-4 lg:basis-auto">
-          <p className="text-white hidden lg:flex lg:place-self-center">
-            Descargas
-          </p>
           <div className="flex flex-col gap-2 items-end lg:flex-row md:items-start lg:items-center">
             <Image
               className="w-6 h-6 object-contain"
@@ -116,11 +113,11 @@ export default function Footer() {
               src={instagram}
               alt="Instagram"
             />
+            <Twitter className="text-white" />
           </div>
         </div>
       </div>
-
-      <div className="bg-[#fdba13] h-[1px] w-full mt-10"></div>
+      <div className="bg-[#fdba13] h-[1px] w-full mt-10 mb-9"></div>
     </div>
   );
 }

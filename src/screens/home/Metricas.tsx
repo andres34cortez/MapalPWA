@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React from "react";
 import star from "@/assets/starMetrics.png";
 import house from "@/assets/houseMetrics.png";
@@ -10,7 +10,7 @@ import MetricsItem from "@/components/MetricsItem";
 
 export default function Metricas() {
   return (
-    <div className="flex flex-wrap justify-center gap-14 p-8 items-start">
+    <div className="flex flex-wrap justify-center gap-14 px-8 pb-4 pt-6 items-start">
       <MetricsItem image={star} tprimary="309">
         Obras ejecutadas
       </MetricsItem>
