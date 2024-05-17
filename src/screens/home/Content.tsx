@@ -30,7 +30,10 @@ export function Content() {
 const Empresa = () => {
   return (
     <div className="flex flex-col sm:pl-6">
-      <h2 className="font-bold mb-2">LA EMPRESA</h2>
+      <div className="flex flex-row items-center relative mb-2">
+        <div className="absolute bg-[#FAB918] h-0.5 w-[270px] -left-[280px]" />
+        <h2 className="font-bold">LA EMPRESA</h2>
+      </div>
       <div className="flex flex-row justify-between flex-wrap sm:flex-nowrap">
         <div className="max-w-[450px] w-full">
           <h3 className="text-[#FAB918] font-bold">MISIÓN</h3>
@@ -104,7 +107,10 @@ async function News() {
 
   return (
     <div className="flex flex-col mt-[10px] z-10">
-      <h2 className="font-bold mb-2">NOTICIAS / PRENSA</h2>
+      <div className="flex flex-row items-center relative mb-2">
+        <div className="absolute bg-[#FAB918] h-0.5 w-[270px] -left-[280px]" />
+        <h2 className="font-bold">NOTICIAS / PRENSA</h2>
+      </div>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {/* @ts-ignore */}
         {cards.map((card, index) => (
