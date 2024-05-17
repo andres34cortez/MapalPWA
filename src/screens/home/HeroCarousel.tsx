@@ -37,29 +37,32 @@ export function HeroCarousel() {
   }, [api]);
 
   return (
-    <div className="w-screen overflow-hidden">
+    <div className='w-screen overflow-hidden'>
       <Carousel
         setApi={setApi}
-        className="w-full items-center justify-center border"
+        className='w-full items-center justify-center border'
       >
         <CarouselContent>
           {HeroImage.map((foto, index) => (
             <CarouselItem key={index}>
-              <Image src={foto} alt="" className="w-full object-cover" />
+              <div className='relative w-full h-full'>
+                <Image src={foto} alt='' className='w-full object-cover' />
+                {index === 0 && (
+                  <div className='absolute bottom-4 left-14  lg:top-1/3 md:left-20 p-4 flex flex-col items-start lg:left-32'>
+                    <span className='  text-lg md:text-6xl lg:text-7xl text-white  text-outline-black'>
+                      +50 Años
+                    </span>
+                    <span className='  text-lg md:text-4xl lg:text-4xl text-white  '>
+                      Construyendo Historia
+                    </span>
+                  </div>
+                )}
+              </div>
             </CarouselItem>
           ))}
         </CarouselContent>
         <CarouselPrevious />
         <CarouselNext />
-        {/* {HeroImage.map((_, index) => (
-          <div
-            className={cn(
-              "rounded-full w-3 h-3",
-              index === count ? "bg-white" : "bg-[#f4f4f4]"
-            )}
-            key=""
-          />
-        ))} */}
       </Carousel>
     </div>
   );
