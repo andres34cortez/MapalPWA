@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import construccionPuente from "../../assets/mineriaPage/construccionDePuentesIcon.png";
 import movimientoSuelos from "../../assets/mineriaPage/movimientoDeSuelosIcon.png";
 import obrasViales from "../../assets/mineriaPage/obrasVialesMineriaIcon.png";
@@ -55,7 +55,7 @@ export default function Servicios() {
           Servicios de infraestructura para la industria minera
         </h3>
       </div>
-      <div className={cn('flex flex-wrap justify-center', mobile && 'flex-col')}>
+      <div className={cn("flex flex-wrap", mobile && "flex-col")}>
         {items.map((item, index) => {
           return (
             <ServiciosCard
