@@ -104,7 +104,10 @@ export default function Footer() {
           </div>
         </div>
         <p className="text-white hidden lg:flex lg:place-self-center">
-          <a href="https://drive.google.com/drive/folders/157n6lUTFU2lcUDj65B4trtPjZRtzcQyv?usp=drive_link">
+          <a
+            href="https://drive.google.com/drive/folders/157n6lUTFU2lcUDj65B4trtPjZRtzcQyv?usp=drive_link"
+            target="_blank"
+          >
             Descargas
           </a>
         </p>
