@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Link from "next/link";
 import { client } from "../../../sanity/lib/client";
 import { ProjectCard } from "@/components/ProjectCard";
@@ -43,6 +43,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 };
 //coomentario para ver si se sana
 
+// eslint-disable-next-line @next/next/no-async-client-component
 export default async function Proyectos({ tipo }: Props) {
   const projects = await getProyects();
   const filteredProjects = projects.filter((project) => project.type === tipo);
@@ -84,6 +85,28 @@ export default async function Proyectos({ tipo }: Props) {
             }`}
           >
             Hidraulicas
+          </Link>
+          <Link
+            href='/proyectos?tipo=petroleos'
+            scroll={false}
+            className={`uppercase font-bold text-[15px] py-2 px-3 ${
+              tipo === "petroleos"
+                ? "border-b-2 border-[#fdba13] text-[#fdba13]"
+                : "border-b-2 border-[#b2b2b2]"
+            }`}
+          >
+            Petróleos
+          </Link>
+          <Link
+            href='/proyectos?tipo=puentes'
+            scroll={false}
+            className={`uppercase font-bold text-[15px] py-2 px-3 ${
+              tipo === "puentes"
+                ? "border-b-2 border-[#fdba13] text-[#fdba13]"
+                : "border-b-2 border-[#b2b2b2]"
+            }`}
+          >
+            Puentes
           </Link>
           <Link
             href='/proyectos?tipo=infraestructura'
