@@ -21,6 +21,8 @@ const Proyectos = {
           { title: "Infraestructura", value: "infraestructura" },
           { title: "Mineria", value: "mineria" },
           { title: "Inmobiliaria", value: "inmobiliaria" },
+          { title: "Puentes", value: "puentes" },
+          { title: "Petróleos", value: "petroleos" },
         ],
       },
     },
