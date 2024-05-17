@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React from "react";
 import Image from "next/image";
 import photo1 from "@/assets/photosBaner/photo1.png";
@@ -10,7 +10,7 @@ import sigma from "@/assets/photosBaner/sigma.png";
 import sigmaLogo from "@/assets/photosBaner/SigmaPNG.png";
 export default function PhotosHomeBanner() {
   return (
-    <div className='overflow-hidden'>
+    <div className='flex flex-col overflow-hidden w-full bg-black items-center justify-center'>
       <div className='flex flex-row'>
         <Image src={photo1} alt=''></Image>
         <Image src={photo2} alt=''></Image>
