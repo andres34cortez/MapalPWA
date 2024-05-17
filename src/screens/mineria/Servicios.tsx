@@ -1,4 +1,5 @@
 "use client";
+
 import construccionPuente from "../../assets/mineriaPage/construccionDePuentesIcon.png";
 import movimientoSuelos from "../../assets/mineriaPage/movimientoDeSuelosIcon.png";
 import obrasViales from "../../assets/mineriaPage/obrasVialesMineriaIcon.png";
