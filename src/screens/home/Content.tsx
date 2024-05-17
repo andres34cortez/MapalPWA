@@ -28,7 +28,7 @@ export function Content() {
 }
 const Empresa = () => {
   return (
-    <div className="flex flex-col sm:pl-6" id="Empresa">
+    <div className="flex flex-col sm:pl-6">
       <h2 className="font-bold mb-2">LA EMPRESA</h2>
       <div className="flex flex-row justify-between flex-wrap sm:flex-nowrap">
         <div className="max-w-[450px] w-full">

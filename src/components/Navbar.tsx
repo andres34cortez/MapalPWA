@@ -1,15 +1,47 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
 import logoNavbar from "@/assets/logoMapal.svg";
 import { cn } from "@/lib/utils";
+import { usePathname, useRouter } from "next/navigation";
 
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleMenuToggle = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+
+  function scrollToBottom() {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: "smooth",
+    });
+  }
+
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const scrollTo = (id: string) => {
+    // const yOffset = -90;
+
+    if (pathname !== "/") {
+      router.push("/#company");
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        const y = element.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
+    }
   };
 
   return (
@@ -19,103 +51,110 @@ const Navbar: React.FC = () => {
         menuOpen && "bg-black"
       )}
     >
-      <div className='flex items-center justify-between'>
-        <div className='flex-shrink-0'>
-          <Image src={logoNavbar} alt='Logo' width={120} height={40} />
-        </div>
-        <div className='md:hidden ml-auto mr-4'>
-          <div onClick={handleMenuToggle} className='text-white cursor-pointer'>
+      <div className="flex items-center justify-between">
+        <a className="flex-shrink-0" onClick={() => scrollToTop()} href="/">
+          <Image
+            src={logoNavbar}
+            alt="Logo"
+            width={120}
+            height={40}
+            className="cursor-pointer"
+          />
+        </a>
+        <div className="md:hidden ml-auto mr-4">
+          <div onClick={handleMenuToggle} className="text-white cursor-pointer">
             ☰
           </div>
         </div>
 
         <div className={" hidden  md:block md:space-x-6 ml-auto"}>
           <a
-            href='/#Empresa'
-            className='text-white font-medium text-xs hover:text-gray-300'
+            href={pathname !== "/" ? "/#empresa" : undefined}
+            onClick={() => scrollTo("empresa")}
+            className="text-white font-medium text-xs hover:text-gray-300 cursor-pointer"
           >
             LA EMPRESA
           </a>
           <a
-            href='/#Historia'
-            className='text-white disabled font-medium text-xs hover:text-gray-300'
+            id="Historia"
+            className="text-white font-medium text-xs hover:text-gray-300 cursor-pointer"
           >
             PRENSA
           </a>
           <a
-            href='/proyectos'
-            className='text-white disabled font-medium text-xs hover:text-gray-300'
+            href="/proyectos"
+            className="text-white font-medium text-xs hover:text-gray-300 cursor-pointer"
           >
             PROYECTOS
           </a>
           <a
-            href='/mineria'
-            className='text-white disabled font-medium text-xs hover:text-gray-300'
+            href="/mineria"
+            className="text-white font-medium text-xs hover:text-gray-300 cursor-pointer"
           >
             MINERIA
           </a>
-          <a
-            href='/mineria#Equipamiento'
-            className='text-white disabled font-medium text-xs hover:text-gray-300'
+          {/* <a
+            href="/mineria#Equipamiento"
+            className="text-white font-medium text-xs hover:text-gray-300 cursor-pointer"
           >
             EQUIPAMIENTO
-          </a>
+          </a> */}
           <a
-            href='#Contacto'
-            className='text-white disabled font-medium text-xs hover:text-gray-300'
+            className="text-white font-medium text-xs hover:text-gray-300 cursor-pointer"
+            onClick={() => scrollToBottom()}
           >
             CONTACTO
           </a>
           <a
-            href='#'
-            className='text-white disabled font-medium text-xs hover:text-gray-300'
+            href="#"
+            className="text-white font-medium text-xs hover:text-gray-300 cursor-pointer"
           >
             ING/ESP
           </a>
         </div>
 
-        <div className='md:hidden'>
+        <div className="md:hidden">
           {menuOpen && (
-            <div className='absolute right-0 top-16 w-full bg-gray-800'>
+            <div className="absolute right-0 top-16 w-full bg-gray-800">
               <a
-                href='/#Empresa'
-                className='text-white  text-xs hover:text-gray-300 block py-2'
+                href="/#Empresa"
+                className="text-white  text-xs hover:text-gray-300 block py-2"
               >
                 LA EMPRESA
               </a>
               <a
-                href='/#Historia'
-                className='text-white disabled text-xs hover:text-gray-300 block py-2'
+                href="/#Historia"
+                className="text-white text-xs hover:text-gray-300 block py-2"
               >
                 PRENSA
               </a>
               <a
-                href='#'
-                className='text-white disabled text-xs hover:text-gray-300 block py-2'
+                href="#"
+                className="text-white text-xs hover:text-gray-300 block py-2"
               >
                 PROYECTOS
               </a>
               <a
-                href='mineria'
-                className='text-white  text-xs hover:text-gray-300 block py-2'
+                href="mineria"
+                className="text-white  text-xs hover:text-gray-300 block py-2"
               >
                 MINERIA
               </a>
-              <a
-                href='/mineria#Equipamiento'
-                className='text-white disabled text-xs hover:text-gray-300 block py-2'
+              {/* <a
+                href="/mineria#Equipamiento"
+                className="text-white text-xs hover:text-gray-300 block py-2"
               >
                 EQUIPAMIENTO
-              </a>
+              </a> */}
               <a
-                href='#Contacto'
-                className='text-white disabled text-xs hover:text-gray-300 block py-2'
+                className="text-white text-xs hover:text-gray-300 block py-2"
+                onClick={() => scrollToBottom()}
               >
                 CONTACTO
               </a>
               <a
-                href='#'
-                className='text-white disabled text-xs hover:text-gray-300 block py-2'
+                href="#"
+                className="text-white text-xs hover:text-gray-300 block py-2"
               >
                 ING/ESP
               </a>
