@@ -17,9 +17,10 @@ export async function getCards() {
 export function Content() {
   return (
     <div className="flex flex-col w-full">
-      <div className="pt-8 pb-12 border-r-2 border-[#FAB918] pr-6 sm:pr-12 mt-8 mb-12 justify-center items-center">
+      <div className="pt-0 pb-12 border-r-2 border-[#FAB918] pr-6 sm:pr-12 mt-4 mb-12 justify-center items-center">
         <div className="flex flex-col bg-transparent max-w-7xl mx-auto md:pl-0 pl-3">
           <Empresa />
+          <div className="h-[90px]" id="prensa" />
           <News />
         </div>
       </div>
@@ -102,7 +103,7 @@ async function News() {
   const cards = await getCards();
 
   return (
-    <div className="flex flex-col mt-[100px] z-10">
+    <div className="flex flex-col mt-[10px] z-10">
       <h2 className="font-bold mb-2">NOTICIAS / PRENSA</h2>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {/* @ts-ignore */}

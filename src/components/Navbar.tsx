@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 
 import logoNavbar from "@/assets/logoMapal.svg";
@@ -31,8 +31,6 @@ const Navbar: React.FC = () => {
   const pathname = usePathname();
 
   const scrollTo = (id: string) => {
-    // const yOffset = -90;
-
     if (pathname !== "/") {
       router.push("/#company");
     } else {
@@ -52,7 +50,11 @@ const Navbar: React.FC = () => {
       )}
     >
       <div className="flex items-center justify-between">
-        <a className="flex-shrink-0" onClick={() => scrollToTop()} href="/">
+        <a
+          className="flex-shrink-0"
+          onClick={() => scrollToTop()}
+          href={pathname !== "/" ? "/" : undefined}
+        >
           <Image
             src={logoNavbar}
             alt="Logo"
@@ -67,7 +69,7 @@ const Navbar: React.FC = () => {
           </div>
         </div>
 
-        <div className={" hidden  md:block md:space-x-6 ml-auto"}>
+        <div className={" hidden md:block md:space-x-6 ml-auto"}>
           <a
             href={pathname !== "/" ? "/#empresa" : undefined}
             onClick={() => scrollTo("empresa")}
@@ -76,7 +78,8 @@ const Navbar: React.FC = () => {
             LA EMPRESA
           </a>
           <a
-            id="Historia"
+            href={pathname !== "/" ? "/#prensa" : undefined}
+            onClick={() => scrollTo("prensa")}
             className="text-white font-medium text-xs hover:text-gray-300 cursor-pointer"
           >
             PRENSA
@@ -117,44 +120,61 @@ const Navbar: React.FC = () => {
           {menuOpen && (
             <div className="absolute right-0 top-16 w-full bg-gray-800">
               <a
-                href="/#Empresa"
-                className="text-white  text-xs hover:text-gray-300 block py-2"
+                href={pathname !== "/" ? "/#empresa" : undefined}
+                onClick={() => {
+                  scrollTo("empresa"), setMenuOpen((o) => !o);
+                }}
+                className="text-white text-xs hover:text-gray-300 block py-3 pl-4"
               >
                 LA EMPRESA
               </a>
               <a
-                href="/#Historia"
-                className="text-white text-xs hover:text-gray-300 block py-2"
+                href={pathname !== "/" ? "/#prensa" : undefined}
+                onClick={() => {
+                  scrollTo("prensa"), setMenuOpen((o) => !o);
+                }}
+                className="text-white text-xs hover:text-gray-300 block py-3 pl-4"
               >
                 PRENSA
               </a>
               <a
-                href="#"
-                className="text-white text-xs hover:text-gray-300 block py-2"
+                href="/proyectos"
+                onClick={() => {
+                  setMenuOpen((o) => !o);
+                }}
+                className="text-white text-xs hover:text-gray-300 block py-3 pl-4"
               >
                 PROYECTOS
               </a>
               <a
-                href="mineria"
-                className="text-white  text-xs hover:text-gray-300 block py-2"
+                href="/mineria"
+                onClick={() => {
+                  setMenuOpen((o) => !o);
+                }}
+                className="text-white text-xs hover:text-gray-300 block py-3 pl-4"
               >
                 MINERIA
               </a>
               {/* <a
                 href="/mineria#Equipamiento"
-                className="text-white text-xs hover:text-gray-300 block py-2"
+                className="text-white text-xs hover:text-gray-300 block py-3 pl-4"
               >
                 EQUIPAMIENTO
               </a> */}
               <a
-                className="text-white text-xs hover:text-gray-300 block py-2"
-                onClick={() => scrollToBottom()}
+                className="text-white text-xs hover:text-gray-300 block py-3 pl-4"
+                onClick={() => {
+                  scrollToBottom(), setMenuOpen((o) => !o);
+                }}
               >
                 CONTACTO
               </a>
               <a
                 href="#"
-                className="text-white text-xs hover:text-gray-300 block py-2"
+                onClick={() => {
+                  setMenuOpen((o) => !o);
+                }}
+                className="text-white text-xs hover:text-gray-300 block py-3 pl-4"
               >
                 ING/ESP
               </a>
