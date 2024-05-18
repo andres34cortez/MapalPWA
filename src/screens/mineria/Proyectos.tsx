@@ -14,14 +14,14 @@ export default async function Proyectos() {
   const projects = await getProyects();
 
   return (
-    <div className="py-8 md:py-12 lg:py-16 flex flex-col gap-8 md:gap-12 lg:gap-16">
-      <div className="flex flex-row items-center relative mb-2">
-        <div className="absolute bg-[#FAB918] h-0.5 w-[350px] -left-[360px]" />
+    <div className="py-8 md:py-12 lg:py-16 container sm:p-0 gap-8 px-8 xl:px-0">
+      <div className="flex flex-row items-center relative mb-2 md:px-8 xl:px-0">
+        <div className="absolute bg-[#FAB918] h-0.5 w-[400px] -left-[410px]" />
         <h2 className="font-bold uppercase text-sm md:text-lg">
           Proyectos en desarrollo
         </h2>
       </div>
-      <div className="grid   gap-6 md:gap-8 lg:gap-10">
+      <div className="grid gap-6 md:gap-8 lg:gap-10 md:px-8 xl:px-0">
         {projects.map((proyecto, index) => (
           <ProjectCard
             name={proyecto.name}

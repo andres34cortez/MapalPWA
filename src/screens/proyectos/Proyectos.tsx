@@ -49,19 +49,17 @@ export default async function Proyectos({ tipo }: Props) {
   const filteredProjects = projects.filter((project) => project.type === tipo);
   return (
     <>
-      <div className="container mx-auto py-[40px] relative">
+      <div className="container sm:px-0 mx-auto py-[40px] relative max-w-[1280px]">
         <div className="flex flex-row items-center relative">
-          <div className="absolute bg-[#FAB918] h-0.5 w-[230px] -left-[240px]" />
+          <div className="absolute bg-[#FAB918] h-0.5 w-[400px] -left-[410px]" />
           <p className="uppercase font-bold text-[18px]">Proyectos</p>
         </div>
         <div className="flex gap-[20px] flex-wrap mt-[25px]">
           <Link
             href="/proyectos?tipo=viales"
             scroll={false}
-            className={`uppercase font-bold text-[15px] py-2 px-3 ${
-              tipo === "viales"
-                ? "border-b-2 border-[#fdba13] text-[#fdba13]"
-                : "border-b-2 border-[#b2b2b2]"
+            className={`uppercase font-bold text-[15px] pt-2 px-3 hover:text-[#B2B2B2] ${
+              tipo === "viales" && " text-[#fdba13]"
             }`}
           >
             Viales
@@ -69,10 +67,8 @@ export default async function Proyectos({ tipo }: Props) {
           <Link
             href="/proyectos?tipo=arquitectura"
             scroll={false}
-            className={`uppercase font-bold text-[15px] py-2 px-3 ${
-              tipo === "arquitectura"
-                ? "border-b-2 border-[#fdba13] text-[#fdba13]"
-                : "border-b-2 border-[#b2b2b2]"
+            className={`uppercase font-bold text-[15px] pt-2 px-3 hover:text-[#B2B2B2] ${
+              tipo === "arquitectura" && " text-[#fdba13]"
             }`}
           >
             Arquitectura
@@ -80,10 +76,8 @@ export default async function Proyectos({ tipo }: Props) {
           <Link
             href="/proyectos?tipo=hidraulicas"
             scroll={false}
-            className={`uppercase font-bold text-[15px] py-2 px-3 ${
-              tipo === "hidraulicas"
-                ? "border-b-2 border-[#fdba13] text-[#fdba13]"
-                : "border-b-2 border-[#b2b2b2]"
+            className={`uppercase font-bold text-[15px] pt-2 px-3 hover:text-[#B2B2B2] ${
+              tipo === "hidraulicas" && " text-[#fdba13]"
             }`}
           >
             Hidraulicas
@@ -91,10 +85,8 @@ export default async function Proyectos({ tipo }: Props) {
           <Link
             href="/proyectos?tipo=petroleos"
             scroll={false}
-            className={`uppercase font-bold text-[15px] py-2 px-3 ${
-              tipo === "petroleos"
-                ? "border-b-2 border-[#fdba13] text-[#fdba13]"
-                : "border-b-2 border-[#b2b2b2]"
+            className={`uppercase font-bold text-[15px] pt-2 px-3 hover:text-[#B2B2B2] ${
+              tipo === "petroleos" && " text-[#fdba13]"
             }`}
           >
             Petróleos
@@ -102,10 +94,8 @@ export default async function Proyectos({ tipo }: Props) {
           <Link
             href="/proyectos?tipo=puentes"
             scroll={false}
-            className={`uppercase font-bold text-[15px] py-2 px-3 ${
-              tipo === "puentes"
-                ? "border-b-2 border-[#fdba13] text-[#fdba13]"
-                : "border-b-2 border-[#b2b2b2]"
+            className={`uppercase font-bold text-[15px] pt-2 px-3 hover:text-[#B2B2B2] ${
+              tipo === "puentes" && " text-[#fdba13]"
             }`}
           >
             Puentes
@@ -113,10 +103,8 @@ export default async function Proyectos({ tipo }: Props) {
           <Link
             href="/proyectos?tipo=infraestructura"
             scroll={false}
-            className={`uppercase font-bold text-[15px] py-2 px-3 ${
-              tipo === "infraestructura"
-                ? "border-b-2 border-[#fdba13] text-[#fdba13]"
-                : "border-b-2 border-[#b2b2b2]"
+            className={`uppercase font-bold text-[15px] pt-2 px-3 hover:text-[#B2B2B2] ${
+              tipo === "infraestructura" && " text-[#fdba13]"
             }`}
           >
             Infraestructura
@@ -124,17 +112,15 @@ export default async function Proyectos({ tipo }: Props) {
           <Link
             href="/proyectos?tipo=inmobiliaria"
             scroll={false}
-            className={`uppercase font-bold text-[15px] py-2 px-3 ${
-              tipo === "inmobiliaria"
-                ? "border-b-2 border-[#fdba13] text-[#fdba13]"
-                : "border-b-2 border-[#b2b2b2]"
+            className={`uppercase font-bold text-[15px] pt-2 px-3 hover:text-[#B2B2B2] ${
+              tipo === "inmobiliaria" && " text-[#fdba13]"
             }`}
           >
             Inmobiliaria
           </Link>
         </div>
 
-        <div className="flex flex-col space-y-5 mt-[50px]">
+        <div className="flex flex-col space-y-5 mt-[32px]">
           {filteredProjects.map((proyecto, index) => {
             return (
               <ProjectCard

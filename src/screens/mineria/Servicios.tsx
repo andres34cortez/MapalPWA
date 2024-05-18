@@ -50,10 +50,10 @@ const items = [
 export default function Servicios() {
   const mobile = useMediaQuery("screen and (max-width:768px)");
   return (
-    <div className="bg-white py-10 md:py-20 mt-5 md:mt-10">
-      <div className="container mx-auto mb-10 md:mb-20">
-        <div className="flex flex-row items-center relative mb-2">
-          <div className="absolute bg-[#FAB918] h-0.5 w-[350px] -left-[360px]" />
+    <div className="bg-white py-10 md:py-10 mt-5 md:mt-10">
+      <div className="container mb-10 max-w-[1280px] px-8 xl:px-0">
+        <div className="flex flex-row items-center relative">
+          <div className="absolute bg-[#FAB918] h-0.5 w-[400px] -left-[410px]" />
           <h2 className="font-bold uppercase text-sm md:text-lg">
             Servicios de infraestructura para la industria minera
           </h2>
@@ -87,7 +87,7 @@ type CardProps = {
 
 export function ServiciosCard({ name, icon, background, text }: CardProps) {
   return (
-    <div className="relative flex justify-center flex-1 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+    <div className="relative flex justify-center flex-1 mix-w-[400px]">
       <Image
         src={background}
         alt="fondo"
@@ -95,7 +95,7 @@ export function ServiciosCard({ name, icon, background, text }: CardProps) {
         objectFit="cover"
         className="absolute inset-0"
       />
-      <div className="flex flex-col items-center p-4 py-20 bg-black/10 w-full h-full z-10">
+      <div className="flex flex-col items-center p-4 py-20 bg-black/10 min-w-[300px] h-full z-10">
         <Image src={icon} alt="icon" width={85} height={85} />
         <h4 className="text-white font-bold text-sm md:text-lg text-center uppercase mt-2">
           {name}

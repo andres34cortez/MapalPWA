@@ -29,9 +29,9 @@ export function Content() {
 }
 const Empresa = () => {
   return (
-    <div className="flex flex-col sm:pl-6">
+    <div className="container sm:pl-6">
       <div className="flex flex-row items-center relative mb-2">
-        <div className="absolute bg-[#FAB918] h-0.5 w-[270px] -left-[280px]" />
+        <div className="absolute bg-[#FAB918] h-0.5 w-[400px] -left-[410px]" />
         <h2 className="font-bold">LA EMPRESA</h2>
       </div>
       <div className="flex flex-row justify-between flex-wrap sm:flex-nowrap">
@@ -106,9 +106,9 @@ async function News() {
   const cards = await getCards();
 
   return (
-    <div className="flex flex-col mt-[10px] z-10">
+    <div className="flex flex-col mt-[10px] z-10 pl-6">
       <div className="flex flex-row items-center relative mb-2">
-        <div className="absolute bg-[#FAB918] h-0.5 w-[270px] -left-[280px]" />
+        <div className="absolute bg-[#FAB918] h-0.5 w-[400px] -left-[410px]" />
         <h2 className="font-bold">NOTICIAS / PRENSA</h2>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">

@@ -71,14 +71,14 @@ export function ProjectCard({
         <Carousel
           opts={{ loop: true }}
           setApi={setApi}
-          className="h-[300px] lg:h-[500px] relative"
+          className="h-[300px] lg:h-[400px] relative"
         >
           <CarouselContent>
             {images.map((item, index) => {
               return (
                 <CarouselItem
                   key={index}
-                  className="h-[300px] lg:h-[500px] border"
+                  className="h-[300px] lg:h-[400px] border"
                 >
                   <div className="h-full w-full relative">
                     <Image
@@ -91,10 +91,14 @@ export function ProjectCard({
                 </CarouselItem>
               );
             })}
-        </CarouselContent>
-        {!mobile && <><CarouselPrevious />
-          <CarouselNext /></>}
-        
+          </CarouselContent>
+          {!mobile && (
+            <>
+              <CarouselPrevious />
+              <CarouselNext />
+            </>
+          )}
+
           <div className="flex lg:hidden py-3 w-full justify-center items-center gap-[8px] absolute bottom-0">
             {images.map((items, index) => {
               return (

@@ -10,7 +10,7 @@ import ConsorcioGallery from "@/screens/mineria/ConsorcioGallery";
 
 export default function Mineria() {
   return (
-    <div className="relative flex flex-col">
+    <div className="relative flex flex-col items-center mx-0">
       <div className="w-full h-[600px] md:h-[400px] lg:h-[500px] flex justify-center left-0 items-center relative">
         <Image
           src={logoMS}
@@ -21,14 +21,10 @@ export default function Mineria() {
         />
         <Image src={bg} alt="Fondo" layout="fill" objectFit="cover" />
       </div>
-      <div className="flex justify-between">
-        <div className="h-[2px] w-1/6 mt-10 md:mt-20 lg:mt-10"></div>
-        <Consorcio />
-        <div className="w-1/6"></div>
-      </div>
+      <Consorcio />
       <ConsorcioGallery />
       <Servicios />
-      <div className="border-r border-r-[#FDBA13] container mx-auto">
+      <div className="flex flex-col max-w-[1280px]">
         <Desarrollo />
         <Proyectos />
       </div>
