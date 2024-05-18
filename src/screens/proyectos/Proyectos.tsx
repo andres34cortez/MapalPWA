@@ -52,7 +52,7 @@ export default async function Proyectos({ tipo }: Props) {
       <div className="container sm:px-0 mx-auto py-[40px] relative max-w-[1280px]">
         <div className="flex flex-row items-center relative">
           <div className="absolute bg-[#FAB918] h-0.5 w-[400px] -left-[410px]" />
-          <p className="uppercase font-bold text-[18px]">Proyectos</p>
+          <p className="uppercase font-bold text-[18px]">Obras</p>
         </div>
         <div className="flex gap-[20px] flex-wrap mt-[25px]">
           <Link
