@@ -130,7 +130,7 @@ type Card = {
 
 const NewsCard = (props: { card: Card }) => {
   return (
-    <div className="rounded-[8px] flex flex-col py-3 px-5 w-full max-h-[300px] border shadow-[0px_0px_20px_-10px_rgba(0,0,0,0.4)] bg-white">
+    <div className="rounded-[8px] flex flex-col py-3 px-5 w-full gap-3 max-h-[300px] border shadow-[0px_0px_20px_-10px_rgba(0,0,0,0.4)] bg-white">
       <div className="relative w-full h-[200px]">
         <Image
           src={props.card.image}
@@ -142,7 +142,11 @@ const NewsCard = (props: { card: Card }) => {
       </div>
       <h1>{props.card.title}</h1>
       <p>{props.card.description}</p>
-      <Link href={props.card.link} className="pointer" target="_blank">
+      <Link
+        href={props.card.link}
+        className="pointer underline text-blue-700"
+        target="_blank"
+      >
         ver mas
       </Link>
     </div>
