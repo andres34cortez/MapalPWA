@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import bg from "../../assets/mineriaPage/bg.png";
-import logoMS from "../../assets/mineriaPage/logo.png";
+import logoMS from '@/assets/logonuevo.png'
 import Consorcio from "@/screens/mineria/Consorcio";
 import Servicios from "@/screens/mineria/Servicios";
 import Desarrollo from "@/screens/mineria/Desarrollo";

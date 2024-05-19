@@ -7,10 +7,12 @@ import instagram from "@/assets/instagram.png";
 import youtube from "@/assets/youtube.png";
 import linkdin from "@/assets/linkdin.png";
 import { usePathname, useRouter } from "next/navigation";
+import { useLanguage } from "@/context/LayoutContext";
 
 export default function Footer() {
   const router = useRouter();
   const pathname = usePathname();
+  const { language } = useLanguage();
 
   const scrollTo = (id: string) => {
     if (pathname !== "/") {
@@ -39,26 +41,26 @@ export default function Footer() {
             onClick={() => scrollTo("empresa")}
             className='uppercase text-white cursor-pointer hover:underline text-[14px] w-max'
           >
-            La empresa
+            {language === "ESP" ? <>La empresa</> : <>Company</>}
           </a>
           <a
             href={pathname !== "/" ? "/#prensa" : undefined}
             onClick={() => scrollTo("prensa")}
             className='uppercase text-white cursor-pointer hover:underline text-[14px] w-max'
           >
-            Prensa
+            {language === "ESP" ? <>Prensa</> : <>Press</>}
           </a>
           <a
             href='/proyectos'
             className='uppercase text-white cursor-pointer hover:underline text-[14px] w-max'
           >
-            Proyectos
+            {language === "ESP" ? <>Proyectos</> : <>Proyects</>}
           </a>
           <a
             href='/mineria'
             className='uppercase text-white cursor-pointer hover:underline text-[14px] w-max'
           >
-            Mineria
+            {language === "ESP" ? <>Mineria</> : <>Mining</>}
           </a>
           {/* <a
             href="#"
@@ -76,13 +78,21 @@ export default function Footer() {
             href='#'
             className='uppercase text-white cursor-pointer hover:underline text-[14px] w-max'
           >
-            ING/ESP
+            {language === "ENG" ? (
+              <span>
+                <span className='underline'>ING/</span>ESP
+              </span>
+            ) : (
+              <span>
+                ING/ <span className='underline'>ESP</span>
+              </span>
+            )}
           </a>
         </div>
         <div className='basis-3/6 flex flex-col gap-3 pl-2 lg:basis-auto'>
           <div>
             <p className='uppercase text-white text-[14px] font-medium'>
-              Oficinas
+              {language === "ESP" ? <> Oficinas</> : <>Offices</>}
             </p>
             <p className='text-white text-[14px] font-light cursor-pointer hover:underline'>
               Tucumán 523 NORTE, CP 5413 Chimbas, San Juan.
@@ -90,7 +100,7 @@ export default function Footer() {
           </div>
           <div>
             <p className='uppercase text-white text-[14px] font-medium'>
-              Contáctenos
+              {language === "ESP" ? <>Contáctenos</> : <>Contact Us</>}
             </p>
             <p className='text-white text-[14px] font-light cursor-pointer hover:underline'>
               (+54) 264 4313310
@@ -108,7 +118,7 @@ export default function Footer() {
             href='https://drive.google.com/drive/folders/157n6lUTFU2lcUDj65B4trtPjZRtzcQyv?usp=drive_link'
             target='_blank'
           >
-            Descargas
+            {language === "ESP" ? <>Descargas</> : <>Downloads</>}
           </a>
         </p>
         <div className='basis-1/6 flex flex-col justify-center md:flex-row lg:gap-4 lg:basis-auto'>

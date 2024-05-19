@@ -8,6 +8,7 @@ import photo4 from "@/assets/photosBaner/photo4.png";
 import photo5 from "@/assets/photosBaner/photo5.png";
 import sigma from "@/assets/photosBaner/sigma.png";
 import sigmaLogo from "@/assets/photosBaner/SigmaPNG.png";
+import logonuevo from '@/assets/logonuevo.png'
 export default function PhotosHomeBanner() {
   return (
     <div className='flex flex-col overflow-hidden w-full bg-black items-center justify-center'>
@@ -22,8 +23,9 @@ export default function PhotosHomeBanner() {
         <Image src={sigma} className='relative z-10' alt=''></Image>
         <Image
           className='absolute top-[40%] right-[224px] z-20'
-          src={sigmaLogo}
+          src={logonuevo}
           alt=''
+          height={100}
         ></Image>
       </div>
     </div>

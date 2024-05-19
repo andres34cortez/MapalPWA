@@ -1,12 +1,14 @@
 "use client";
+
 import React, { useState } from "react";
 import Image from "next/image";
-
 import logoNavbar from "@/assets/logoMapal.svg";
 import { cn } from "@/lib/utils";
 import { usePathname, useRouter } from "next/navigation";
+import { useLanguage } from "@/context/LayoutContext";
 
 const Navbar: React.FC = () => {
+  const { language, toggleLanguage } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleMenuToggle = () => {
@@ -32,7 +34,7 @@ const Navbar: React.FC = () => {
 
   const scrollTo = (id: string) => {
     if (pathname !== "/") {
-      router.push("/#company");
+      router.push(`/#${id}`);
     } else {
       const element = document.getElementById(id);
       if (element) {
@@ -49,135 +51,139 @@ const Navbar: React.FC = () => {
         menuOpen && "bg-black"
       )}
     >
-      <div className="flex items-center justify-between">
+      <div className='flex items-center justify-between'>
         <a
-          className="flex-shrink-0"
+          className='flex-shrink-0'
           onClick={() => scrollToTop()}
           href={pathname !== "/" ? "/" : undefined}
         >
           <Image
             src={logoNavbar}
-            alt="Logo"
+            alt='Logo'
             width={120}
             height={40}
-            className="cursor-pointer"
+            className='cursor-pointer'
           />
         </a>
-        <div className="md:hidden ml-auto mr-4">
-          <div onClick={handleMenuToggle} className="text-white cursor-pointer">
+        <div className='md:hidden ml-auto mr-4'>
+          <div onClick={handleMenuToggle} className='text-white cursor-pointer'>
             ☰
           </div>
         </div>
 
-        <div className={" hidden md:block md:space-x-6 ml-auto"}>
+        <div className={"hidden md:block md:space-x-6 ml-auto"}>
           <a
             href={pathname !== "/" ? "/#empresa" : undefined}
             onClick={() => scrollTo("empresa")}
-            className="text-white font-medium text-xs hover:text-gray-300 cursor-pointer"
+            className='text-white font-medium text-xs hover:text-gray-300 cursor-pointer'
           >
-            LA EMPRESA
+            {language === "ESP" ? <>LA EMPRESA</> : <>COMPANY</>} 
           </a>
           <a
             href={pathname !== "/" ? "/#prensa" : undefined}
             onClick={() => scrollTo("prensa")}
-            className="text-white font-medium text-xs hover:text-gray-300 cursor-pointer"
+            className='text-white font-medium text-xs hover:text-gray-300 cursor-pointer'
           >
-            PRENSA
+            {language === "ESP" ? <>PRENSA</> : <>PRESS</>} 
           </a>
           <a
-            href="/proyectos"
-            className="text-white font-medium text-xs hover:text-gray-300 cursor-pointer"
+            href='/proyectos'
+            className='text-white font-medium text-xs hover:text-gray-300 cursor-pointer'
           >
-            OBRAS
+           {language === "ESP" ? <>OBRAS</> : <>WORKS</>}  
           </a>
           <a
-            href="/mineria"
-            className="text-white font-medium text-xs hover:text-gray-300 cursor-pointer"
+            href='/mineria'
+            className='text-white font-medium text-xs hover:text-gray-300 cursor-pointer'
           >
-            MINERIA
+           {language === "ESP" ? <>MINERIA</> : <>MINING</>}  
           </a>
-          {/* <a
-            href="/mineria#Equipamiento"
-            className="text-white font-medium text-xs hover:text-gray-300 cursor-pointer"
-          >
-            EQUIPAMIENTO
-          </a> */}
           <a
-            className="text-white font-medium text-xs hover:text-gray-300 cursor-pointer"
+            className='text-white font-medium text-xs hover:text-gray-300 cursor-pointer'
             onClick={() => scrollToBottom()}
           >
-            CONTACTO
+           {language === "ESP" ? <>CONTACTO</> : <>CONTACT</>}  
           </a>
-          <a
-            href="#"
-            className="text-white font-medium text-xs hover:text-gray-300 cursor-pointer"
+          <button
+            onClick={toggleLanguage}
+            className='text-white font-medium text-xs hover:text-gray-300 cursor-pointer'
           >
-            ING/ESP
-          </a>
+            {language === "ESP" ? (
+              <span>
+                <span className='underline'>ESP/</span>ING
+              </span>
+            ) : (
+              <span>
+                ESP/ <span className='underline'>ING</span>
+              </span>
+            )}
+          </button>
         </div>
 
-        <div className="md:hidden">
+        <div className='md:hidden'>
           {menuOpen && (
-            <div className="absolute right-0 top-16 w-full bg-gray-800">
+            <div className='absolute right-0 top-16 w-full bg-gray-800'>
               <a
                 href={pathname !== "/" ? "/#empresa" : undefined}
                 onClick={() => {
                   scrollTo("empresa"), setMenuOpen((o) => !o);
                 }}
-                className="text-white text-xs hover:text-gray-300 block py-3 pl-4"
+                className='text-white text-xs hover:text-gray-300 block py-3 pl-4'
               >
-                LA EMPRESA
+                 {language === "ESP" ? <>LA EMPRESA</> : <>COMPANY</>} 
               </a>
               <a
                 href={pathname !== "/" ? "/#prensa" : undefined}
                 onClick={() => {
                   scrollTo("prensa"), setMenuOpen((o) => !o);
                 }}
-                className="text-white text-xs hover:text-gray-300 block py-3 pl-4"
+                className='text-white text-xs hover:text-gray-300 block py-3 pl-4'
               >
-                PRENSA
+              {language === "ESP" ? <>PRENSA</> : <>PRESS</>}
               </a>
               <a
-                href="/proyectos"
+                href='/proyectos'
                 onClick={() => {
                   setMenuOpen((o) => !o);
                 }}
-                className="text-white text-xs hover:text-gray-300 block py-3 pl-4"
+                className='text-white text-xs hover:text-gray-300 block py-3 pl-4'
               >
-                OBRAS
+               {language === "ESP" ? <>OBRAS</> : <>WORKS</>}  
               </a>
               <a
-                href="/mineria"
+                href='/mineria'
                 onClick={() => {
                   setMenuOpen((o) => !o);
                 }}
-                className="text-white text-xs hover:text-gray-300 block py-3 pl-4"
+                className='text-white text-xs hover:text-gray-300 block py-3 pl-4'
               >
-                MINERIA
+               {language === "ESP" ? <>MINERIA</> : <>MINING</>} 
               </a>
-              {/* <a
-                href="/mineria#Equipamiento"
-                className="text-white text-xs hover:text-gray-300 block py-3 pl-4"
-              >
-                EQUIPAMIENTO
-              </a> */}
               <a
-                className="text-white text-xs hover:text-gray-300 block py-3 pl-4"
+                className='text-white text-xs hover:text-gray-300 block py-3 pl-4'
                 onClick={() => {
                   scrollToBottom(), setMenuOpen((o) => !o);
                 }}
               >
-                CONTACTO
+              {language === "ESP" ? <>CONTACTO</> : <>CONTACT</>}  
               </a>
-              <a
-                href="#"
+              <button
                 onClick={() => {
+                  toggleLanguage();
                   setMenuOpen((o) => !o);
                 }}
-                className="text-white text-xs hover:text-gray-300 block py-3 pl-4"
+                className='text-white text-xs hover:text-gray-300 block py-3 pl-4'
               >
-                ING/ESP
-              </a>
+                {language === "ESP" ? (
+                  <span>
+                    <span className='underline'>ESP/</span>ING
+                  </span>
+                ) : (
+                  <span>
+                    ESP/ <span className='underline'>ING</span>
+                  </span>
+                )}
+              </button>
             </div>
           )}
         </div>
