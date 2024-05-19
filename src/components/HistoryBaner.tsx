@@ -46,7 +46,7 @@ export default function HistoryBaner() {
               </>
             ) : (
               <>
-                MAPAL S.A. is a San Juan's company with a national scope with
+                MAPAL S.A. is a San Juan s company with a national scope with
                 more than 50 years of experience in the construction of Road,
                 Civil, Hydraulic Works, Mining Services, Oil Services and real
                 estate development.
@@ -117,7 +117,7 @@ export default function HistoryBaner() {
               </>
             ) : (
               <>
-                MAPAL S.A. is a San Juan's company with a national scope with
+                MAPAL S.A. is a San Juan s company with a national scope with
                 more than 50 years of experience in the construction of Road,
                 Civil, Hydraulic Works, Mining Services, Oil Services and real
                 estate development.
