@@ -2,6 +2,7 @@ import { client } from "../../../sanity/lib/client";
 import { ProjectCard } from "@/components/ProjectCard";
 import { ProjectCardType } from "../proyectos/Proyectos";
 import { useLanguage } from "@/context/LayoutContext";
+import React, { useEffect, useState } from "react";
 
 export const dynamic = "force-dynamic";
 export async function getProyects(): Promise<ProjectCardType[]> {
@@ -11,9 +12,17 @@ export async function getProyects(): Promise<ProjectCardType[]> {
   return projects;
 }
 
-export default async function Proyectos() {
-  const projects = await getProyects();
+const Proyectos = () => {
+  const [projects, setProjects] = useState<ProjectCardType[]>([]);
   const { language } = useLanguage();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const fetchedProjects = await getProyects();
+      setProjects(fetchedProjects);
+    };
+    fetchData();
+  }, []);
 
   return (
     <div className='py-8 md:py-12 lg:py-16 container sm:p-0 gap-8 px-8 xl:px-0'>
@@ -46,4 +55,6 @@ export default async function Proyectos() {
       </div>
     </div>
   );
-}
+};
+
+export default Proyectos;
