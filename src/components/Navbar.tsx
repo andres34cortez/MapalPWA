@@ -93,7 +93,7 @@ const Navbar: React.FC = () => {
            {language === "ESP" ? <>OBRAS</> : <>WORKS</>}  
           </a>
           <a
-            href='/mineria'
+            href='/mapalsigma'
             className='text-white font-medium text-xs hover:text-gray-300 cursor-pointer'
           >
            {language === "ESP" ? <>MINERIA</> : <>MINING</>}  
@@ -151,7 +151,7 @@ const Navbar: React.FC = () => {
                {language === "ESP" ? <>OBRAS</> : <>WORKS</>}  
               </a>
               <a
-                href='/mineria'
+                href='/mapalsigma'
                 onClick={() => {
                   setMenuOpen((o) => !o);
                 }}

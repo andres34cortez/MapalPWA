@@ -57,7 +57,7 @@ export default function Footer() {
             {language === "ESP" ? <>Proyectos</> : <>Proyects</>}
           </a>
           <a
-            href='/mineria'
+            href='/mapalsigma'
             className='uppercase text-white cursor-pointer hover:underline text-[14px] w-max'
           >
             {language === "ESP" ? <>Mineria</> : <>Mining</>}
