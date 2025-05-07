@@ -1,3 +1,5 @@
+import { title } from "process";
+
 const Proyectos = {
   name: "projects",
   title: "Proyectos",
@@ -66,6 +68,13 @@ const Proyectos = {
       title: "Imagenes",
       type: "array",
       of: [{ type: "image" }],
+    },
+    {
+      name: "order",
+      title: "Orden Visual",
+      type: "number",
+      description:
+        "El orden visual de los proyectos en la web. El menor número se mostrará primero.",
     },
   ],
 };
