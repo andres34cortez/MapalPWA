@@ -51,22 +51,21 @@ const Navbar: React.FC = () => {
         menuOpen && "bg-black"
       )}
     >
-      <div className='flex items-center justify-between'>
+      <div className="flex items-center justify-between">
         <a
-          className='flex-shrink-0'
+          className="flex-shrink-0"
           onClick={() => scrollToTop()}
           href={pathname !== "/" ? "/" : undefined}
         >
           <Image
             src={logoNavbar}
-            alt='Logo'
-            width={120}
-            height={40}
-            className='cursor-pointer'
+            alt="Logo"
+            height={48}
+            className="cursor-pointer"
           />
         </a>
-        <div className='md:hidden ml-auto mr-4'>
-          <div onClick={handleMenuToggle} className='text-white cursor-pointer'>
+        <div className="md:hidden ml-auto mr-4">
+          <div onClick={handleMenuToggle} className="text-white cursor-pointer">
             ☰
           </div>
         </div>
@@ -75,112 +74,112 @@ const Navbar: React.FC = () => {
           <a
             href={pathname !== "/" ? "/#empresa" : undefined}
             onClick={() => scrollTo("empresa")}
-            className='text-white font-medium text-xs hover:text-gray-300 cursor-pointer'
+            className="text-white font-medium text-sm hover:text-gray-300 cursor-pointer"
           >
-            {language === "ESP" ? <>LA EMPRESA</> : <>COMPANY</>} 
+            {language === "ESP" ? <>LA EMPRESA</> : <>COMPANY</>}
           </a>
           <a
             href={pathname !== "/" ? "/#prensa" : undefined}
             onClick={() => scrollTo("prensa")}
-            className='text-white font-medium text-xs hover:text-gray-300 cursor-pointer'
+            className="text-white font-medium text-sm hover:text-gray-300 cursor-pointer"
           >
-            {language === "ESP" ? <>PRENSA</> : <>PRESS</>} 
+            {language === "ESP" ? <>PRENSA</> : <>PRESS</>}
           </a>
           <a
-            href='/proyectos'
-            className='text-white font-medium text-xs hover:text-gray-300 cursor-pointer'
+            href="/proyectos"
+            className="text-white font-medium text-sm hover:text-gray-300 cursor-pointer"
           >
-           {language === "ESP" ? <>OBRAS</> : <>WORKS</>}  
+            {language === "ESP" ? <>OBRAS</> : <>WORKS</>}
           </a>
           <a
-            href='/mapalsigma'
-            className='text-white font-medium text-xs hover:text-gray-300 cursor-pointer'
+            href="/mapalsigma"
+            className="text-white font-medium text-sm hover:text-gray-300 cursor-pointer"
           >
-           {language === "ESP" ? <>MINERIA</> : <>MINING</>}  
+            {language === "ESP" ? <>MINERIA</> : <>MINING</>}
           </a>
           <a
-            className='text-white font-medium text-xs hover:text-gray-300 cursor-pointer'
-            onClick={() => scrollToBottom()}
+            className="text-white font-medium text-sm hover:text-gray-300 cursor-pointer"
+            href="/contacto/rrhh"
           >
-           {language === "ESP" ? <>CONTACTO</> : <>CONTACT</>}  
+            {language === "ESP" ? <>CONTACTO</> : <>CONTACT</>}
           </a>
           <button
             onClick={toggleLanguage}
-            className='text-white font-medium text-xs hover:text-gray-300 cursor-pointer'
+            className="text-white font-medium text-sm hover:text-gray-300 cursor-pointer"
           >
             {language === "ESP" ? (
               <span>
-                <span className='underline'>ESP/</span>ING
+                <span className="underline">ESP /</span> ING
               </span>
             ) : (
               <span>
-                ESP/ <span className='underline'>ING</span>
+                ESP / <span className="underline">ING</span>
               </span>
             )}
           </button>
         </div>
 
-        <div className='md:hidden'>
+        <div className="md:hidden">
           {menuOpen && (
-            <div className='absolute right-0 top-16 w-full bg-gray-800'>
+            <div className="absolute right-0 top-16 w-full bg-gray-800">
               <a
                 href={pathname !== "/" ? "/#empresa" : undefined}
                 onClick={() => {
                   scrollTo("empresa"), setMenuOpen((o) => !o);
                 }}
-                className='text-white text-xs hover:text-gray-300 block py-3 pl-4'
+                className="text-white text-sm hover:text-gray-300 block py-3 pl-4"
               >
-                 {language === "ESP" ? <>LA EMPRESA</> : <>COMPANY</>} 
+                {language === "ESP" ? <>LA EMPRESA</> : <>COMPANY</>}
               </a>
               <a
                 href={pathname !== "/" ? "/#prensa" : undefined}
                 onClick={() => {
                   scrollTo("prensa"), setMenuOpen((o) => !o);
                 }}
-                className='text-white text-xs hover:text-gray-300 block py-3 pl-4'
+                className="text-white text-sm hover:text-gray-300 block py-3 pl-4"
               >
-              {language === "ESP" ? <>PRENSA</> : <>PRESS</>}
+                {language === "ESP" ? <>PRENSA</> : <>PRESS</>}
               </a>
               <a
-                href='/proyectos'
+                href="/proyectos"
                 onClick={() => {
                   setMenuOpen((o) => !o);
                 }}
-                className='text-white text-xs hover:text-gray-300 block py-3 pl-4'
+                className="text-white text-sm hover:text-gray-300 block py-3 pl-4"
               >
-               {language === "ESP" ? <>OBRAS</> : <>WORKS</>}  
+                {language === "ESP" ? <>OBRAS</> : <>WORKS</>}
               </a>
               <a
-                href='/mapalsigma'
+                href="/mapalsigma"
                 onClick={() => {
                   setMenuOpen((o) => !o);
                 }}
-                className='text-white text-xs hover:text-gray-300 block py-3 pl-4'
+                className="text-white text-sm hover:text-gray-300 block py-3 pl-4"
               >
-               {language === "ESP" ? <>MINERIA</> : <>MINING</>} 
+                {language === "ESP" ? <>MINERIA</> : <>MINING</>}
               </a>
               <a
-                className='text-white text-xs hover:text-gray-300 block py-3 pl-4'
+                className="text-white text-sm hover:text-gray-300 block py-3 pl-4"
                 onClick={() => {
                   scrollToBottom(), setMenuOpen((o) => !o);
                 }}
               >
-              {language === "ESP" ? <>CONTACTO</> : <>CONTACT</>}  
+                {language === "ESP" ? <>CONTACTO</> : <>CONTACT</>}
               </a>
               <button
                 onClick={() => {
                   toggleLanguage();
                   setMenuOpen((o) => !o);
                 }}
-                className='text-white text-xs hover:text-gray-300 block py-3 pl-4'
+                className="text-white text-sm hover:text-gray-300 block py-3 pl-4"
               >
                 {language === "ESP" ? (
                   <span>
-                    <span className='underline'>ESP/</span>ING
+                    <span className="underline">ESP/</span>ING
                   </span>
                 ) : (
                   <span>
-                    ESP/ <span className='underline'>ING</span>
+                    ESP/ <span className="underline">ING</span>
                   </span>
                 )}
               </button>

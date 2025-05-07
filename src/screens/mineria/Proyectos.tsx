@@ -25,18 +25,14 @@ const Proyectos = () => {
   }, []);
 
   return (
-    <div className='py-8 md:py-12 lg:py-16 container sm:p-0 gap-8 px-8 xl:px-0'>
-      <div className='flex flex-row items-center relative mb-2 md:px-8 xl:px-0'>
-        <div className='absolute bg-[#FAB918] h-0.5 w-[400px] -left-[410px]' />
-        <h2 className='font-bold uppercase text-sm md:text-lg'>
-          {language === "ESP" ? (
-            <>Proyectos en desarrollo</>
-          ) : (
-            <>DEVELOPMENT PROJECTS</>
-          )}
+    <div className="py-8 md:py-12 lg:py-16 container sm:p-0 gap-8 px-8 xl:px-0">
+      <div className="flex flex-row items-center relative mb-2 md:px-8 xl:px-0">
+        <div className="absolute bg-[#FAB918] h-0.5 w-[400px] -left-[410px]" />
+        <h2 className="font-bold uppercase text-sm md:text-lg">
+          {language === "ESP" ? <>Proyectos</> : <>PROJECTS</>}
         </h2>
       </div>
-      <div className='grid gap-6 md:gap-8 lg:gap-10 md:px-8 xl:px-0'>
+      <div className="grid gap-6 md:gap-8 lg:gap-10 md:px-8 xl:px-0">
         {projects.map((proyecto, index) => (
           <ProjectCard
             name={proyecto.name}

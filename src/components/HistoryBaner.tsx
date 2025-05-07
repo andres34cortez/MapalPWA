@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import iconHistory from "@/assets/IconHisrory.png";
 import fondoHistory from "@/assets/FondoHistory.png";
 import Image from "next/image";
@@ -8,23 +8,23 @@ export default function HistoryBaner() {
   const { language } = useLanguage();
 
   return (
-    <div className='bg-black w-full' id='Historia'>
-      <div className='hidden md:flex w-full items-center justify-center gap-12 overflow-hidden '>
-        <div className='bg-historyTexture w-full h-[372px] -mt-4 absolute' />
+    <div className="bg-black w-full" id="Historia">
+      <div className="hidden md:flex w-full items-center justify-center gap-12 overflow-hidden ">
+        <div className="bg-historyTexture w-full h-[372px] -mt-4 absolute" />
         <Image
           src={fondoHistory}
-          alt=''
-          className='absolute w-full h-[372px]'
+          alt=""
+          className="absolute w-full h-[372px]"
         />
-        <div className='border border-[#FDBA13] rounded-sm'>
+        <div className="border border-[#FDBA13] rounded-sm">
           <Image
             src={iconHistory}
-            alt=''
-            className='-mt-2 -ml-2 pb-2 pr-2 min-w-[200px]'
+            alt=""
+            className="-mt-2 -ml-2 pb-2 pr-2 min-w-[200px]"
           />
         </div>
-        <div className='max-w-[800px]'>
-          <h1 className='text-[#FAB918] text-3xl mt-8'>
+        <div className="max-w-[800px]">
+          <h1 className="text-[#FAB918] text-3xl mt-8">
             {language === "ESP" ? (
               <>
                 NUESTRA <br /> HISTORIA
@@ -35,130 +35,116 @@ export default function HistoryBaner() {
               </>
             )}
           </h1>
-          <h2 className='text-[#FFFFFF] text-sm  font-medium pt-4'>
+          <h2 className="text-[#FFFFFF] text-sm  font-medium pt-4">
             {language === "ESP" ? (
               <>
-                {" "}
-                MAPAL S.A. es una empresa Sanjuanina de alcance nacional con más
-                de 50 años de experiencia en construcción de Obras Viales,
-                Civiles, Hidráulicas, Servicios mineros, Servicios petroleros y
-                desarrollo inmobiliario.
+                MAPAL S.A.C.I.A. es una empresa sanjuanina con proyección
+                nacional y más de 60 años de trayectoria en la construcción de
+                obras de gran envergadura y en la prestación de servicios, tanto
+                para el ámbito público como privado. Su experiencia abarca obras
+                viales, civiles, hidráulicas, servicios mineros, oil & gas y
+                real estate.
               </>
             ) : (
               <>
-                MAPAL S.A. is a San Juan s company with a national scope with
-                more than 50 years of experience in the construction of Road,
-                Civil, Hydraulic Works, Mining Services, Oil Services and real
-                estate development.
+                MAPAL S.A.C.I.A. is a company based in San Juan, Argentina, with
+                national reach and over 60 years of experience in the
+                construction of large-scale projects and the provision of
+                services for both the public and private sectors. Its expertise
+                includes roadworks, civil and hydraulic engineering, mining
+                services, oil & gas, and real estate.
               </>
             )}
           </h2>
-          <h3 className='text-[#bababa] text-sm pt-8'>
+          <h3 className="text-[#bababa] text-sm pt-8">
             {language === "ESP" ? (
               <>
-                Desde su comienzo en el año 1967 bajo el nombre de
-                CONSTRUCCIONES JULIO CESAR PALLUCCHINI y posteriormente a partir
-                del año 1980, MAPAL S.A. ha realizado un gran número de obras y
-                servicios en la provincia de San Juan y en distintas provincias
-                de nuestro País, posicionándola como una de las principales
-                compañías de zona cuyo en el rubro.
+                Desde sus inicios en 1967, bajo el nombre CONSTRUCCIONES JULIO
+                CÉSAR PALLUCCHINI, y a partir de 1980 como MAPAL S.A.C.I.A., la
+                compañía ha consolidado su liderazgo a lo largo de tres
+                generaciones, posicionándose como una de las principales
+                referentes del sector en la provincia de San Juan y en la región
+                de Cuyo.
               </>
             ) : (
               <>
-                Since its inception in 1967 under the name of CONSTRUCCIONES
-                JULIO CESAR PALLUCCHINI and subsequently from 1980, MAPAL S.A.
-                has carried out a large number of works and services in the
-                province of San Juan and in different provinces of our Country,
-                positioning it as one of the main building companies in the
-                area.
+                Since its beginnings in 1967 under the name CONSTRUCCIONES JULIO
+                CÉSAR PALLUCCHINI, and from 1980 onward as MAPAL S.A.C.I.A., the
+                company has strengthened its leadership over three generations,
+                becoming one of the leading references in the sector in the
+                province of San Juan and the Cuyo region.
               </>
             )}
           </h3>
-          <h3 className='text-[#bababa] text-sm italic pt-8 pb-8'>
+          <h3 className="text-[#bababa] text-sm italic pt-8 pb-8">
             {language === "ESP" ? (
-              <>
-                “Desde su comienzo en el año 1967 bajo el nombre de
-                CONSTRUCCIONES <br />
-                JULIO CESAR PALLUCCHINI y posteriormente a partir del año 1980,
-                MAPAL.”
-              </>
+              <>“Julio C. Pallucchini (padre), socio fundador.”</>
             ) : (
-              <>
-                “Since its inception in 1967 under the name of CONSTRUCCIONES{" "}
-                <br />
-                JULIO CESAR PALLUCCHINI and subsequently from 1980, MAPAL S.A.
-                .”
-              </>
+              <>“Julio C. Pallucchini (father), founding partner.”</>
             )}
           </h3>
         </div>
       </div>
 
-      <div className='md:hidden text-center'>
-        <h1 className='text-[#FAB918] text-3xl mt-8'>NUESTRA HISTORIA</h1>
-        <div className=' w-auto rounded-sm overflow-hidden flex justify-center'>
-          <div className='border border-[#FDBA13] rounded-sm'>
+      <div className="md:hidden text-center">
+        <h1 className="text-[#FAB918] text-3xl mt-8">NUESTRA HISTORIA</h1>
+        <div className=" w-auto rounded-sm overflow-hidden flex justify-center">
+          <div className="border border-[#FDBA13] rounded-sm">
             <Image
               src={iconHistory}
-              alt=''
-              className='-mt-2 -ml-2 pb-2 pr-2 min-w-[200px]'
+              alt=""
+              className="-mt-2 -ml-2 pb-2 pr-2 min-w-[200px]"
             />
           </div>
         </div>
-        <div className='text-[#FFFFFF] text-sm font-medium pt-4 px-4'>
+        <div className="text-[#FFFFFF] text-sm font-medium pt-4 px-4">
           <p>
             {language === "ESP" ? (
               <>
-                {" "}
-                MAPAL S.A. es una empresa Sanjuanina de alcance nacional con más
-                de 50 años de experiencia en construcción de Obras Viales,
-                Civiles, Hidráulicas, Servicios mineros, Servicios petroleros y
-                desarrollo inmobiliario.
+                MAPAL S.A.C.I.A. es una empresa sanjuanina con proyección
+                nacional y más de 60 años de trayectoria en la construcción de
+                obras de gran envergadura y en la prestación de servicios, tanto
+                para el ámbito público como privado. Su experiencia abarca obras
+                viales, civiles, hidráulicas, servicios mineros, oil & gas y
+                real estate.
               </>
             ) : (
               <>
-                MAPAL S.A. is a San Juan s company with a national scope with
-                more than 50 years of experience in the construction of Road,
-                Civil, Hydraulic Works, Mining Services, Oil Services and real
-                estate development.
+                MAPAL S.A.C.I.A. is a company based in San Juan, Argentina, with
+                national reach and over 60 years of experience in the
+                construction of large-scale projects and the provision of
+                services for both the public and private sectors. Its expertise
+                includes roadworks, civil and hydraulic engineering, mining
+                services, oil & gas, and real estate.
               </>
             )}
           </p>
-          <p className='pt-4'>
+          <p className="pt-4">
             {language === "ESP" ? (
               <>
-                Desde su comienzo en el año 1967 bajo el nombre de
-                CONSTRUCCIONES JULIO CESAR PALLUCCHINI y posteriormente a partir
-                del año 1980, MAPAL S.A. ha realizado un gran número de obras y
-                servicios en la provincia de San Juan y en distintas provincias
-                de nuestro País, posicionándola como una de las principales
-                compañías de zona cuyo en el rubro.
+                Desde sus inicios en 1967, bajo el nombre CONSTRUCCIONES JULIO
+                CÉSAR PALLUCCHINI, y a partir de 1980 como MAPAL S.A.C.I.A., la
+                compañía ha consolidado su liderazgo a lo largo de tres
+                generaciones, posicionándose como una de las principales
+                referentes del sector en la provincia de San Juan y en la región
+                de Cuyo.
               </>
             ) : (
               <>
-                Since its inception in 1967 under the name of CONSTRUCCIONES
-                JULIO CESAR PALLUCCHINI and subsequently from 1980, MAPAL S.A.
-                has carried out a large number of works and services in the
-                province of San Juan and in different provinces of our Country,
-                positioning it as one of the main building companies in the
-                area.
+                Since its beginnings in 1967 under the name CONSTRUCCIONES JULIO
+                CÉSAR PALLUCCHINI, and from 1980 onward as MAPAL S.A.C.I.A., the
+                company has strengthened its leadership over three generations,
+                becoming one of the leading references in the sector in the
+                province of San Juan and the Cuyo region.
               </>
             )}
           </p>
 
-          <p className='italic pt-4 pb-8'>
+          <p className="italic pt-4 pb-8">
             {language === "ESP" ? (
-              <>
-                “Desde su comienzo en el año 1967 bajo el nombre de
-                CONSTRUCCIONES JULIO CESAR PALLUCCHINI y posteriormente a partir
-                del año 1980, MAPAL.”
-              </>
+              <>“Julio C. Pallucchini (padre), socio fundador.”</>
             ) : (
-              <>
-                “Since its inception in 1967 under the name of CONSTRUCCIONES
-                JULIO CESAR PALLUCCHINI and subsequently from 1980, MAPAL S.A.
-                .”
-              </>
+              <>“Julio C. Pallucchini (father), founding partner.”</>
             )}
           </p>
         </div>

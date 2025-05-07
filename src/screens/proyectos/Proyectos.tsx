@@ -59,15 +59,16 @@ const Proyectos = ({ tipo }: Props) => {
 
   return (
     <div>
-      <div className='container sm:px-0 mx-auto py-[40px] relative max-w-[1280px]'>
-        <div className='flex flex-row items-center relative'>
-          <div className='absolute bg-[#FAB918] h-0.5 w-[400px] -left-[410px]' />
-          <p className='uppercase font-bold text-[18px]'>
-          {language === "ESP" ? <>Obras</> : <>Works and Projects</>} </p>
+      <div className="container sm:px-0 mx-auto py-[40px] relative max-w-[1280px]">
+        <div className="flex flex-row items-center relative">
+          <div className="absolute bg-[#FAB918] h-0.5 w-[400px] -left-[410px]" />
+          <p className="uppercase font-bold text-[18px]">
+            {language === "ESP" ? <>Obras</> : <>Works and Projects</>}{" "}
+          </p>
         </div>
-        <div className='flex gap-[20px] flex-wrap mt-[25px]'>
+        <div className="flex gap-[20px] flex-wrap mt-[25px]">
           <Link
-            href='/proyectos?tipo=viales'
+            href="/proyectos?tipo=viales"
             scroll={false}
             className={`uppercase font-bold text-[15px] pt-2 px-3 hover:text-[#B2B2B2] ${
               tipo === "viales" && " text-[#fdba13]"
@@ -76,7 +77,7 @@ const Proyectos = ({ tipo }: Props) => {
             {language === "ESP" ? <>Viales</> : <>ROADS</>}
           </Link>
           <Link
-            href='/proyectos?tipo=arquitectura'
+            href="/proyectos?tipo=arquitectura"
             scroll={false}
             className={`uppercase font-bold text-[15px] pt-2 px-3 hover:text-[#B2B2B2] ${
               tipo === "arquitectura" && " text-[#fdba13]"
@@ -85,53 +86,52 @@ const Proyectos = ({ tipo }: Props) => {
             {language === "ESP" ? <>Arquitectura</> : <>ARCHITECTURE</>}
           </Link>
           <Link
-            href='/proyectos?tipo=hidraulicas'
+            href="/proyectos?tipo=hidraulicas"
             scroll={false}
             className={`uppercase font-bold text-[15px] pt-2 px-3 hover:text-[#B2B2B2] ${
               tipo === "hidraulicas" && " text-[#fdba13]"
             }`}
           >
-          {language === "ESP" ? <>Hidraulicas</> : <>HYDRAULICS </>}   
+            {language === "ESP" ? <>Hidraulicas</> : <>HYDRAULICS </>}
           </Link>
           <Link
-            href='/proyectos?tipo=petroleos'
+            href="/proyectos?tipo=petroleos"
             scroll={false}
             className={`uppercase font-bold text-[15px] pt-2 px-3 hover:text-[#B2B2B2] ${
               tipo === "petroleos" && " text-[#fdba13]"
             }`}
           >
-            {language === "ESP" ? <>Petróleos</> : <>PETROLEUM</>} 
+            {language === "ESP" ? <>OIL & GAS</> : <>PETROLEUM</>}
           </Link>
           <Link
-            href='/proyectos?tipo=puentes'
+            href="/proyectos?tipo=puentes"
             scroll={false}
             className={`uppercase font-bold text-[15px] pt-2 px-3 hover:text-[#B2B2B2] ${
               tipo === "puentes" && " text-[#fdba13]"
             }`}
           >
-           {language === "ESP" ? <>Puentes</> : <>BRIDGES</>}  
+            {language === "ESP" ? <>Puentes</> : <>BRIDGES</>}
           </Link>
           <Link
-            href='/proyectos?tipo=infraestructura'
+            href="/proyectos?tipo=infraestructura"
             scroll={false}
             className={`uppercase font-bold text-[15px] pt-2 px-3 hover:text-[#B2B2B2] ${
               tipo === "infraestructura" && " text-[#fdba13]"
             }`}
           >
-           {language === "ESP" ? <>Infraestructura</> : <>INFRASTRUCTURE</>}  
+            {language === "ESP" ? <>Infraestructura</> : <>INFRASTRUCTURE</>}
           </Link>
           <Link
-            href='/proyectos?tipo=inmobiliaria'
+            href="/proyectos?tipo=inmobiliaria"
             scroll={false}
             className={`uppercase font-bold text-[15px] pt-2 px-3 hover:text-[#B2B2B2] ${
               tipo === "inmobiliaria" && " text-[#fdba13]"
             }`}
           >
-           {language === "ESP" ? <>Inmobiliaria</> : <>REAL ESTATE</>}  
+            {language === "ESP" ? <>Inmobiliaria</> : <>REAL ESTATE</>}
           </Link>
         </div>
-
-        <div className='flex flex-col space-y-5 mt-[32px]'>
+        <div className="flex flex-col space-y-5 mt-[32px]">
           {filteredProjects.map((proyecto, index) => (
             <ProjectCard
               name={proyecto.name}

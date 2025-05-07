@@ -12,7 +12,7 @@ import { useLanguage } from "@/context/LayoutContext";
 export default function Footer() {
   const router = useRouter();
   const pathname = usePathname();
-  const { language } = useLanguage();
+  const { language, toggleLanguage } = useLanguage();
 
   const scrollTo = (id: string) => {
     if (pathname !== "/") {
@@ -54,7 +54,7 @@ export default function Footer() {
             href="/proyectos"
             className="uppercase text-white cursor-pointer hover:underline text-[14px] w-max"
           >
-            {language === "ESP" ? <>Proyectos</> : <>Proyects</>}
+            {language === "ESP" ? <>Obras</> : <>Works</>}
           </a>
           <a
             href="/mapalsigma"
@@ -74,20 +74,20 @@ export default function Footer() {
           >
             Contacto
           </a> */}
-          <a
-            href="#"
-            className="uppercase text-white cursor-pointer hover:underline text-[14px] w-max"
+          <button
+            onClick={toggleLanguage}
+            className="text-white text-[14px] hover:text-gray-300 cursor-pointer justify-start text-left"
           >
-            {language === "ENG" ? (
+            {language === "ESP" ? (
               <span>
-                <span className="underline">ING/</span>ESP
+                <span className="underline">ESP /</span> ING
               </span>
             ) : (
               <span>
-                ING/ <span className="underline">ESP</span>
+                ESP / <span className="underline">ING</span>
               </span>
             )}
-          </a>
+          </button>
         </div>
         <div className="basis-3/6 flex flex-col gap-3 pl-2 lg:basis-auto">
           <div>
