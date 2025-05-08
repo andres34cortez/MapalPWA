@@ -24,14 +24,18 @@ export default defineConfig({
           .title("Projecto")
           .items([
             // Minimum required configuration
+            // @ts-ignore
             orderableDocumentListDeskItem({
               type: "projects",
+              // @ts-ignore
               S,
               context,
               title: "Proyectos",
             }),
+            // @ts-ignore
             orderableDocumentListDeskItem({
               type: "card",
+              // @ts-ignore
               S,
               context,
               title: "Noticias",
