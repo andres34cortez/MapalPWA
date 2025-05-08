@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import bg from "../../assets/mineriaPage/bg.png";
+import bg from "@/assets/mineriaPage/bg.png";
 import logoMS from "@/assets/logonuevo.png";
 import Consorcio from "@/screens/mineria/Consorcio";
 import Servicios from "@/screens/mineria/Servicios";
@@ -22,7 +22,7 @@ import PerezCompanc from "@/assets/cambios2025/logosMapal/PerezCompanc.jpg";
 import ShandongGold from "@/assets/cambios2025/logosMapal/ShandongGoldMining.png";
 import Techint from "@/assets/cambios2025/logosMapal/Techint.svg";
 import Veladero from "@/assets/cambios2025/logosMapal/Veladero.png";
-import YamanaGold from "@/assets/cambios2025/logosMapal/YamanaGold.png";
+import YamanaGold from "@/assets/cambios2025/logosMapalSigma/Logo_Yamana_Gold.png";
 import YPF from "@/assets/cambios2025/logosMapal/YPF.svg";
 
 import { useLanguage } from "@/context/LayoutContext";
@@ -57,10 +57,10 @@ export default function Mineria() {
 const Clientes = () => {
   const { language } = useLanguage();
   return (
-    <div className="flex flex-col mt-[10px] z-10 pl-6">
-      <div className="flex flex-row items-center relative mb-2">
+    <div className="flex flex-col mt-[10px] z-10">
+      <div className="flex flex-row items-center relative mb-2 md:px-8 xl:px-0 py-6">
         <div className="absolute bg-[#FAB918] h-0.5 w-[400px] -left-[410px]" />
-        <h2 className="font-bold">
+        <h2 className="font-bold uppercase text-sm md:text-lg">
           {language === "ESP" ? <>NUESTROS CLIENTES</> : <>OUR CLIENTS</>}
         </h2>
       </div>
@@ -73,53 +73,53 @@ const MarqueeEmpresas = () => {
   return (
     <div className=" bg-white px-20">
       <div className="whitespace-nowrap animate-marquee flex items-center py-3 gap-8">
-        <Image src={AustralGold} alt="" className="h-[50px] w-auto" />
         <Image src={Barrick} alt="" className="h-[50px] w-auto p-3 =mx-3" />
-        <Image src={Belararox} alt="" className="h-[60px] w-auto" />
-        <Image src={Casposo} alt="" className="h-[50px] w-auto px-3" />
-        <Image src={CBB} alt="" className="h-[40px] w-auto px-4" />
-        <Image src={Glencore} alt="" className="h-[150px] w-auto -my-[50px]" />
-        <Image src={LosAzules} alt="" className="h-[45px] w-auto" />
-        <Image src={McEwenMining} alt="" className="h-[45px] w-auto px-2" />
-        <Image src={MinasArgentinas} alt="" className="h-[70px] w-auto" />
-        <Image src={PerezCompanc} alt="" className="h-[70px] w-auto" />
         <Image src={ShandongGold} alt="" className="h-[55px] w-auto px-3" />
-        <Image src={Techint} alt="" className="h-[70px] w-auto mx-6" />
         <Image src={Veladero} alt="" className="h-[70px] w-auto" />
+        <Image src={McEwenMining} alt="" className="h-[45px] w-auto px-2" />
+        <Image src={LosAzules} alt="" className="h-[45px] w-auto" />
+        <Image src={MinasArgentinas} alt="" className="h-[70px] w-auto" />
+        <Image src={Glencore} alt="" className="h-[150px] w-auto -my-[50px]" />
         <Image src={YamanaGold} alt="" className="h-[60px] w-auto" />
+        <Image src={AustralGold} alt="" className="h-[50px] w-auto" />
+        <Image src={Casposo} alt="" className="h-[50px] w-auto px-3" />
+        <Image src={Belararox} alt="" className="h-[60px] w-auto" />
         <Image src={YPF} alt="" className="h-[50px] w-auto" />
+        <Image src={CBB} alt="" className="h-[40px] w-auto px-4" />
+        <Image src={Techint} alt="" className="h-[70px] w-auto mx-6" />
+        <Image src={PerezCompanc} alt="" className="h-[70px] w-auto" />
         {/*  */}
-        <Image src={AustralGold} alt="" className="h-[50px] w-auto" />
         <Image src={Barrick} alt="" className="h-[50px] w-auto p-3 =mx-3" />
-        <Image src={Belararox} alt="" className="h-[60px] w-auto" />
-        <Image src={Casposo} alt="" className="h-[50px] w-auto px-3" />
-        <Image src={CBB} alt="" className="h-[40px] w-auto px-4" />
-        <Image src={Glencore} alt="" className="h-[150px] w-auto -my-[50px]" />
-        <Image src={LosAzules} alt="" className="h-[45px] w-auto" />
-        <Image src={McEwenMining} alt="" className="h-[45px] w-auto px-2" />
-        <Image src={MinasArgentinas} alt="" className="h-[70px] w-auto" />
-        <Image src={PerezCompanc} alt="" className="h-[70px] w-auto" />
         <Image src={ShandongGold} alt="" className="h-[55px] w-auto px-3" />
-        <Image src={Techint} alt="" className="h-[70px] w-auto mx-6" />
         <Image src={Veladero} alt="" className="h-[70px] w-auto" />
+        <Image src={McEwenMining} alt="" className="h-[45px] w-auto px-2" />
+        <Image src={LosAzules} alt="" className="h-[45px] w-auto" />
+        <Image src={MinasArgentinas} alt="" className="h-[70px] w-auto" />
+        <Image src={Glencore} alt="" className="h-[150px] w-auto -my-[50px]" />
         <Image src={YamanaGold} alt="" className="h-[60px] w-auto" />
+        <Image src={AustralGold} alt="" className="h-[50px] w-auto" />
+        <Image src={Casposo} alt="" className="h-[50px] w-auto px-3" />
+        <Image src={Belararox} alt="" className="h-[60px] w-auto" />
         <Image src={YPF} alt="" className="h-[50px] w-auto" />
+        <Image src={CBB} alt="" className="h-[40px] w-auto px-4" />
+        <Image src={Techint} alt="" className="h-[70px] w-auto mx-6" />
+        <Image src={PerezCompanc} alt="" className="h-[70px] w-auto" />
         {/*  */}
-        <Image src={AustralGold} alt="" className="h-[50px] w-auto" />
         <Image src={Barrick} alt="" className="h-[50px] w-auto p-3 =mx-3" />
-        <Image src={Belararox} alt="" className="h-[60px] w-auto" />
-        <Image src={Casposo} alt="" className="h-[50px] w-auto px-3" />
-        <Image src={CBB} alt="" className="h-[40px] w-auto px-4" />
-        <Image src={Glencore} alt="" className="h-[150px] w-auto -my-[50px]" />
-        <Image src={LosAzules} alt="" className="h-[45px] w-auto" />
-        <Image src={McEwenMining} alt="" className="h-[45px] w-auto px-2" />
-        <Image src={MinasArgentinas} alt="" className="h-[70px] w-auto" />
-        <Image src={PerezCompanc} alt="" className="h-[70px] w-auto" />
         <Image src={ShandongGold} alt="" className="h-[55px] w-auto px-3" />
-        <Image src={Techint} alt="" className="h-[70px] w-auto mx-6" />
         <Image src={Veladero} alt="" className="h-[70px] w-auto" />
+        <Image src={McEwenMining} alt="" className="h-[45px] w-auto px-2" />
+        <Image src={LosAzules} alt="" className="h-[45px] w-auto" />
+        <Image src={MinasArgentinas} alt="" className="h-[70px] w-auto" />
+        <Image src={Glencore} alt="" className="h-[150px] w-auto -my-[50px]" />
         <Image src={YamanaGold} alt="" className="h-[60px] w-auto" />
+        <Image src={AustralGold} alt="" className="h-[50px] w-auto" />
+        <Image src={Casposo} alt="" className="h-[50px] w-auto px-3" />
+        <Image src={Belararox} alt="" className="h-[60px] w-auto" />
         <Image src={YPF} alt="" className="h-[50px] w-auto" />
+        <Image src={CBB} alt="" className="h-[40px] w-auto px-4" />
+        <Image src={Techint} alt="" className="h-[70px] w-auto mx-6" />
+        <Image src={PerezCompanc} alt="" className="h-[70px] w-auto" />
       </div>
     </div>
   );

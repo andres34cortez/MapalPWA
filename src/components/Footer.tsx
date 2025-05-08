@@ -1,6 +1,7 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import LogoFooter from "@/assets/LogoFooter1.svg";
+import logoMS from "@/assets/logonuevo.png";
 import Image from "next/image";
 import Facebook from "@/assets/facebook.png";
 import instagram from "@/assets/instagram.png";
@@ -8,6 +9,7 @@ import youtube from "@/assets/youtube.png";
 import linkdin from "@/assets/linkdin.png";
 import { usePathname, useRouter } from "next/navigation";
 import { useLanguage } from "@/context/LayoutContext";
+import DialogDescarga from "./DialogDescarga";
 
 export default function Footer() {
   const router = useRouter();
@@ -33,7 +35,16 @@ export default function Footer() {
     >
       <div className="flex justify-between gap-2 max-w-[1240px] mx-auto">
         <div className="basis-2/6 flex justify-center lg:basis-auto">
-          <Image src={LogoFooter} alt="Logo Mapal" />
+          {pathname !== "/mapalsigma" && (
+            <Image src={LogoFooter} alt="Logo Mapal" />
+          )}
+          {pathname === "/mapalsigma" && (
+            <Image
+              src={logoMS}
+              alt="Logo Mapal Sigma"
+              className="h-[100px] w-[200px]"
+            />
+          )}
         </div>
         <div className="hidden md:flex flex-col lg:basis-auto">
           <a
@@ -68,12 +79,12 @@ export default function Footer() {
           >
             Equipamiento
           </a> */}
-          {/* <a
-            href="#"
+          <a
+            href="/contacto"
             className="uppercase text-white cursor-pointer hover:underline text-[14px] w-max"
           >
             Contacto
-          </a> */}
+          </a>
           <button
             onClick={toggleLanguage}
             className="text-white text-[14px] hover:text-gray-300 cursor-pointer justify-start text-left"
@@ -94,21 +105,27 @@ export default function Footer() {
             <p className="uppercase text-white text-[14px] font-medium">
               {language === "ESP" ? <> Oficinas</> : <>Offices</>}
             </p>
-            <p className="text-white text-[14px] font-light cursor-pointer hover:underline">
-              Tucumán 523 NORTE, CP 5413 Chimbas, San Juan.
-            </p>
+            <a
+              href="https://maps.app.goo.gl/NXApWAEXYZQuyXQk8"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p className="text-white text-[14px] font-light cursor-pointer hover:underline">
+                Tucumán 523 NORTE, CP 5413 Chimbas, San Juan.
+              </p>
+            </a>
           </div>
           <div className="flex flex-col">
             <p className="uppercase text-white text-[14px] font-medium">
               {language === "ESP" ? <>Contáctenos</> : <>Contact Us</>}
             </p>
-            <p className="text-white text-[14px] font-light cursor-pointer hover:underline">
+            <p className="text-white text-[14px] font-light">
               (+54) 264 4313310
             </p>
-            <p className="text-white text-[14px] font-light cursor-pointer hover:underline">
+            <p className="text-white text-[14px] font-light">
               (+54) 264 4313355
             </p>
-            <a
+            {/* <a
               href="mailto:comercial@mapal.com.ar"
               className="text-white text-[14px] font-light cursor-pointer hover:underline"
             >
@@ -119,17 +136,22 @@ export default function Footer() {
               className="text-white text-[14px] font-light cursor-pointer hover:underline"
             >
               rrhh@mapal.com.ar
-            </a>
+            </a> */}
           </div>
         </div>
-        <p className="text-white hidden lg:flex lg:place-self-center">
+        <DialogDescarga>
+          <p className="text-white hidden lg:flex lg:place-self-center cursor-pointer hover:underline">
+            {language === "ESP" ? <>Descargas</> : <>Downloads</>}
+          </p>
+        </DialogDescarga>
+        {/* <p className="text-white hidden lg:flex lg:place-self-center">
           <a
             href="https://drive.google.com/drive/folders/157n6lUTFU2lcUDj65B4trtPjZRtzcQyv?usp=drive_link"
             target="_blank"
           >
             {language === "ESP" ? <>Descargas</> : <>Downloads</>}
           </a>
-        </p>
+        </p> */}
         <div className="basis-1/6 flex flex-col justify-center md:flex-row lg:gap-4 lg:basis-auto">
           <div className="flex flex-col gap-2 items-end lg:flex-row md:items-start lg:items-center">
             <a

@@ -82,7 +82,7 @@
 }
 
 .historyTexture {
-  background-image: url("../assets/FondoHistory.png");
+  background-image: url("../../assets/FondoHistory.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position-x: left;

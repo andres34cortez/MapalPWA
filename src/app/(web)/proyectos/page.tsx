@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Fondo from "../../assets/proyectosPage/ProyectosBanner.png";
+import Fondo from "@/assets/proyectosPage/ProyectosBanner.png";
 import Banner from "@/screens/proyectos/Banner";
 import Proyectos from "@/screens/proyectos/Proyectos";
 import MetricasProyectos from "@/screens/proyectos/MetricasProyectos";

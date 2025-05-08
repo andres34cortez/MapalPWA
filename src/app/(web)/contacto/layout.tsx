@@ -4,7 +4,7 @@ import { useLanguage } from "@/context/LayoutContext";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import Fondo from "../../assets/cambios2025/fotos/PortadaContacto-min.jpg";
+import Fondo from "@/assets/cambios2025/fotos/PortadaContacto-min.jpg";
 import Link from "next/link";
 
 export const dynamic = "force-static";

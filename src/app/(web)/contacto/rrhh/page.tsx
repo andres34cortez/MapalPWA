@@ -120,29 +120,7 @@ export default function Page() {
           <Input className="w-full" {...register("localidad")} />
         </div>
       </div>
-      <div className="flex flex-col gap-1 w-full">
-        <h1>Area*</h1>
-        <Controller
-          control={control}
-          name="area"
-          render={({ field }) => (
-            <Select onValueChange={field.onChange} value={field.value}>
-              <SelectTrigger className="w-full">
-                <SelectValue placeholder="Seleccione un área" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectGroup>
-                  <SelectItem value="apple">Apple</SelectItem>
-                  <SelectItem value="banana">Banana</SelectItem>
-                  <SelectItem value="blueberry">Blueberry</SelectItem>
-                  <SelectItem value="grapes">Grapes</SelectItem>
-                  <SelectItem value="pineapple">Pineapple</SelectItem>
-                </SelectGroup>
-              </SelectContent>
-            </Select>
-          )}
-        />
-      </div>
+
       <div className="flex flex-col gap-1 w-full">
         <h1>Nivel de estudio*</h1>
         <Controller
@@ -155,11 +133,10 @@ export default function Page() {
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  <SelectItem value="apple">Apple</SelectItem>
-                  <SelectItem value="banana">Banana</SelectItem>
-                  <SelectItem value="blueberry">Blueberry</SelectItem>
-                  <SelectItem value="grapes">Grapes</SelectItem>
-                  <SelectItem value="pineapple">Pineapple</SelectItem>
+                  <SelectItem value="primaria">Primaria</SelectItem>
+                  <SelectItem value="secundaria">Secundaria</SelectItem>
+                  <SelectItem value="terciaria">Terciaria / Técnica</SelectItem>
+                  <SelectItem value="universitaria">Universitaria</SelectItem>
                 </SelectGroup>
               </SelectContent>
             </Select>

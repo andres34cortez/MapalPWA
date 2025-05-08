@@ -60,7 +60,7 @@ const Navbar: React.FC = () => {
           <Image
             src={logoNavbar}
             alt="Logo"
-            height={48}
+            height={40}
             className="cursor-pointer"
           />
         </a>

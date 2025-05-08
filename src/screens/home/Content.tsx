@@ -53,8 +53,9 @@ import Veladero from "@/assets/cambios2025/logosMapal/Veladero.png";
 import VialidadNacional from "@/assets/cambios2025/logosMapal/VialidadNacional.jpg";
 import VialidadMendoza from "@/assets/cambios2025/logosMapal/VialidadProvincialMendoza.png";
 import VialidadProvincial from "@/assets/cambios2025/logosMapal/VialidadProvincial.jpg";
-import YamanaGold from "@/assets/cambios2025/logosMapal/YamanaGold.png";
+import YamanaGold from "@/assets/cambios2025/logosMapalSigma/Logo_Yamana_Gold.png";
 import YPF from "@/assets/cambios2025/logosMapal/YPF.svg";
+import BancoHipotecario from "@/assets/cambios2025/logosMapal/BancoHipotecario.svg";
 
 export const dynamic = "force-dynamic";
 export async function getCards() {
@@ -259,7 +260,7 @@ const DialogMesaDirectiva = (props: { children: React.ReactNode }) => {
             <FotoEmpleado
               foto={AlejandroPalluchini}
               nombre="Franco Palluchini"
-              cargo="Vicesidente"
+              cargo="Vicepresidente"
             />
             <FotoEmpleado nombre="Julio Palluchini" cargo="Director" />
             <FotoEmpleado nombre="Fernando Palluchini" cargo="Director" />
@@ -295,12 +296,12 @@ const DialogMesaDirectiva = (props: { children: React.ReactNode }) => {
             <FotoEmpleado
               foto={HumbertoViener}
               nombre="Humberto Viener"
-              cargo="Coodinador de Obras"
+              cargo="Coordinador de Obras"
             />
             <FotoEmpleado
               foto={ManuelBustamante}
               nombre="Manuel Bustamante"
-              cargo="Coodinador de SGC"
+              cargo="Coordinador de SGC"
             />
             <FotoEmpleado
               foto={VictorZanni}
@@ -455,89 +456,93 @@ const MarqueeEmpresas = () => {
   return (
     <div className=" bg-white px-20">
       <div className="whitespace-nowrap animate-marquee flex items-center py-3 gap-8">
-        <Image src={AustralGold} alt="" className="h-[50px] w-auto" />
         <Image src={Barrick} alt="" className="h-[50px] w-auto p-3 =mx-3" />
-        <Image src={Belararox} alt="" className="h-[60px] w-auto" />
-        <Image src={Casposo} alt="" className="h-[50px] w-auto px-3" />
-        <Image src={CBB} alt="" className="h-[40px] w-auto px-4" />
-        <Image src={Hidraulica} alt="" className="h-[90px] w-auto -mx-8" />
-        <Image src={EDEMSA} alt="" className="h-[50px] w-auto -my-8" />
-        <Image src={Enohsa} alt="" className="h-[100px] w-auto -mx-4" />
-        <Image src={Glencore} alt="" className="h-[150px] w-auto -my-[50px]" />
-        <Image src={GobSj} alt="" className="h-[50px] w-auto px-2" />
-        <Image src={IPV} alt="" className="h-[60px] w-auto px-2" />
-        <Image src={LosAzules} alt="" className="h-[45px] w-auto" />
-        <Image src={McEwenMining} alt="" className="h-[45px] w-auto px-2" />
-        <Image src={MinasArgentinas} alt="" className="h-[70px] w-auto" />
-        <Image src={MuniChimbas} alt="" className="h-[40px] w-auto" />
-        <Image src={MuniSJ} alt="" className="h-[40px] w-auto px-1" />
-        <Image src={OSSE} alt="" className="h-[40px] w-auto px-2" />
-        <Image src={PerezCompanc} alt="" className="h-[70px] w-auto" />
-        <Image src={RecursosHidricos} alt="" className="h-[110px] w-auto" />
         <Image src={ShandongGold} alt="" className="h-[55px] w-auto px-3" />
-        <Image src={Techint} alt="" className="h-[70px] w-auto mx-6" />
         <Image src={Veladero} alt="" className="h-[70px] w-auto" />
-        <Image src={VialidadNacional} alt="" className="h-[70px] w-auto mx-8" />
-        <Image src={VialidadMendoza} alt="" className="h-[80px] w-auto mx-4" />
-        <Image src={VialidadProvincial} alt="" className="h-[80px] w-auto" />
+        <Image src={McEwenMining} alt="" className="h-[45px] w-auto px-2" />
+        <Image src={LosAzules} alt="" className="h-[45px] w-auto" />
+        <Image src={MinasArgentinas} alt="" className="h-[70px] w-auto" />
+        <Image src={Glencore} alt="" className="h-[150px] w-auto -my-[50px]" />
         <Image src={YamanaGold} alt="" className="h-[60px] w-auto" />
+        <Image src={AustralGold} alt="" className="h-[50px] w-auto" />
+        <Image src={Casposo} alt="" className="h-[50px] w-auto px-3" />
+        <Image src={Belararox} alt="" className="h-[60px] w-auto" />
         <Image src={YPF} alt="" className="h-[50px] w-auto" />
+        <Image src={CBB} alt="" className="h-[40px] w-auto px-4" />
+        <Image src={Techint} alt="" className="h-[70px] w-auto mx-6" />
+        <Image src={PerezCompanc} alt="" className="h-[70px] w-auto" />
+        <Image src={BancoHipotecario} alt="" className="h-[50px] w-auto" />
+        <Image src={VialidadNacional} alt="" className="h-[70px] w-auto ml-8" />
+        <Image src={Enohsa} alt="" className="h-[100px] w-auto -mx-4" />
+        <Image src={EDEMSA} alt="" className="h-[50px] w-auto -my-8" />
+        <Image src={VialidadMendoza} alt="" className="h-[80px] w-auto mx-4" />
+        <Image src={RecursosHidricos} alt="" className="h-[110px] w-auto" />
+        <Image src={GobSj} alt="" className="h-[50px] w-auto px-2" />
+        <Image src={OSSE} alt="" className="h-[40px] w-auto px-2" />
+        <Image src={IPV} alt="" className="h-[60px] w-auto px-2" />
+        <Image src={Hidraulica} alt="" className="h-[90px] w-auto -mx-8" />
+        <Image src={VialidadProvincial} alt="" className="h-[80px] w-auto" />
+        <Image src={MuniSJ} alt="" className="h-[40px] w-auto px-1" />
+        <Image src={MuniChimbas} alt="" className="h-[40px] w-auto" />
+
         {/*  */}
-        <Image src={AustralGold} alt="" className="h-[50px] w-auto" />
         <Image src={Barrick} alt="" className="h-[50px] w-auto p-3 =mx-3" />
-        <Image src={Belararox} alt="" className="h-[60px] w-auto" />
-        <Image src={Casposo} alt="" className="h-[50px] w-auto px-3" />
-        <Image src={CBB} alt="" className="h-[40px] w-auto px-4" />
-        <Image src={Hidraulica} alt="" className="h-[90px] w-auto -mx-8" />
-        <Image src={EDEMSA} alt="" className="h-[50px] w-auto -my-8" />
-        <Image src={Enohsa} alt="" className="h-[100px] w-auto -mx-4" />
-        <Image src={Glencore} alt="" className="h-[150px] w-auto -my-[50px]" />
-        <Image src={GobSj} alt="" className="h-[50px] w-auto px-2" />
-        <Image src={IPV} alt="" className="h-[60px] w-auto px-2" />
-        <Image src={LosAzules} alt="" className="h-[45px] w-auto" />
-        <Image src={McEwenMining} alt="" className="h-[45px] w-auto px-2" />
-        <Image src={MinasArgentinas} alt="" className="h-[70px] w-auto" />
-        <Image src={MuniChimbas} alt="" className="h-[40px] w-auto" />
-        <Image src={MuniSJ} alt="" className="h-[40px] w-auto px-1" />
-        <Image src={OSSE} alt="" className="h-[40px] w-auto px-2" />
-        <Image src={PerezCompanc} alt="" className="h-[70px] w-auto" />
-        <Image src={RecursosHidricos} alt="" className="h-[110px] w-auto" />
         <Image src={ShandongGold} alt="" className="h-[55px] w-auto px-3" />
-        <Image src={Techint} alt="" className="h-[70px] w-auto mx-6" />
         <Image src={Veladero} alt="" className="h-[70px] w-auto" />
-        <Image src={VialidadNacional} alt="" className="h-[70px] w-auto mx-8" />
-        <Image src={VialidadMendoza} alt="" className="h-[80px] w-auto mx-4" />
-        <Image src={VialidadProvincial} alt="" className="h-[80px] w-auto" />
+        <Image src={McEwenMining} alt="" className="h-[45px] w-auto px-2" />
+        <Image src={LosAzules} alt="" className="h-[45px] w-auto" />
+        <Image src={MinasArgentinas} alt="" className="h-[70px] w-auto" />
+        <Image src={Glencore} alt="" className="h-[150px] w-auto -my-[50px]" />
         <Image src={YamanaGold} alt="" className="h-[60px] w-auto" />
+        <Image src={AustralGold} alt="" className="h-[50px] w-auto" />
+        <Image src={Casposo} alt="" className="h-[50px] w-auto px-3" />
+        <Image src={Belararox} alt="" className="h-[60px] w-auto" />
         <Image src={YPF} alt="" className="h-[50px] w-auto" />
+        <Image src={CBB} alt="" className="h-[40px] w-auto px-4" />
+        <Image src={Techint} alt="" className="h-[70px] w-auto mx-6" />
+        <Image src={PerezCompanc} alt="" className="h-[70px] w-auto" />
+        <Image src={BancoHipotecario} alt="" className="h-[50px] w-auto" />
+        <Image src={VialidadNacional} alt="" className="h-[70px] w-auto ml-8" />
+        <Image src={Enohsa} alt="" className="h-[100px] w-auto -mx-4" />
+        <Image src={EDEMSA} alt="" className="h-[50px] w-auto -my-8" />
+        <Image src={VialidadMendoza} alt="" className="h-[80px] w-auto mx-4" />
+        <Image src={RecursosHidricos} alt="" className="h-[110px] w-auto" />
+        <Image src={GobSj} alt="" className="h-[50px] w-auto px-2" />
+        <Image src={OSSE} alt="" className="h-[40px] w-auto px-2" />
+        <Image src={IPV} alt="" className="h-[60px] w-auto px-2" />
+        <Image src={Hidraulica} alt="" className="h-[90px] w-auto -mx-8" />
+        <Image src={VialidadProvincial} alt="" className="h-[80px] w-auto" />
+        <Image src={MuniSJ} alt="" className="h-[40px] w-auto px-1" />
+        <Image src={MuniChimbas} alt="" className="h-[40px] w-auto" />
         {/*  */}
-        <Image src={AustralGold} alt="" className="h-[50px] w-auto" />
         <Image src={Barrick} alt="" className="h-[50px] w-auto p-3 =mx-3" />
-        <Image src={Belararox} alt="" className="h-[60px] w-auto" />
-        <Image src={Casposo} alt="" className="h-[50px] w-auto px-3" />
-        <Image src={CBB} alt="" className="h-[40px] w-auto px-4" />
-        <Image src={Hidraulica} alt="" className="h-[90px] w-auto -mx-8" />
-        <Image src={EDEMSA} alt="" className="h-[50px] w-auto -my-8" />
-        <Image src={Enohsa} alt="" className="h-[100px] w-auto -mx-4" />
-        <Image src={Glencore} alt="" className="h-[150px] w-auto -my-[50px]" />
-        <Image src={GobSj} alt="" className="h-[50px] w-auto px-2" />
-        <Image src={IPV} alt="" className="h-[60px] w-auto px-2" />
-        <Image src={LosAzules} alt="" className="h-[45px] w-auto" />
-        <Image src={McEwenMining} alt="" className="h-[45px] w-auto px-2" />
-        <Image src={MinasArgentinas} alt="" className="h-[70px] w-auto" />
-        <Image src={MuniChimbas} alt="" className="h-[40px] w-auto" />
-        <Image src={MuniSJ} alt="" className="h-[40px] w-auto px-1" />
-        <Image src={OSSE} alt="" className="h-[40px] w-auto px-2" />
-        <Image src={PerezCompanc} alt="" className="h-[70px] w-auto" />
-        <Image src={RecursosHidricos} alt="" className="h-[110px] w-auto" />
         <Image src={ShandongGold} alt="" className="h-[55px] w-auto px-3" />
-        <Image src={Techint} alt="" className="h-[70px] w-auto mx-6" />
         <Image src={Veladero} alt="" className="h-[70px] w-auto" />
-        <Image src={VialidadNacional} alt="" className="h-[70px] w-auto mx-8" />
-        <Image src={VialidadMendoza} alt="" className="h-[80px] w-auto mx-4" />
-        <Image src={VialidadProvincial} alt="" className="h-[80px] w-auto" />
+        <Image src={McEwenMining} alt="" className="h-[45px] w-auto px-2" />
+        <Image src={LosAzules} alt="" className="h-[45px] w-auto" />
+        <Image src={MinasArgentinas} alt="" className="h-[70px] w-auto" />
+        <Image src={Glencore} alt="" className="h-[150px] w-auto -my-[50px]" />
         <Image src={YamanaGold} alt="" className="h-[60px] w-auto" />
+        <Image src={AustralGold} alt="" className="h-[50px] w-auto" />
+        <Image src={Casposo} alt="" className="h-[50px] w-auto px-3" />
+        <Image src={Belararox} alt="" className="h-[60px] w-auto" />
         <Image src={YPF} alt="" className="h-[50px] w-auto" />
+        <Image src={CBB} alt="" className="h-[40px] w-auto px-4" />
+        <Image src={Techint} alt="" className="h-[70px] w-auto mx-6" />
+        <Image src={PerezCompanc} alt="" className="h-[70px] w-auto" />
+        <Image src={BancoHipotecario} alt="" className="h-[50px] w-auto" />
+        <Image src={VialidadNacional} alt="" className="h-[70px] w-auto ml-8" />
+        <Image src={Enohsa} alt="" className="h-[100px] w-auto -mx-4" />
+        <Image src={EDEMSA} alt="" className="h-[50px] w-auto -my-8" />
+        <Image src={VialidadMendoza} alt="" className="h-[80px] w-auto mx-4" />
+        <Image src={RecursosHidricos} alt="" className="h-[110px] w-auto" />
+        <Image src={GobSj} alt="" className="h-[50px] w-auto px-2" />
+        <Image src={OSSE} alt="" className="h-[40px] w-auto px-2" />
+        <Image src={IPV} alt="" className="h-[60px] w-auto px-2" />
+        <Image src={Hidraulica} alt="" className="h-[90px] w-auto -mx-8" />
+        <Image src={VialidadProvincial} alt="" className="h-[80px] w-auto" />
+        <Image src={MuniSJ} alt="" className="h-[40px] w-auto px-1" />
+        <Image src={MuniChimbas} alt="" className="h-[40px] w-auto" />
       </div>
     </div>
   );

@@ -10,7 +10,7 @@ export const dynamic = "force-dynamic";
 export async function getProyects(): Promise<ProjectCardType[]> {
   noStore();
   const projects = await client.fetch(
-    `*[_type == "projects"]{name, type, month, year, state, text, localidad, superficie, comitente, "images": images[] {'url': asset->url}}`
+    `*[_type == "projects"]|order(orderRank){name, type, month, year, state, text, localidad, superficie, comitente, "images": images[] {'url': asset->url}}`
   );
   return projects;
 }
@@ -128,7 +128,7 @@ const Proyectos = ({ tipo }: Props) => {
               tipo === "inmobiliaria" && " text-[#fdba13]"
             }`}
           >
-            {language === "ESP" ? <>Inmobiliaria</> : <>REAL ESTATE</>}
+            {language === "ESP" ? <>REAL ESTATE</> : <>REAL ESTATE</>}
           </Link>
         </div>
         <div className="flex flex-col space-y-5 mt-[32px]">

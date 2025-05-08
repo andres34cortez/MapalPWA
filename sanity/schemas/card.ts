@@ -1,9 +1,16 @@
+import {
+  orderRankField,
+  orderRankOrdering,
+} from "@sanity/orderable-document-list";
+
 const card = {
   name: "card",
-  title: "Noticia",
+  title: "Noticias",
   type: "document",
+  orderings: [orderRankOrdering],
   //   es como se ve en el panel de sanity
   fields: [
+    orderRankField({ type: "Noticias" }),
     {
       name: "image",
       title: "Imagen",
