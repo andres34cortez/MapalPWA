@@ -29,7 +29,7 @@ import { useLanguage } from "@/context/LayoutContext";
 
 export default function Mineria() {
   return (
-    <div className="relative flex flex-col items-center mx-0">
+    <div className="relative flex flex-col items-center mx-0 overflow-x-hidden">
       <div className="w-full h-[600px] md:h-[400px] lg:h-[500px] flex justify-center left-0 items-center relative">
         <Image
           src={logoMS}
@@ -64,14 +64,16 @@ const Clientes = () => {
           {language === "ESP" ? <>NUESTROS CLIENTES</> : <>OUR CLIENTS</>}
         </h2>
       </div>
-      <MarqueeEmpresas />
+      <div className=" bg-transparent max-w-7xl mx-auto md:pl-0 pl-3">
+        <MarqueeEmpresas />
+      </div>
     </div>
   );
 };
 
 const MarqueeEmpresas = () => {
   return (
-    <div className=" bg-white px-20">
+    <div className="bg-white px-20">
       <div className="whitespace-nowrap animate-marquee flex items-center py-3 gap-8">
         <Image src={Barrick} alt="" className="h-[50px] w-auto p-3 =mx-3" />
         <Image src={ShandongGold} alt="" className="h-[55px] w-auto px-3" />

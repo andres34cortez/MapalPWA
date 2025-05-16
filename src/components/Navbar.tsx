@@ -89,7 +89,7 @@ const Navbar: React.FC = () => {
             href="/proyectos"
             className="text-white font-medium text-sm hover:text-gray-300 cursor-pointer"
           >
-            {language === "ESP" ? <>OBRAS</> : <>WORKS</>}
+            {language === "ESP" ? <>OBRAS</> : <>PROJECTS</>}
           </a>
           <a
             href="/mapalsigma"

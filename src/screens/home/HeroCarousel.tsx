@@ -74,7 +74,7 @@ export function HeroCarousel() {
   }, [api]);
 
   return (
-    <div className="w-screen overflow-hidden">
+    <div className="w-screen overflow-hidden relative">
       <Carousel
         setApi={setApi}
         className="w-full items-center justify-center border"
@@ -91,36 +91,25 @@ export function HeroCarousel() {
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
-      {/* <div className="bg-black/15 absolute top-0 left-0 z-10 w-full h-[56%]"> */}
-      <div className="absolute left-14 lg:top-[190px] md:left-20 p-4 flex flex-col items-start lg:left-32">
-        <span
-          className="  text-lg md:text-6xl lg:text-7xl text-white"
-          style={{
-            textShadow:
-              "4px 4px 0 rgba(0, 0, 0, 0.06), -4px 4px 0 rgba(0, 0, 0, 0.06), 4px -4px 0 rgba(0, 0, 0, 0.06), -4px -4px 0 rgba(0, 0, 0, 0.06)",
-          }}
-        >
+      <div className="absolute top-1/4 lg:top-[32%] left-4 md:left-20 lg:left-32 p-4 flex flex-col items-start z-10">
+        <span className="text-lg md:text-6xl lg:text-7xl text-white">
+          {language === "ESP" ? <>+60 Años </> : <>+60 Years </>}
+        </span>
+        <span className="text-lg md:text-4xl text-white">
           {language === "ESP" ? (
-            <>+60 Años 3 Generaciones</>
+            <>3 Generaciones</>
           ) : (
-            <>+60 Years 3 Generations</>
+            <>Through 3 Generations</>
           )}
         </span>
-        <span
-          className="  text-lg md:text-4xl lg:text-4xl text-white"
-          style={{
-            textShadow:
-              "4px 4px 0 rgba(0, 0, 0, 0.06), -4px 4px 0 rgba(0, 0, 0, 0.06), 4px -4px 0 rgba(0, 0, 0, 0.06), -4px -4px 0 rgba(0, 0, 0, 0.06)",
-          }}
-        >
+        <span className="text-lg md:text-4xl text-white">
           {language === "ESP" ? (
             <>Construyendo Historia</>
           ) : (
-            <>Building History</>
+            <>Building a Legacy</>
           )}
         </span>
       </div>
-      {/* </div> */}
     </div>
   );
 }

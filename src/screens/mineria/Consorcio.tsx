@@ -41,22 +41,24 @@ export default function Consorcio() {
                 </>
               ) : (
                 <>
-                  MAPAL SIGMA, is the result of the vision of two companies from
-                  San Juan with over 60 years of experience in public and
-                  private works. Through our consortium, we drive and enhance
-                  the development of services and projects in mining,
-                  exploration, civil, roads and infrastructure sectors, both in
-                  San Juan and in other provinces of the country. We contribute
-                  to the sustainable development and progress of the project,
-                  the community, and the society in which we operate.
+                  MAPAL SIGMA is the result of the shared vision of two San
+                  Juan-based companies with over 60 years of experience in
+                  public and private construction projects. Through our
+                  consortium, we promote and strengthen the development of
+                  services and projects in the mining, exploration, civil works,
+                  roadworks, and infrastructure sectors — both in San Juan and
+                  across other provinces in Argentina. We are committed to
+                  contributing to the sustainable development and progress of
+                  each project, the communities we serve, and the society in
+                  which we operate.
                 </>
               )}
             </p>
-            <div className="flex items-center justify-center">
+            <div className="flex flex-row items-center justify-center lg:ml-[6px]">
               <Image
                 src={logoMapal}
                 alt="logo Mapal"
-                className="w-[60%] md:w-full md:h-[40px] md:-mr-6 md:-ml-6"
+                className=" md:w-full md:h-[40px]"
               />
               <Image
                 src={arrows}
@@ -66,31 +68,19 @@ export default function Consorcio() {
               <Image
                 src={logoSigma}
                 alt="logo Sigma"
-                className="w-auto h-[53px] md:h-[150px] md:-ml-[56px] md:-my-8"
+                className="w-auto h-[53px] md:h-[150px] md:-ml-[50px] md:-my-8"
               />
             </div>
             <div className="-mt-6">
               <DialogDescarga>
-                <h4 className="cursor-pointer hover:text-[#1d2d93] text-[#201D93] text-xs">
+                <button className="bg-[#FAB918] text-white font-semibold text-sm py-1 px-3 rounded-lg hover:bg-[#FDBA13]">
                   {language === "ESP" ? (
                     <>Descarga nuestro Brochure Online</>
                   ) : (
                     <>Download our mining brochure Online</>
                   )}
-                </h4>
+                </button>
               </DialogDescarga>
-              {/* <a
-                href="https://drive.google.com/drive/folders/157n6lUTFU2lcUDj65B4trtPjZRtzcQyv?usp=drive_link"
-                target="_blank"
-              >
-                <h4 className="cursor-pointer hover:text-[#1d2d93] text-[#201D93] text-xs">
-                  {language === "ESP" ? (
-                    <>Descarga nuestro Brochure Online</>
-                  ) : (
-                    <>Download our mining brochure Online</>
-                  )}
-                </h4>
-              </a> */}
             </div>
           </div>
           <div className="flex flex-col items-start justify-between">

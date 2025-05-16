@@ -14,6 +14,7 @@ import {
 import { useForm, Controller } from "react-hook-form";
 import { Textarea } from "@/components/ui/textarea";
 import { SendIcon } from "lucide-react";
+import { useLanguage } from "@/context/LayoutContext";
 
 type FormData = {
   apellido?: string;
@@ -36,6 +37,7 @@ export default function Page() {
     control,
     formState: { errors },
   } = useForm<FormData>();
+  const { language } = useLanguage();
 
   const onSubmit = (data: FormData) => {
     const {
@@ -54,20 +56,30 @@ export default function Page() {
 
     const subject = `Nueva consulta de ${nombre} ${apellido}`;
     const body = `
-      Nombre: ${nombre}
-      Apellido: ${apellido}
-      Email: ${email}
-      Teléfono: ${telefono}
-      Provincia: ${provincia}
-      Localidad: ${localidad}
-      Área: ${area}
-      Nivel de Estudio: ${nivelEstudio}
-      ¿Trabajó en nuestros proyectos?: ${trabajaste}
-      Proyecto: ${projecto}
-      Mensaje:
+Nombre: ${nombre}
+
+Apellido: ${apellido}
+
+Email: ${email}
+
+Teléfono: ${telefono}
+
+Provincia: ${provincia}
+
+Localidad: ${localidad}
+
+Área: ${area ?? ""}
+
+Nivel de Estudio: ${nivelEstudio ?? ""}
+
+Trabajó en nuestros proyectos?: ${trabajaste ?? ""}
+
+Proyecto: ${projecto}
+
+Mensaje:
       ${mensaje}
       
-      *Recordá adjuntar el CV al correo.
+** Recordá adjuntar el CV al correo. **
     `.trim();
 
     const mailtoLink = `mailto:rrhh@mapal.com.ar?subject=${encodeURIComponent(

@@ -66,15 +66,23 @@ export default function Page() {
 
     const subject = `Nueva consulta de ${nombre} ${apellido}`;
     const body = `
-      Nombre: ${nombre}
-    Apellido: ${apellido}
-    Email: ${email}
-    Teléfono: ${telefono}
-    Provincia: ${provincia}
-    Localidad: ${localidad}
-    Empresa: ${empresa}
-    Sector: ${sector}
-    Mensaje:
+Nombre: ${nombre}
+
+Apellido: ${apellido}
+
+Email: ${email}
+
+Teléfono: ${telefono}
+
+Provincia: ${provincia}
+
+Localidad: ${localidad}
+
+Empresa: ${empresa}
+
+Sector: ${sector}
+
+Mensaje:
       ${mensaje}
     `.trim();
 

@@ -74,7 +74,7 @@ const Proyectos = ({ tipo }: Props) => {
               tipo === "viales" && " text-[#fdba13]"
             }`}
           >
-            {language === "ESP" ? <>Viales</> : <>ROADS</>}
+            {language === "ESP" ? <>Viales</> : <>ROADWORKS</>}
           </Link>
           <Link
             href="/proyectos?tipo=arquitectura"
@@ -92,7 +92,7 @@ const Proyectos = ({ tipo }: Props) => {
               tipo === "hidraulicas" && " text-[#fdba13]"
             }`}
           >
-            {language === "ESP" ? <>Hidraulicas</> : <>HYDRAULICS </>}
+            {language === "ESP" ? <>Hidraulicas</> : <>WATERWORKS </>}
           </Link>
           <Link
             href="/proyectos?tipo=petroleos"

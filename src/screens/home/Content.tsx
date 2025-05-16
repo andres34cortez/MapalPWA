@@ -83,6 +83,13 @@ export function Content() {
 
 const Empresa = () => {
   const { language } = useLanguage();
+
+  const downloadPDFMapal = () => {
+    const fileId = "1fY30GYdl9uAcY3IdH9fRRNDgfBbh1vKv";
+    const downloadLink = `https://drive.google.com/uc?export=download&id=${fileId}`;
+    window.open(downloadLink, "_blank");
+  };
+
   return (
     <div className="container sm:pl-6">
       <div className="flex flex-row items-center relative mb-2">
@@ -110,16 +117,16 @@ const Empresa = () => {
             ) : (
               <>
                 Our mission is to create value through the quality of the
-                projects and services we develop, for our partners, clients, and
-                suppliers alike. We aim to improve the lives of the people who
-                work in our company, the communities where we carry out each
-                project, and society as a whole, with a strong commitment to
-                safety and environmental responsibility.
+                projects and services we deliver — for our partners, clients,
+                and suppliers — while improving the lives of our employees, the
+                communities where we operate, and society as a whole. We work
+                with a firm commitment to safety and environmental
+                responsibility.
               </>
             )}
           </p>
           <h3 className="text-[#FAB918] font-bold">
-            {language === "ESP" ? <>VISIÓN</> : <>VIEW</>}
+            {language === "ESP" ? <>VISIÓN</> : <>VISION</>}
           </h3>
           <p className="m-0 p-0 font-light text-sm mb-6">
             {language === "ESP" ? (
@@ -133,97 +140,128 @@ const Empresa = () => {
               </>
             ) : (
               <>
-                To be a leading company in our province and in the country,
-                known for our high standards of quality and reliability. To be
-                recognized by our clients, suppliers, and peers as a strategic
-                partner, building trustworthy and respectful alliances. To be a
-                workplace where people aspire to belong and grow.
+                To be a benchmark company in our province and nationwide,
+                recognized for our high standards of quality and reliability. To
+                be known by our clients, suppliers, and industry peers as a
+                trusted strategic partner, fostering respectful and dependable
+                partnerships. To be the workplace where people aspire to belong,
+                grow, and build their careers.
               </>
             )}
           </p>
           <h3 className="text-[#FAB918] font-bold">
-            {language === "ESP" ? <>VALORES</> : <>VALUES</>}
+            {language === "ESP" ? <>VALORES</> : <>CORE VALUES</>}
           </h3>
           <ul className="m-0 p-0 font-light text-sm">
             <li>{language === "ESP" ? <>• Confianza.</> : <>• Trust.</>}</li>
             <li>{language === "ESP" ? <>• Respeto. </> : <>• Respect.</>}</li>
-            <li>{language === "ESP" ? <>• Calidad.</> : <>• Quality.</>}</li>
+            <li>
+              {language === "ESP" ? (
+                <>• Calidad.</>
+              ) : (
+                <>• Commitment to Quality.</>
+              )}
+            </li>
             <li>
               {language === "ESP" ? (
                 <>• Seguridad de las personas.</>
               ) : (
-                <>• People’s safety.</>
+                <>• Safety First.</>
               )}
             </li>
             <li>
               {language === "ESP" ? (
                 <>• Cuidado del medio ambiente.</>
               ) : (
-                <>• Environmental care.</>
+                <>• Environmental Responsibility.</>
               )}
             </li>
             <li>
               {language === "ESP" ? (
                 <>• Mejora continua.</>
               ) : (
-                <>• Continuous improvement.</>
+                <>• Continuous Improvement</>
               )}
             </li>
             <li>
               {language === "ESP" ? (
                 <>• Sentido de pertenencia.</>
               ) : (
-                <>• Sense of belonging.</>
+                <>• Sense of Belonging.</>
               )}
             </li>
             <li>
               {language === "ESP" ? (
                 <>• Contribución a las comunidades.</>
               ) : (
-                <>• Contribution to communities.</>
+                <>• Community Engagement.</>
               )}
             </li>
             <li>
               {language === "ESP" ? (
                 <>• Colaboración.</>
               ) : (
-                <>• Collaboration.</>
+                <>• Teamwork and Collaboration.</>
               )}
             </li>
           </ul>
+          <h3 className="text-[#FAB918] font-bold mt-6">
+            {language === "ESP" ? (
+              <>RESPONSABILIDAD SOCIAL</>
+            ) : (
+              <>SOCIAL RESPONSIBILITY</>
+            )}
+          </h3>
+          <p className="m-0 p-0 font-light text-sm mb-12 text-justify">
+            {language === "ESP" ? (
+              <>
+                La calidad de nuestras obras y servicios genera un impacto
+                positivo y mejora la vida de las personas de las comunidades
+                donde desarrollamos nuestros trabajos. Esto se logra a partir de
+                una visión estratégica que atraviesa verticalmente toda nuestra
+                empresa, planificando las acciones en función de las necesidades
+                de las instituciones y las personas en las regiones donde
+                trabajamos.
+              </>
+            ) : (
+              <>
+                The quality of our projects and services creates a positive
+                impact and improves the lives of people in the communities where
+                we work. This is achieved through a strategic vision that runs
+                throughout the entire organization, planning actions based on
+                the needs of local institutions and communities in every region
+                where we operate.
+              </>
+            )}
+          </p>
         </div>
         <div className="w-0.5 bg-[#C8C8C8] min-h-full mx-5 hidden sm:flex" />
         <div className="max-w-[700px] w-full">
           <div className="mt-4">
-            <h3 className="text-[#FAB918] font-bold">
-              {language === "ESP" ? (
-                <>RESPONSABILIDAD SOCIAL</>
-              ) : (
-                <>SOCIAL RESPONSIBILITY</>
-              )}
-            </h3>
-            <p className="m-0 p-0 font-light text-sm mb-12 text-justify">
-              {language === "ESP" ? (
-                <>
-                  La calidad de nuestras obras y servicios genera un impacto
-                  positivo y mejora la vida de las personas de las comunidades
-                  donde desarrollamos nuestros trabajos. Esto se logra a partir
-                  de una visión estratégica que atraviesa verticalmente toda
-                  nuestra empresa, planificando las acciones en función de las
-                  necesidades de las instituciones y las personas en las
-                  regiones donde trabajamos.
-                </>
-              ) : (
-                <>
-                  The quality of our projects and services creates a positive
-                  impact and improves the lives of people in the communities
-                  where we carry out our work. This is achieved through a
-                  strategic vision that runs throughout our entire company,
-                  planning actions based on the needs of institutions and
-                  individuals in the regions where we operate.
-                </>
-              )}
-            </p>
+            <div className="md:border-[#FDBA13] md:ml-4 pb-4 md:border items-center rounded-sm">
+              <iframe
+                width="684"
+                height="352"
+                src="https://www.youtube.com/embed/o8_scl4l-H4?si=-bY_WnglpUlOfIHQ"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen={true}
+                className="md:-ml-4 md:-mt-4 rounded-sm"
+              />
+            </div>
+            <div className="flex flex-col items-end justify-center mt-4">
+              <button
+                className="bg-[#FAB918] text-white font-semibold text-sm py-1 px-3 rounded-lg hover:bg-[#FDBA13]"
+                onClick={downloadPDFMapal}
+              >
+                {language === "ESP" ? (
+                  <>Descargar Brochure</>
+                ) : (
+                  <>Download Brochure</>
+                )}
+              </button>
+            </div>
+            <div className="mt-12" />
             <div className="md:border-[#FDBA13] md:ml-4 pb-4 md:border items-center rounded-sm">
               <Image
                 src={DirecvitosImg}
@@ -234,7 +272,11 @@ const Empresa = () => {
             <div className="flex flex-col items-end justify-center mt-4">
               <DialogMesaDirectiva>
                 <button className="bg-[#FAB918] text-white font-semibold text-sm py-1 px-3 rounded-lg hover:bg-[#FDBA13]">
-                  {language === "ESP" ? <>Ver Mesa Directiva</> : <>SEE MORE</>}
+                  {language === "ESP" ? (
+                    <>Ver Mesa Directiva</>
+                  ) : (
+                    <>Meet Our Leadership Team</>
+                  )}
                 </button>
               </DialogMesaDirectiva>
             </div>

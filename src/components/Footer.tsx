@@ -65,7 +65,7 @@ export default function Footer() {
             href="/proyectos"
             className="uppercase text-white cursor-pointer hover:underline text-[14px] w-max"
           >
-            {language === "ESP" ? <>Obras</> : <>Works</>}
+            {language === "ESP" ? <>Obras</> : <>PROJECTS</>}
           </a>
           <a
             href="/mapalsigma"
@@ -83,7 +83,7 @@ export default function Footer() {
             href="/contacto"
             className="uppercase text-white cursor-pointer hover:underline text-[14px] w-max"
           >
-            Contacto
+            {language === "ESP" ? <>Contacto</> : <>Contact</>}
           </a>
           <button
             onClick={toggleLanguage}
@@ -111,7 +111,7 @@ export default function Footer() {
               rel="noopener noreferrer"
             >
               <p className="text-white text-[14px] font-light cursor-pointer hover:underline">
-                Tucumán 523 NORTE, CP 5413 Chimbas, San Juan.
+                Tucumán Norte 523, CP 5413 Chimbas, San Juan.
               </p>
             </a>
           </div>

@@ -26,7 +26,7 @@ export default function Servicios() {
       text:
         language === "ESP"
           ? "Diseño, planificación y ejecución de puentes, sobre ríos, carreteras y terrenos difíciles. La importancia de este servicio radica en su capacidad para mejorar la conectividad y facilitar el transporte, abriendo nuevas vías de comunicación y acceso"
-          : "Design, planning, and execution of bridges over rivers, roads, and challenging terrains. The significance of this service lies in its ability to enhance connectivity and facilitate transportation, opening new avenues of communication and access",
+          : "Design, planning, and construction of bridges over rivers, roads, and challenging terrains. This service plays a key role in improving connectivity and facilitating transportation, opening new routes for communication and access.",
     },
     {
       name: language === "ESP" ? "Movimiento de Suelos" : "EARTHWORKS",
@@ -35,7 +35,7 @@ export default function Servicios() {
       text:
         language === "ESP"
           ? "Movimientos de suelos, excavaciones, transporte desde cantera, relleno, compactación y perfilado, instalación de geomembrana, geotextiles y tuberías, entre otras actividades, como construcción de valles de lixiviación"
-          : "Earthworks, excavations, transportation from quarry, backfilling, compaction and grading, installation of geomembranes, geotextiles, and pipelines, among other activities, such as construction of leach pads.",
+          : "Earthmoving, excavations, material hauling from quarries, backfilling, compaction, grading, installation of geomembranes, geotextiles, and pipelines, among other activities, including the construction of leach pads.",
     },
     {
       name: language === "ESP" ? "Obras viales minería" : "MINING ROADWORKS",
@@ -44,7 +44,7 @@ export default function Servicios() {
       text:
         language === "ESP"
           ? "Servicios de apertura, mantenimiento, reparación de caminos mineros, despeje de nieve y/o hielo, estabilización y reparación de los taludes laterales del camino, construcción y/o reemplazo de bermas de seguridad, construcción y/o mantenimiento de rampas de escape para salidas de emergencia, limpieza y remoción de material producto de grandes deslizamientos, derrumbes, avalanchas y/o crecientes."
-          : "Opening, maintenance, and repair services for mining roads, snow and/or ice clearance, stabilization and repair of road shoulders, construction and/or replacement of safety berms, construction and/or maintenance of emergency exit ramps, cleaning and removal of material resulting from large  landslides.",
+          : "Services for the opening, maintenance, and repair of mining roads, snow and ice removal, stabilization and repair of road shoulders, construction and/or replacement of safety berms, building and maintenance of emergency escape ramps, and clearing and removal of debris from major landslides, rockfalls, avalanches, and flood events.",
     },
     {
       name:
@@ -56,7 +56,7 @@ export default function Servicios() {
       text:
         language === "ESP"
           ? "Brindamos soluciones integrales que impulsan el desarrollo de la minería, realizando obras de soporte fundamentales para la sostenibilidad de la misma, tales como naves industriales para diversos usos dentro de los proyectos mineros."
-          : "We offer comprehensive solutions that promote the development of mining, carrying out essential support works for its sustainability, such as industrial warehouses for various purposes within mining projects.",
+          : "We provide comprehensive solutions that support mining development through the construction of essential infrastructure, such as industrial warehouses for various operational needs within mining projects.",
     },
     {
       name:
@@ -68,7 +68,7 @@ export default function Servicios() {
       text:
         language === "ESP"
           ? "Servicio de provisión y operación de equipos pesados y livianos en todas las etapas (exploración, construcción, operación) y sectores e instalaciones de los proyectos mineros (procesos, mina, operativo invierno), con operarios altamente capacitados para trabajos en mina."
-          : "Provision and operation service of heavy and light equipment at all stages (exploration - construction - operation) and sectors and facilities of mining projects (processes - mine - winter operations), with highly trained operators for mine work.",
+          : "Provision and operation of heavy and light equipment across all project stages (Exploration, Construction, Operation) and throughout the different areas and facilities of mining projects (Process Plants, Mine Operations, Winter Operations). We provide highly trained, certified operators specialized in on-site mining work.",
     },
   ];
   const mobile = useMediaQuery("screen and (max-width:768px)");

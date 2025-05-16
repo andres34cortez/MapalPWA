@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -77,6 +77,41 @@ export default function ConsorcioGallery() {
   }, [api]);
 
   const mobile = useMediaQuery("screen and (max-width:768px)");
+
+  // Auto-slide cada 3 segundos
+  const intervalRef = React.useRef<NodeJS.Timeout | null>(null);
+
+  React.useEffect(() => {
+    if (!api) return;
+
+    const startAutoSlide = () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+
+      intervalRef.current = setInterval(() => {
+        const nextIndex = api.selectedScrollSnap() + 1;
+        const total = api.scrollSnapList().length;
+
+        if (nextIndex >= total) {
+          api.scrollTo(0); // Ciclo infinito
+        } else {
+          api.scrollNext();
+        }
+      }, 1500);
+    };
+
+    // Iniciar autoplay
+    startAutoSlide();
+
+    // Reiniciar autoplay cuando el usuario interactúe
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+      startAutoSlide(); // reinicia el temporizador
+    });
+
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [api]);
 
   return (
     <Carousel
