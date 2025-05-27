@@ -23,7 +23,6 @@ type FormData = {
   telefono?: string;
   provincia?: string;
   localidad?: string;
-  area?: string;
   nivelEstudio?: string;
   trabajaste?: string;
   projecto?: string;
@@ -47,15 +46,20 @@ export default function Page() {
       telefono,
       provincia,
       localidad,
-      area,
       nivelEstudio,
       trabajaste,
       projecto,
       mensaje,
     } = data;
 
-    const subject = `Nueva consulta de ${nombre} ${apellido}`;
-    const body = `
+    const subject =
+      language === "ESP"
+        ? `Nueva consulta de ${nombre} ${apellido}`
+        : `New inquiry from ${nombre} ${apellido}`;
+
+    const body =
+      language === "ESP"
+        ? `
 Nombre: ${nombre}
 
 Apellido: ${apellido}
@@ -68,18 +72,38 @@ Provincia: ${provincia}
 
 Localidad: ${localidad}
 
-Área: ${area ?? ""}
-
 Nivel de Estudio: ${nivelEstudio ?? ""}
 
 Trabajó en nuestros proyectos?: ${trabajaste ?? ""}
 
 Proyecto: ${projecto}
 
-Mensaje:
-      ${mensaje}
+Mensaje: ${mensaje}
       
 ** Recordá adjuntar el CV al correo. **
+    `.trim()
+        : `
+First Name: ${nombre}
+
+Last Name: ${apellido}
+
+Email: ${email}
+
+Phone: ${telefono}
+
+State: ${provincia}
+
+City: ${localidad}
+
+Education Level: ${nivelEstudio ?? ""}
+
+Worked on our projects?: ${trabajaste ?? ""}
+
+Project: ${projecto}
+
+Message: ${mensaje}
+      
+** Please remember to attach your CV to the email. **
     `.trim();
 
     const mailtoLink = `mailto:rrhh@mapal.com.ar?subject=${encodeURIComponent(
@@ -96,11 +120,11 @@ Mensaje:
     >
       <div className="flex flex-row items-center gap-6 w-full">
         <div className="w-full gap-1 flex flex-col">
-          <h1>Apellido*</h1>
+          {language === "ESP" ? <h1>Apellido*</h1> : <h1>Last Name*</h1>}
           <Input className="w-full" {...register("apellido")} />
         </div>
         <div className="w-full gap-1 flex flex-col">
-          <h1>Nombre*</h1>
+          {language === "ESP" ? <h1>Nombre*</h1> : <h1>First Name*</h1>}
           <Input className="w-full" {...register("nombre")} />
         </div>
       </div>
@@ -118,37 +142,57 @@ Mensaje:
           />
         </div>
         <div className="w-full gap-1 flex flex-col">
-          <h1>Teléfono*</h1>
+          {language === "ESP" ? <h1>Teléfono*</h1> : <h1>Phone*</h1>}
           <Input className="w-full" {...register("telefono")} />
         </div>
       </div>
       <div className="flex flex-row items-center gap-6 w-full">
         <div className="w-full gap-1 flex flex-col">
-          <h1>Provincia*</h1>
+          {language === "ESP" ? <h1>Provincia*</h1> : <h1>State*</h1>}
           <Input className="w-full" {...register("provincia")} />
         </div>
         <div className="w-full gap-1 flex flex-col">
-          <h1>Localidad*</h1>
+          {language === "ESP" ? <h1>Localidad*</h1> : <h1>City*</h1>}
           <Input className="w-full" {...register("localidad")} />
         </div>
       </div>
 
       <div className="flex flex-col gap-1 w-full">
-        <h1>Nivel de estudio*</h1>
+        {language === "ESP" ? (
+          <h1>Nivel de estudio*</h1>
+        ) : (
+          <h1>Education Level*</h1>
+        )}
         <Controller
           control={control}
           name="nivelEstudio"
           render={({ field }) => (
             <Select onValueChange={field.onChange} value={field.value}>
               <SelectTrigger className="w-full">
-                <SelectValue placeholder="Seleccione nivel de estudio" />
+                <SelectValue
+                  placeholder={
+                    language === "ESP"
+                      ? "Seleccione nivel de estudio"
+                      : "Select education level"
+                  }
+                />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  <SelectItem value="primaria">Primaria</SelectItem>
-                  <SelectItem value="secundaria">Secundaria</SelectItem>
-                  <SelectItem value="terciaria">Terciaria / Técnica</SelectItem>
-                  <SelectItem value="universitaria">Universitaria</SelectItem>
+                  <SelectItem value="primaria">
+                    {language === "ESP" ? "Primaria" : "Primary"}
+                  </SelectItem>
+                  <SelectItem value="secundaria">
+                    {language === "ESP" ? "Secundaria" : "High School"}
+                  </SelectItem>
+                  <SelectItem value="terciaria">
+                    {language === "ESP"
+                      ? "Terciaria / Técnica"
+                      : "Tertiary / Technical"}
+                  </SelectItem>
+                  <SelectItem value="universitaria">
+                    {language === "ESP" ? "Universitaria" : "University"}
+                  </SelectItem>
                 </SelectGroup>
               </SelectContent>
             </Select>
@@ -157,19 +201,33 @@ Mensaje:
       </div>
       <div className="flex flex-row items-center gap-6 w-full">
         <div className="flex flex-col gap-1 w-full">
-          <h1>Tabajó en alguno de nuestros proyectos?*</h1>
+          {language === "ESP" ? (
+            <h1>Tabajó en alguno de nuestros proyectos?*</h1>
+          ) : (
+            <h1>Worked on our projects?*</h1>
+          )}
           <Controller
             control={control}
             name="trabajaste"
             render={({ field }) => (
               <Select onValueChange={field.onChange} value={field.value}>
                 <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Indique su respuesta" />
+                  <SelectValue
+                    placeholder={
+                      language === "ESP"
+                        ? "Indique su respuesta"
+                        : "Select an answer"
+                    }
+                  />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectGroup>
-                    <SelectItem value="yes">Si</SelectItem>
-                    <SelectItem value="no">No</SelectItem>
+                    <SelectItem value="yes">
+                      {language === "ESP" ? "Si" : "Yes"}
+                    </SelectItem>
+                    <SelectItem value="no">
+                      {language === "ESP" ? "No" : "No"}
+                    </SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
@@ -177,26 +235,32 @@ Mensaje:
           />
         </div>
         <div className="w-full gap-1 flex flex-col">
-          <h1>Indique cuál</h1>
+          {language === "ESP" ? <h1>Indique cuál</h1> : <h1>Please specify</h1>}
           <Input className="w-full" {...register("projecto")} />
         </div>
       </div>
       <div className="flex flex-row items-center gap-6 w-full">
         <div className="w-full gap-1 flex flex-col">
-          <h1>Mensaje</h1>
+          {language === "ESP" ? <h1>Mensaje</h1> : <h1>Message</h1>}
           <Textarea
-            placeholder="Escribenos tu consulta..."
+            placeholder={
+              language === "ESP"
+                ? "Escribenos tu consulta..."
+                : "Write us your inquiry..."
+            }
             {...register("mensaje")}
           />
         </div>
       </div>
       <div className="italic text-muted-foreground">
-        *Recordá adjuntarnos tu CV en el mail
+        {language === "ESP"
+          ? "*Recordá adjuntarnos tu CV en el mail"
+          : "*Please remember to attach your CV to the email"}
       </div>
       <div className="flex flex-row justify-end gap-6 w-full">
         <Button type="submit">
           <SendIcon className="w-4 h-4 mr-2" />
-          Enviar
+          {language === "ESP" ? "Enviar" : "Send"}
         </Button>
       </div>
     </form>

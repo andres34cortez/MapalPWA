@@ -96,17 +96,13 @@ export function HeroCarousel() {
           {language === "ESP" ? <>+60 Años </> : <>+60 Years </>}
         </span>
         <span className="text-lg md:text-4xl text-white">
-          {language === "ESP" ? (
-            <>3 Generaciones</>
-          ) : (
-            <>Through 3 Generations</>
-          )}
+          {language === "ESP" ? <>3 Generaciones</> : <>3 Generations</>}
         </span>
         <span className="text-lg md:text-4xl text-white">
           {language === "ESP" ? (
             <>Construyendo Historia</>
           ) : (
-            <>Building a Legacy</>
+            <>One Timeless Legacy</>
           )}
         </span>
       </div>

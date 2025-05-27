@@ -273,7 +273,7 @@ const Empresa = () => {
               <DialogMesaDirectiva>
                 <button className="bg-[#FAB918] text-white font-semibold text-sm py-1 px-3 rounded-lg hover:bg-[#FDBA13]">
                   {language === "ESP" ? (
-                    <>Ver Mesa Directiva</>
+                    <>Conocé Nuestro Equipo de Liderazgo</>
                   ) : (
                     <>Meet Our Leadership Team</>
                   )}
@@ -301,7 +301,7 @@ const DialogMesaDirectiva = (props: { children: React.ReactNode }) => {
             />
             <FotoEmpleado
               foto={AlejandroPalluchini}
-              nombre="Franco Palluchini"
+              nombre="Alejandro Palluchini"
               cargo="Vicepresidente"
             />
             <FotoEmpleado nombre="Julio Palluchini" cargo="Director" />

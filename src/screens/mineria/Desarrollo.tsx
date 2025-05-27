@@ -138,9 +138,15 @@ export default function Desarrollo() {
             />
           </div>
           <div className="flex flex-col md:col-span-2 gap-4 md:gap-6 sm:mt-8 md:mt-12">
-            <h4 className="uppercase font-bold text-[#FDBA13] text-sm md:text-lg">
-              Sede operativa Barreal
-            </h4>
+            {language === "ESP" ? (
+              <h4 className="uppercase font-bold text-[#FDBA13] text-sm md:text-lg">
+                Sede operativa Barreal
+              </h4>
+            ) : (
+              <h4 className="uppercase font-bold text-[#FDBA13] text-sm md:text-lg">
+                Barreal operational headquarters
+              </h4>
+            )}
             <Image src={map} alt="mapa" />
           </div>
         </div>

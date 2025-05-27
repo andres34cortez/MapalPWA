@@ -14,6 +14,7 @@ import {
 import { useForm, Controller } from "react-hook-form";
 import { Textarea } from "@/components/ui/textarea";
 import { SendIcon } from "lucide-react";
+import { useLanguage } from "@/context/LayoutContext";
 
 type FormData = {
   apellido?: string;
@@ -34,6 +35,8 @@ export default function Page() {
     control,
     formState: { errors },
   } = useForm<FormData>();
+
+  const { language } = useLanguage();
 
   const onSubmit = (data: FormData) => {
     const {
@@ -64,8 +67,14 @@ export default function Page() {
         break;
     }
 
-    const subject = `Nueva consulta de ${nombre} ${apellido}`;
-    const body = `
+    const subject =
+      language === "ESP"
+        ? `Nueva consulta de ${nombre} ${apellido}`
+        : `New inquiry from ${nombre} ${apellido}`;
+
+    const body =
+      language === "ESP"
+        ? `
 Nombre: ${nombre}
 
 Apellido: ${apellido}
@@ -82,8 +91,26 @@ Empresa: ${empresa}
 
 Sector: ${sector}
 
-Mensaje:
-      ${mensaje}
+Mensaje: ${mensaje}
+    `.trim()
+        : `
+First Name: ${nombre}
+
+Last Name: ${apellido}
+
+Email: ${email}
+
+Phone: ${telefono}
+
+State: ${provincia}
+
+City: ${localidad}
+
+Company Name: ${empresa}
+
+Area: ${sector}
+
+Message: ${mensaje}
     `.trim();
 
     const mailtoLink = `mailto:${emailReceptor}?subject=${encodeURIComponent(
@@ -100,11 +127,11 @@ Mensaje:
     >
       <div className="flex flex-row items-center gap-6 w-full">
         <div className="w-full gap-1 flex flex-col">
-          <h1>Apellido*</h1>
+          {language === "ESP" ? <h1>Apellido*</h1> : <h1>Last Name*</h1>}
           <Input className="w-full" {...register("apellido")} />
         </div>
         <div className="w-full gap-1 flex flex-col">
-          <h1>Nombre*</h1>
+          {language === "ESP" ? <h1>Nombre*</h1> : <h1>First Name*</h1>}
           <Input className="w-full" {...register("nombre")} />
         </div>
       </div>
@@ -122,40 +149,60 @@ Mensaje:
           />
         </div>
         <div className="w-full gap-1 flex flex-col">
-          <h1>Teléfono*</h1>
+          {language === "ESP" ? <h1>Teléfono*</h1> : <h1>Phone*</h1>}
           <Input className="w-full" {...register("telefono")} />
         </div>
       </div>
       <div className="flex flex-row items-center gap-6 w-full">
         <div className="w-full gap-1 flex flex-col">
-          <h1>Provincia*</h1>
+          {language === "ESP" ? <h1>Provincia*</h1> : <h1>State*</h1>}
           <Input className="w-full" {...register("provincia")} />
         </div>
         <div className="w-full gap-1 flex flex-col">
-          <h1>Localidad*</h1>
+          {language === "ESP" ? <h1>Localidad*</h1> : <h1>City*</h1>}
           <Input className="w-full" {...register("localidad")} />
         </div>
       </div>
       <div className="w-full gap-1 flex flex-col">
-        <h1>Empresa*</h1>
+        {language === "ESP" ? <h1>Empresa*</h1> : <h1>Company Name*</h1>}
         <Input className="w-full" {...register("empresa")} />
       </div>
       <div className="flex flex-col gap-1 w-full">
-        <h1>Sector a contratar*</h1>
+        {language === "ESP" ? (
+          <h1>Sector a contratar*</h1>
+        ) : (
+          <h1>Hiring department*</h1>
+        )}
         <Controller
           control={control}
           name="sector"
           render={({ field }) => (
             <Select onValueChange={field.onChange} value={field.value}>
               <SelectTrigger className="w-full">
-                <SelectValue placeholder="Seleccione un sector" />
+                <SelectValue
+                  placeholder={
+                    language === "ESP"
+                      ? "Seleccione un sector"
+                      : "Select department"
+                  }
+                />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  <SelectItem value="compras">Compras</SelectItem>
-                  <SelectItem value="taller">Taller</SelectItem>
-                  <SelectItem value="administracion">Administración</SelectItem>
-                  <SelectItem value="oficina">Oficina Técnica</SelectItem>
+                  <SelectItem value="compras">
+                    {language === "ESP" ? "Compras" : "Procurement"}
+                  </SelectItem>
+                  <SelectItem value="taller">
+                    {language === "ESP" ? "Taller" : "Workshop"}
+                  </SelectItem>
+                  <SelectItem value="administracion">
+                    {language === "ESP" ? "Administración" : "Administration"}
+                  </SelectItem>
+                  <SelectItem value="oficina">
+                    {language === "ESP"
+                      ? "Oficina Técnica"
+                      : "Technical Office"}
+                  </SelectItem>
                 </SelectGroup>
               </SelectContent>
             </Select>
@@ -164,9 +211,13 @@ Mensaje:
       </div>
       <div className="flex flex-row items-center gap-6 w-full">
         <div className="w-full gap-1 flex flex-col">
-          <h1>Mensaje</h1>
+          {language === "ESP" ? <h1>Mensaje</h1> : <h1>Message</h1>}
           <Textarea
-            placeholder="Escribenos tu consulta..."
+            placeholder={
+              language === "ESP"
+                ? "Escribenos tu consulta..."
+                : "Write us your inquiry..."
+            }
             {...register("mensaje")}
           />
         </div>
@@ -174,7 +225,7 @@ Mensaje:
       <div className="flex flex-row justify-end gap-6 w-full">
         <Button type="submit">
           <SendIcon className="w-4 h-4 mr-2" />
-          Enviar
+          {language === "ESP" ? "Enviar" : "Send"}
         </Button>
       </div>
     </form>

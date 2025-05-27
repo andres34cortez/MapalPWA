@@ -21,7 +21,7 @@ export default function ContactoPage({
       <div className="h-[300px] md:h-[600px] w-[100%] relative flex justify-center">
         <div className="w-full h-full container mx-auto absolute z-30 flex items-center justify-center md:justify-start">
           <p className="uppercase text-[38px] md:text-[64px] z-30 absolute text-white font-semibold">
-            {language === "ESP" ? <>Contacto</> : <>Contact</>}
+            {language === "ESP" ? <>Contacto</> : <>Contact Us</>}
           </p>
         </div>
         <div className="bg-black w-full h-full opacity-30 absolute z-20"></div>
@@ -43,7 +43,7 @@ export default function ContactoPage({
         <div className="flex flex-row items-center relative mb-12">
           <div className="absolute bg-[#FAB918] h-0.5 w-[400px] -left-[410px]" />
           <p className="uppercase font-bold text-[18px]">
-            {language === "ESP" ? <>NESTRAS OFICINAS</> : <>OUR OFFICES</>}
+            {language === "ESP" ? <>NUESTRAS OFICINAS</> : <>OUR OFFICES</>}
           </p>
         </div>
         <div className="flex flex-row items-start w-full">
@@ -61,7 +61,11 @@ export default function ContactoPage({
             </a>
           </div>
           <div className="ml-16">
-            <h3 className="font-semibold">Dirección:</h3>
+            {language === "ESP" ? (
+              <h3 className="font-semibold">Dirección:</h3>
+            ) : (
+              <h3 className="font-semibold">Address:</h3>
+            )}
             <a
               href="https://maps.app.goo.gl/NXApWAEXYZQuyXQk8"
               target="_blank"
@@ -71,7 +75,11 @@ export default function ContactoPage({
                 Tucumán Norte 523, CP 5413 Chimbas, San Juan.
               </p>
             </a>
-            <h3 className="font-semibold mt-4">Teléfonos:</h3>
+            {language === "ESP" ? (
+              <h3 className="font-semibold mt-4">Teléfonos:</h3>
+            ) : (
+              <h3 className="font-semibold mt-4">Phone numbers:</h3>
+            )}
             <p className="mt-2 ml-2">(+54) 264 4313310</p>
             <p className="mt-1 ml-2">(+54) 264 4313355</p>
           </div>

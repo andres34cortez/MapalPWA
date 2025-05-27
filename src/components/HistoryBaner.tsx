@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
-import iconHistory from "@/assets/IconHisrory.png";
+import history1 from "@/assets/cambios2025/fotos/history1.jpg";
 import fondoHistory from "@/assets/FondoHistory.png";
+import history2 from "@/assets/cambios2025/fotos/history2.jpg";
 import Image from "next/image";
 import { useLanguage } from "@/context/LayoutContext";
 export default function HistoryBaner() {
@@ -9,31 +10,34 @@ export default function HistoryBaner() {
 
   return (
     <div className="bg-black w-full" id="Historia">
-      <div className="hidden md:flex w-full items-center justify-center gap-12 overflow-hidden ">
-        <div className="bg-historyTexture w-full h-[372px] -mt-4 absolute" />
+      <div className="hidden md:flex w-full items-center justify-center gap-12 overflow-hidden py-12 relative">
+        <div className="bg-historyTexture w-full h-[372px] absolute" />
         <Image
           src={fondoHistory}
           alt=""
           className="absolute w-full h-[372px]"
         />
-        <div className="border border-[#FDBA13] rounded-sm">
-          <Image
-            src={iconHistory}
-            alt=""
-            className="-mt-2 -ml-2 pb-2 pr-2 min-w-[200px]"
-          />
-        </div>
-        <div className="max-w-[800px]">
-          <h1 className="text-[#FAB918] text-3xl mt-8">
+        <div className="flex flex-col items-center">
+          <div className="border border-[#FDBA13] rounded-sm pr-3 pb-3">
+            <Image
+              src={history1}
+              alt=""
+              className="max-w-[250px] rounded-sm -mt-3 -ml-3"
+            />
+          </div>
+          <h3 className="text-[#bababa] text-xs italic pt-4 max-w-[250px] text-center">
             {language === "ESP" ? (
-              <>
-                NUESTRA <br /> HISTORIA
-              </>
+              <>“Julio C. Pallucchini (padre), Socio Fundador.”</>
             ) : (
-              <>
-                OUR <br /> HISTORY
-              </>
+              <>“Julio C. Pallucchini (father), Founding Partner.”</>
             )}
+          </h3>
+          <h1 className="text-white text-3xl text-center mt-2">1967</h1>
+          <div className="w-0.5 h-10 bg-[#bababa] mt-2" />
+        </div>
+        <div className="max-w-[630px] text-center justify-center flex flex-col items-center -mt-20 pt-4">
+          <h1 className="text-[#FAB918] text-3xl mt-8 border-b pb-2 max-w-[400px] w-full border-[#FAB918]">
+            {language === "ESP" ? <>NUESTRA HISTORIA</> : <>OUR HISTORY</>}
           </h1>
           <h2 className="text-[#FFFFFF] text-sm  font-medium pt-4">
             {language === "ESP" ? (
@@ -77,13 +81,42 @@ export default function HistoryBaner() {
               </>
             )}
           </h3>
-          <h3 className="text-[#bababa] text-sm italic pt-8 pb-8">
+        </div>
+        <div className="flex flex-col items-center">
+          <div className="border border-[#FDBA13] rounded-sm pr-3 pb-3">
+            <Image
+              src={history2}
+              alt=""
+              className="max-w-[250px] rounded-sm -mt-3 -ml-3"
+            />
+          </div>
+          <h3 className="text-[#bababa] text-xs italic pt-4 max-w-[250px] text-center">
             {language === "ESP" ? (
-              <>“Julio C. Pallucchini (padre), Socio Fundador.”</>
+              <>“Franco Pallucchini, Socio-CEO y 3ra generación.”</>
             ) : (
-              <>“Julio C. Pallucchini (father), Founding Partner.”</>
+              <>“Franco Pallucchini, Partner & CEO, 3rd Generation.”</>
             )}
           </h3>
+          <h1 className="text-white text-3xl text-center mt-2">2025</h1>
+          <div className="w-0.5 h-10 bg-[#bababa] mt-2" />
+        </div>
+        <div className="absolute bottom-[30px] w-full h-[2px] bg-gray-200 max-w-[1380px]">
+          {/* Gradientes en los extremos */}
+          <div className="absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-black/60 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-black/60 to-transparent z-10 pointer-events-none" />
+
+          {/* Línea con pelotitas */}
+          <div className="flex justify-between items-center w-full relative -top-[5px] px-8 z-0">
+            <div className="rounded-full bg-[#FAB918] w-2 h-2" />
+            <div className="rounded-full bg-[#FAB918] w-3 h-3" />
+            <div className="rounded-full bg-[#FAB918] w-2 h-2" />
+            <div className="rounded-full bg-[#FAB918] w-2 h-2" />
+            <div className="rounded-full bg-[#FAB918] w-2 h-2" />
+            <div className="rounded-full bg-[#FAB918] w-2 h-2" />
+            <div className="rounded-full bg-[#FAB918] w-2 h-2" />
+            <div className="rounded-full bg-[#FAB918] w-3 h-3" />
+            <div className="rounded-full bg-[#FAB918] w-2 h-2" />
+          </div>
         </div>
       </div>
 
@@ -99,12 +132,12 @@ export default function HistoryBaner() {
             </>
           )}
         </h1>
-        <div className=" w-auto rounded-sm overflow-hidden flex justify-center">
-          <div className="border border-[#FDBA13] rounded-sm">
+        <div className=" w-auto rounded-sm overflow-hidden flex justify-center mt-4">
+          <div className="border border-[#FDBA13] rounded-sm pb-2 pr-2 ">
             <Image
-              src={iconHistory}
+              src={history1}
               alt=""
-              className="-mt-2 -ml-2 pb-2 pr-2 min-w-[200px]"
+              className="-mt-2 -ml-2 max-w-[250px]"
             />
           </div>
         </div>
