@@ -1,9 +1,17 @@
+import {
+  orderRankField,
+  orderRankOrdering,
+} from "@sanity/orderable-document-list";
+import { title } from "process";
+
 const Proyectos = {
   name: "projects",
   title: "Proyectos",
   type: "document",
+  orderings: [orderRankOrdering],
 
   fields: [
+    orderRankField({ type: "projects" }),
     {
       name: "name",
       title: "Nombre",

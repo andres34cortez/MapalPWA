@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -18,9 +18,9 @@ import foto06 from "../../assets/mineriaPage/mineriaCarousel/foto06.png";
 import foto07 from "../../assets/mineriaPage/mineriaCarousel/foto07.png";
 import foto08 from "../../assets/mineriaPage/mineriaCarousel/foto08.png";
 import foto09 from "../../assets/mineriaPage/mineriaCarousel/foto09.png";
-import foto10 from "../../assets/mineriaPage/mineriaCarousel/foto10.png";
+import foto10 from "../../assets/cambios2025/fotos/mineria/DJI_20240417145324_0189_D.jpg";
 import foto11 from "../../assets/mineriaPage/mineriaCarousel/foto11.png";
-import foto12 from "../../assets/mineriaPage/mineriaCarousel/foto12.png";
+import foto12 from "../../assets/cambios2025/fotos/mineria/DJI_20240417115046_0128_D.jpg";
 import foto13 from "../../assets/mineriaPage/mineriaCarousel/foto13.png";
 import foto14 from "../../assets/mineriaPage/mineriaCarousel/foto14.png";
 import foto15 from "../../assets/mineriaPage/mineriaCarousel/foto15.png";
@@ -77,6 +77,41 @@ export default function ConsorcioGallery() {
   }, [api]);
 
   const mobile = useMediaQuery("screen and (max-width:768px)");
+
+  // Auto-slide cada 3 segundos
+  const intervalRef = React.useRef<NodeJS.Timeout | null>(null);
+
+  React.useEffect(() => {
+    if (!api) return;
+
+    const startAutoSlide = () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+
+      intervalRef.current = setInterval(() => {
+        const nextIndex = api.selectedScrollSnap() + 1;
+        const total = api.scrollSnapList().length;
+
+        if (nextIndex >= total) {
+          api.scrollTo(0); // Ciclo infinito
+        } else {
+          api.scrollNext();
+        }
+      }, 1500);
+    };
+
+    // Iniciar autoplay
+    startAutoSlide();
+
+    // Reiniciar autoplay cuando el usuario interactúe
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+      startAutoSlide(); // reinicia el temporizador
+    });
+
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [api]);
 
   return (
     <Carousel

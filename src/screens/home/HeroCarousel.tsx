@@ -24,6 +24,7 @@ export function HeroCarousel() {
   const [count, setCount] = React.useState(0);
   const HeroImage = [foto1, foto2, foto3, foto4, foto5, foto6];
   const { language } = useLanguage();
+
   React.useEffect(() => {
     if (!api) {
       return;
@@ -37,31 +38,52 @@ export function HeroCarousel() {
     });
   }, [api]);
 
+  // Auto-slide cada 3 segundos
+  const intervalRef = React.useRef<NodeJS.Timeout | null>(null);
+
+  React.useEffect(() => {
+    if (!api) return;
+
+    const startAutoSlide = () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+
+      intervalRef.current = setInterval(() => {
+        const nextIndex = api.selectedScrollSnap() + 1;
+        const total = api.scrollSnapList().length;
+
+        if (nextIndex >= total) {
+          api.scrollTo(0); // Ciclo infinito
+        } else {
+          api.scrollNext();
+        }
+      }, 4500);
+    };
+
+    // Iniciar autoplay
+    startAutoSlide();
+
+    // Reiniciar autoplay cuando el usuario interactúe
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+      startAutoSlide(); // reinicia el temporizador
+    });
+
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [api]);
+
   return (
-    <div className='w-screen overflow-hidden'>
+    <div className="w-screen overflow-hidden relative">
       <Carousel
         setApi={setApi}
-        className='w-full items-center justify-center border'
+        className="w-full items-center justify-center border"
       >
         <CarouselContent>
           {HeroImage.map((foto, index) => (
             <CarouselItem key={index}>
-              <div className='relative w-full h-full'>
-                <Image src={foto} alt='' className='w-full object-cover' />
-                {index === 0 && (
-                  <div className='absolute bottom-4 left-14  lg:top-1/3 md:left-20 p-4 flex flex-col items-start lg:left-32'>
-                    <span className='  text-lg md:text-6xl lg:text-7xl text-white  text-outline-black'>
-                      {language === "ESP" ? <>+50 Años</> : <>+50 Years</>}
-                    </span>
-                    <span className='  text-lg md:text-4xl lg:text-4xl text-white  '>
-                      {language === "ESP" ? (
-                        <>Construyendo Historia</>
-                      ) : (
-                        <>Building History</>
-                      )}
-                    </span>
-                  </div>
-                )}
+              <div className="relative w-full h-full">
+                <Image src={foto} alt="" className="w-full object-cover" />
               </div>
             </CarouselItem>
           ))}
@@ -69,6 +91,21 @@ export function HeroCarousel() {
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
+      <div className="absolute top-1/4 lg:top-[32%] left-4 md:left-20 lg:left-32 p-4 flex flex-col items-start z-10">
+        <span className="text-lg md:text-6xl lg:text-7xl text-white">
+          {language === "ESP" ? <>+60 Años </> : <>+60 Years </>}
+        </span>
+        <span className="text-lg md:text-4xl text-white">
+          {language === "ESP" ? <>3 Generaciones</> : <>3 Generations</>}
+        </span>
+        <span className="text-lg md:text-4xl text-white">
+          {language === "ESP" ? (
+            <>Construyendo Historia</>
+          ) : (
+            <>One Timeless Legacy</>
+          )}
+        </span>
+      </div>
     </div>
   );
 }
