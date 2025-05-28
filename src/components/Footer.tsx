@@ -165,17 +165,32 @@ export default function Footer() {
                 alt="Facebook"
               />
             </a>
-            <a
-              href="https://www.linkedin.com/company/mapal-s-a-c-i-a/?viewAsMember=true"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                className="w-6 h-6 object-contain"
-                src={linkdin}
-                alt="LinkedIn"
-              />
-            </a>
+            {pathname !== "/mapalsigma" && (
+              <a
+                href="https://www.linkedin.com/company/mapal-s-a-c-i-a/?viewAsMember=true"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  className="w-6 h-6 object-contain"
+                  src={linkdin}
+                  alt="LinkedIn"
+                />
+              </a>
+            )}
+            {pathname === "/mapalsigma" && (
+              <a
+                href="https://www.linkedin.com/company/mapalsigma/?viewAsMember=true"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  className="w-6 h-6 object-contain"
+                  src={linkdin}
+                  alt="LinkedIn"
+                />
+              </a>
+            )}
             <a
               href="https://youtube.com/@mapalsacia-constructionmin2997?si=XjYl2W5kTearQZfU"
               target="_blank"

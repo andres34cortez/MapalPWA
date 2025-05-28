@@ -291,7 +291,7 @@ const DialogMesaDirectiva = (props: { children: React.ReactNode }) => {
   return (
     <Dialog>
       <DialogTrigger asChild>{props.children}</DialogTrigger>
-      <DialogContent className="max-h-[80vh] overflow-y-auto min-w-[90%]">
+      <DialogContent className="max-h-[80vh] overflow-y-auto max-w-[90%]">
         <div className="flex flex-col items-center justify-center space-y-8 py-4">
           <div className="flex flex-row items-start gap-4">
             <FotoEmpleado
@@ -395,11 +395,11 @@ const FotoEmpleado = (props: {
         <Image
           src={props.foto}
           alt=""
-          className="rounded-2xl max-w-[250px] max-h-[250px] object-cover border-[3px] border-black"
+          className="rounded-2xl w-full max-w-[250px] min-w-[200px] max-h-[250px] object-cover border-[3px] border-black"
         />
       )}
       {!props.foto && (
-        <div className="rounded-3xl min-w-[250px] min-h-[243px] border-[3px] border-black felx items-center justify-center">
+        <div className="rounded-2xl min-w-[250px] min-h-[243px] border-[3px] border-black felx items-center justify-center">
           <Image
             src={DefaultUser}
             alt=""

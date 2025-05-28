@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import history1 from "@/assets/cambios2025/fotos/history1.jpg";
+import history1 from "@/assets/cambios2025/fotos/history1_min.jpg";
 import fondoHistory from "@/assets/FondoHistory.png";
-import history2 from "@/assets/cambios2025/fotos/history2.jpg";
+import history2 from "@/assets/cambios2025/fotos/history2_min.jpg";
 import Image from "next/image";
 import { useLanguage } from "@/context/LayoutContext";
 export default function HistoryBaner() {

@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import photo1 from "@/assets/cambios2025/fotos/obras_equipos/Mapal5_1.jpg";
+import photo1 from "@/assets/cambios2025/fotos/footer_min.jpg";
 import photo2 from "@/assets/cambios2025/fotos/obras_equipos/Mapal5_2.jpg";
-import photo3 from "@/assets/cambios2025/fotos/obras_equipos/Mapal5_3.jpg";
+import photo3 from "@/assets/cambios2025/fotos/footer3_min.jpg";
 import photo4 from "@/assets/cambios2025/fotos/obras_equipos/Mapal5_4.jpg";
 import photo5 from "@/assets/cambios2025/fotos/obras_equipos/Mapal5_5.jpg";
 import sigma from "@/assets/photosBaner/sigma.png";
