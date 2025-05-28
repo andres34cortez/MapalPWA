@@ -10,7 +10,7 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Mapal",
   icons: {
-    icon: "./favicon.svg",
+    icon: "./favicon.ico",
   },
 };
 
