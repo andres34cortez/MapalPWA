@@ -296,16 +296,16 @@ const DialogMesaDirectiva = (props: { children: React.ReactNode }) => {
           <div className="flex flex-row items-start gap-4">
             <FotoEmpleado
               foto={FrancoPalluchini}
-              nombre="Franco Palluchini"
+              nombre="Franco Pallucchini"
               cargo="Presidente y CEO"
             />
             <FotoEmpleado
               foto={AlejandroPalluchini}
-              nombre="Alejandro Palluchini"
+              nombre="Alejandro Pallucchini"
               cargo="Vicepresidente"
             />
-            <FotoEmpleado nombre="Julio Palluchini" cargo="Director" />
-            <FotoEmpleado nombre="Fernando Palluchini" cargo="Director" />
+            <FotoEmpleado nombre="Julio Pallucchini" cargo="Director" />
+            <FotoEmpleado nombre="Fernando Pallucchini" cargo="Director" />
           </div>
           <div className="flex flex-row items-start gap-4">
             <FotoEmpleado
@@ -337,7 +337,7 @@ const DialogMesaDirectiva = (props: { children: React.ReactNode }) => {
             />
             <FotoEmpleado
               foto={HumbertoViener}
-              nombre="Humberto Viener"
+              nombre="Humberto Venier"
               cargo="Coordinador de Obras"
             />
             <FotoEmpleado
@@ -369,7 +369,7 @@ const DialogMesaDirectiva = (props: { children: React.ReactNode }) => {
             />
             <FotoEmpleado
               foto={CarlaPalluchini}
-              nombre="Carla Palluchini"
+              nombre="Carla Pallucchini"
               cargo="Coordinadora de Legales y Contratos"
             />
             <FotoEmpleado
